@@ -1,5 +1,4 @@
 $(window).load(function(){
-  console.log('jqui-tabs-ajax.js');
 
   // click
   var jqui_tabs_ajax_a_array = $(".jqui-tabs-ajax > ul > li > a");
@@ -13,15 +12,20 @@ $(window).load(function(){
   });
 
   // ハッシュでAjaxページを切り替え
+  var hash_array = new Array();
+  $('.jqui-tabs-ajax li > a').each( function(i, a) {
+    hash_array.push($(a).attr('href').replace(/.html/g,''));
+  });
+
   var hash = window.location.hash;
   var jqui_tabs_active = 0;
   if(hash){
-    if(hash === '#?droppable'){
-      jqui_tabs_active = 1;
-
-    }
+    $(hash_array).each(function(i, h) {
+      if(hash === '#?' + h){
+        jqui_tabs_active = i;
+      }
+    });
     filename = hash.replace(/#\?/g, '') +'.js';
-    console.log(filename);
   }
 
   $(".jqui-tabs-ajax").tabs({

@@ -1,5 +1,4 @@
 $(function() {
-// $(window).load(function(){
   console.log('collapse_sidebar.js');
   $('body').scrollspy({offset: 100});
 
@@ -8,7 +7,6 @@ $(function() {
       top: 300
     }
   });
-
 
   $('div[aria-hidden=false] .sidebar > li').children('.collapse').collapse('show');
 

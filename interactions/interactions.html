@@ -55,7 +55,7 @@
         </div>
         <div id="main-nav" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li class="interactions active">
               <a href="interactions.html">Interactions</a>
             </li>
             <li>
@@ -108,8 +108,16 @@
     </div>
 
   </main>
+
   <script>
-    console.log(window.location.hash);
+    $(function(){
+      
+
+      $(window).scroll(function() {
+       $('#main-nav li.interactions').addClass('active');
+      });
+
+    });
   </script>
   <script src="../js/jqui-tabs-ajax.js"></script>
 
