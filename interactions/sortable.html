@@ -1,0 +1,1426 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Sortable</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .sortable-nooption .ui-icon,
+      .sortable-axis-x .ui-icon,
+      .sortable-axis-y .ui-icon {
+        display: inline-block;
+      }
+
+    </style>
+
+  <!-- </head>
+  <body> -->
+    <section id="sec-sortable">
+      <h3>Sortable</h3>
+      <p><a href="https://jqueryui.com/sortable/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/sortable/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+            <ul class="nav nav-tabs nav-stacked sidebar">
+              <li>
+                <a href="#ul-ul-sortable-options" class="ul-sortable-options" aria-controls="ul-ul-sortable-options">Options</a>
+
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-sortable-options">
+                  <li>
+                    <a href="#sec-sortable-nooption">Optionなし</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-axis">axis</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-connectWith">connectWith</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-cursor">cursor</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-cursorAt">cursorAt</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-delay">delay</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-distance">distance</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-grid">grid</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-handle">handle</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-placeholder">placeholder</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-revert">revert</a>
+                  </li>
+                  <li>
+                    <a href="#sec-sortable-scrollSensitivity">scrollSensitivity</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-scrollSpeed">scrollSpeed</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-tolerance">tolerance</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a id="ul-sortable-events"  aria-controls="ul-ul-sortable-events" href="#ul-ul-sortable-events">Events</a>
+                  <ul class="nav nav-pills nav-stacked collapse ul-ul-sortable-events">
+                  <li>
+                    <a href="#sec-sortable-update">update</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-sortable-options">
+            <h4>Options</h4>
+            <section id="sec-sortable-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <ul class="sortable-nooption">
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-nooption&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 5&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 6&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-nooption').sortable();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-axis">
+              <h4>axis</h4>
+              <div class="preview">
+                <ul class="sortable-axis-x">
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>x軸のみ</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                </ul>
+
+                <ul class="sortable-axis-y">
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>y軸のみ</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                  <li class="item"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-axis-x&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;x軸のみ&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+<span>
+&lt;ul class=&quot;sortable-axis-y&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;y軸のみ&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$( ".sortable-axis-x" ).sortable({
+  axis: 'x'
+});
+</span>
+<span>
+$( ".sortable-axis-y" ).sortable({
+  axis: 'y'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-connectWith">
+              <h4>connectWith</h4>
+              <div class="preview">
+                <ul class="sortable-connectA connectedSortable" style="display: inline-block;">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    connectA
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 4
+                  </li>
+                </ul>
+
+                <ul class="sortable-connectB connectedSortable" style="display: inline-block;">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    connectB
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 4
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-connectA connectedSortable&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    connectA
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 4
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+<span>
+&lt;ul class=&quot;sortable-connectB connectedSortable&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    connectB
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 4
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-connectA, .sortable-connectB').sortable({
+  connectWith: '.connectedSortable'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-cursor">
+              <h4>cursor</h4>
+              <div class="preview">
+                <ul class="sortable-cursor" style="display: inline-block;">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    cursor
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-cursor&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    cursor
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-cursor').sortable({
+  cursor: 'move'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-cursorAt">
+              <h4>cursorAt: cursorの位置を固定</h4>
+              <div class="preview">
+                <ul class="sortable-nooption" style="display: inline-block;">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    default
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+
+                <ul class="sortable-cursorAt" style="display: inline-block;">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    cursorAt
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    [left: 5]
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-nooption&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    default
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+<span>
+&lt;ul class=&quot;sortable-cursorAt&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    cursorAt
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    [left: 5]
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-cursorAt').sortable({
+  cursorAt: { left: 5 }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-delay">
+              <h4>delay</h4>
+              <div class="preview">
+                <ul class="sortable-delay">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    delay: 300ms
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-delay&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    delay: 300ms
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-delay').sortable({
+  delay: 300
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-distance">
+              <h4>distance</h4>
+              <div class="preview">
+                <ul class="sortable-distance">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    distance: 30
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-distance&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    distance: 30
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-distance').sortable({
+  distance: 30
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- <section id="sec-sortable-forceHelperSize">
+              <h4>forceHelperSize</h4>
+              <div class="preview">
+                <ul class="sortable-forceHelperSize">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    forceHelperSize
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+</span>
+</code>
+</pre>
+                </div>
+                <div class="css">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section> -->
+
+            <!-- <section id="sec-sortable-forcePlaceholderSize">
+              <h4>forcePlaceholderSize</h4>
+              <div class="preview">
+                <ul class="sortable-forcePlaceholderSize">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    forcePlaceholderSize
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+</span>
+</code>
+</pre>
+                </div>
+                <div class="css">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section> -->
+
+            <section id="sec-sortable-grid">
+              <h4>grid</h4>
+              <div class="preview">
+                <ul class="sortable-grid">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    grid: [20, 10]
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-grid&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    grid: [20, 10]
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-grid').sortable({
+  grid: [ 20, 10 ]
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-handle">
+              <h4>handle</h4>
+              <div class="preview">
+                <ul class="sortable-handle">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 1
+                    <span class="handle">[handle]</span>
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                    <span class="handle">[handle]</span>
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 3
+                    <span class="handle">[handle]</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-handle&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 1
+    &lt;span class=&quot;handle&quot;&gt;[handle]&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+    &lt;span class=&quot;handle&quot;&gt;[handle]&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 3
+    &lt;span class=&quot;handle&quot;&gt;[handle]&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-handle').sortable({
+  handle: '.handle'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-">
+              <h4>helper</h4>
+              <div class="preview">
+                <ul class="sortable-helper">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    helper: clone
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-helper&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    helper: clone
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-helper').sortable({
+  helper: "clone",
+  start: function(event, ui){
+    ui.item.css("display", "block");
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-opacity">
+              <h4>opacity</h4>
+              <div class="preview">
+                <ul class="sortable-opacity">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    opacity: 0.5
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-opacity&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    opacity: 0.5
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-opacity').sortable({
+  opacity: .5
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-placeholder">
+              <h4>placeholder</h4>
+              <div class="preview">
+                <ul class="sortable-placeholder">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    placeholder
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-placeholder&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    placeholder
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-placeholder').sortable({
+  placeholder: "ui-state-highlight"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-revert">
+              <h4>revert</h4>
+              <div class="preview">
+                <ul class="sortable-revert">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    revert
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-revert&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    revert
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-revert').sortable({
+  revert: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-sortable-scrollSensitivity">
+              <h4>scrollSensitivity</h4>
+              <div class="preview">
+                <ul class="sortable-scrollSenstiviy">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    scrollSenstiviy: 100
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-scrollSenstiviy&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    scrollSenstiviy: 100
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-scrollSenstiviy').sortable({
+  scrollSensitivity: 100
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectable-scrollSpeed">
+              <h4>scrollSpeed: ドラッグした時のscrollのspeed</h4>
+              <div class="preview">
+                <ul class="sortable-scrollSpeed">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    scrollSpeed: 100
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-scrollSpeed&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    scrollSpeed: 100
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-scrollSpeed').sortable({
+  scrollSpeed: 100
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-selectable-tolerance">
+              <h4>tolerance</h4>
+              <div class="preview">
+                <ul class="sortable-tolerance-intersect">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    default : intersect
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+
+                <ul class="sortable-tolerance-pointer">
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    tolerance: pointer
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    item 2
+                  </li>
+                  <li class="item">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s" style="display: inline-block;"></span>
+                    Item 3
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;sortable-tolerance-intersect&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    default : intersect
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+<span>
+&lt;ul class=&quot;sortable-tolerance-pointer&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    tolerance: pointer
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    item 2
+  &lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;
+    &lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot; style=&quot;display: inline-block;&quot;&gt;&lt;/span&gt;
+    Item 3
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+  $('.sortable-tolerance-intersect').sortable({
+    tolerance: 'intersect'
+  });
+</span>
+<span>
+$('.sortable-tolerance-pointer').sortable({
+  tolerance: 'pointer'
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-sortable-events">
+            <h4>Events</h4>
+            <section id="sec-sortable-update">
+              <h4>update( event, ui ) + (serialize, toArray)</h4>
+              <div class="preview">
+                <div class="div-sortable-update-serialize">serialize:</div>
+                <ul class="sortable-update-serialize">
+                  <li id="item_1">item1</li>
+                  <li id="item_2">item2</li>
+                  <li id="item_3">item3</li>
+                  <li id="item_4">item4</li>
+                  <li id="item_5">item5</li>
+                </ul>
+
+                <div class="div-sortable-update-toArray">toArray:</div>
+                <ul class="sortable-update-toArray">
+                  <li id="item-toArray_1">item1</li>
+                  <li id="item-toArray_2">item2</li>
+                  <li id="item-toArray_3">item3</li>
+                  <li id="item-toArray_4">item4</li>
+                  <li id="item-toArray_5">item5</li>
+                </ul>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-sortable-update-serialize&quot;&gt;serialize:&lt;/div&gt;
+&lt;ul class=&quot;sortable-update-serialize&quot;&gt;
+  &lt;li id=&quot;item_1&quot;&gt;item1&lt;/li&gt;
+  &lt;li id=&quot;item_2&quot;&gt;item2&lt;/li&gt;
+  &lt;li id=&quot;item_3&quot;&gt;item3&lt;/li&gt;
+  &lt;li id=&quot;item_4&quot;&gt;item4&lt;/li&gt;
+  &lt;li id=&quot;item_5&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+<span>
+&lt;div class=&quot;div-sortable-update-toArray&quot;&gt;toArray:&lt;/div&gt;
+&lt;ul class=&quot;sortable-update-toArray&quot;&gt;
+  &lt;li id=&quot;item-toArray_1&quot;&gt;item1&lt;/li&gt;
+  &lt;li id=&quot;item-toArray_2&quot;&gt;item2&lt;/li&gt;
+  &lt;li id=&quot;item-toArray_3&quot;&gt;item3&lt;/li&gt;
+  &lt;li id=&quot;item-toArray_4&quot;&gt;item4&lt;/li&gt;
+  &lt;li id=&quot;item-toArray_5&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.sortable-update-serialize').sortable({
+  update: function(event, ui) {
+    //  id名が item名_index 出ないと動かない。
+    $('.div-sortable-update-serialize').text($(this).sortable('serialize'));
+  }
+});
+</span>
+<span>
+$('.sortable-update-toArray').sortable({
+  update: function(event, ui) {
+    $('.div-sortable-update-toArray').text($(this).sortable('toArray'));
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+  <!-- </body> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // nooption
+      $('.sortable-nooption').sortable();
+
+      // axis
+      $( ".sortable-axis-x" ).sortable({
+        axis: 'x'
+      });
+      $( ".sortable-axis-y" ).sortable({
+        axis: 'y'
+      });
+
+      // connectWith
+      $('.sortable-connectA, .sortable-connectB').sortable({
+        connectWith: '.connectedSortable'
+      });
+
+      // cursor
+      $('.sortable-cursor').sortable({
+        cursor: 'move'
+      });
+
+      // cursorAt
+      $('.sortable-cursorAt').sortable({
+        cursorAt: { left: 5 }
+      });
+
+      // delay
+      $('.sortable-delay').sortable({
+        delay: 300
+      });
+
+      // distance
+      $('.sortable-distance').sortable({
+        distance: 30
+      });
+
+      // forceHelperSize
+      $('.sortable-forceHelperSize').sortable({
+        helper: "clone",
+        start: function(event, ui){
+          ui.item.css("display", "block");
+        },
+        forceHelperSize: true
+      });
+
+      // forcePlaceholderSize
+      $('.sortable-forcePlaceholderSize').sortable({
+        forcePlaceholderSize: true,
+        start: function(event, ui){
+          ui.item.css("display", "block");
+        }
+      });
+
+      // grid
+      $('.sortable-grid').sortable({
+        grid: [ 20, 10 ]
+      });
+
+      // handle
+      $('.sortable-handle').sortable({
+        handle: '.handle'
+      });
+
+      // helper clone
+      $('.sortable-helper').sortable({
+        helper: "clone",
+        start: function(event, ui){
+          ui.item.css("display", "block");
+        }
+      });
+
+      // opacity
+      $('.sortable-opacity').sortable({
+        opacity: .5
+      });
+
+      // placeholder
+      $('.sortable-placeholder').sortable({
+        placeholder: "ui-state-highlight"
+      });
+
+      // revert
+      $('.sortable-revert').sortable({
+        revert: true
+      });
+
+      // scrollSenstivity
+      $('.sortable-scrollSenstiviy').sortable({
+        scrollSensitivity: 100
+      });
+
+      // scrollSpeed
+      $('.sortable-scrollSpeed').sortable({
+        scrollSpeed: 100
+      });
+
+      // tolerance
+      $('.sortable-tolerance-intersect').sortable({
+        tolerance: 'intersect'
+      });
+      $('.sortable-tolerance-pointer').sortable({
+        tolerance: 'pointer'
+      });
+
+      // event
+      // update
+      $('.sortable-update-serialize').sortable({
+        update: function(event, ui) {
+          //  id名が item名_index 出ないと動かない。
+          $('.div-sortable-update-serialize').text($(this).sortable('serialize'));
+        }
+      });
+      $('.sortable-update-toArray').sortable({
+        update: function(event, ui) {
+          $('.div-sortable-update-toArray').text($(this).sortable('toArray'));
+        }
+      });
+    });
+  </script> -->
+<!-- </html> -->

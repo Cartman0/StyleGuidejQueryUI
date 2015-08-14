@@ -1,0 +1,594 @@
+<section id="sec-draggable">
+  <h3>Draggable</h3>
+  <p><a href="http://jqueryui.com/draggable/">公式DEMO</a></p>
+  <p><a href="http://api.jqueryui.com/draggable/">オプション</a></p>
+
+  <div class="row">
+    <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+        <ul class="nav nav-tabs nav-stacked sidebar">
+          <li>
+            <!-- <a href="#ul-ul-draggable-options" class="ul-draggable-options" data-toggle="collapse" aria-expanded="false" aria-controls="ul-ul-draggable-options">Options</a> -->
+            <a href="#ul-ul-draggable-options" id="ul-draggable-options" aria-expanded="false" aria-controls="ul-ul-draggable-options">Options</a>
+
+            <ul class="nav nav-pills nav-stacked collapse ul-ul-draggable-options">
+              <li>
+                <a href="#sec-draggable-nooption">Optionなし</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-axis">axis</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-cancel">cancel</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-cursor">cursor</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-delay">delay</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-grid">grid</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-handle">handle</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-helper">helper</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-opacity">opacity</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-revert">revert</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-revertDuration">revertDuration</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-scroll">scroll</a>
+              </li>
+              <li>
+                <a href="#sec-draggable-snap">snap</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <!-- <a id="ul-events" data-toggle="collapse" aria-expanded="false"  aria-controls="ul-ul-events" href="#ul-ul-events">Events</a> -->
+            <a id="ul-events" aria-expanded="false"  aria-controls="ul-ul-events" href="#ul-ul-events">Events</a>
+            <ul class="nav nav-pills nav-stacked collapse" id="ul-ul-events">
+              <li>
+                <a href="#sec-draggable-drag">drag</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+      <div id="div-draggable-options">
+        <h4>Options</h4>
+        <section id="sec-draggable-nooption">
+          <h4>Optionなし</h4>
+          <div class="preview">
+            <div class="box" style="width:100px; height:100px; border: 1px solid #333;">
+              box
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+box
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.box').draggable();
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-axis">
+          <h4>axis</h4>
+          <div class="preview">
+            <div class="axis-x" style="width:100px; height:100px; border: 1px solid #333; display: inline-block;">
+              x only
+            </div>
+            <div class="axis-y" style="width:100px; height:100px; border: 1px solid #333; display: inline-block;">
+              y only
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;axis-x&quot; style=&quot;width:100px; height:100px; border: 1px solid #333; display: inline-block;&quot;&gt;
+x方向のみ
+&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;axis-y&quot; style=&quot;width:100px; height:100px; border: 1px solid #333; display: inline-block;&quot;&gt;
+y方向のみ
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.axis-x').draggable({
+axis: 'x'
+});
+</span>
+<span>
+$('.axis-y').draggable({
+axis: 'y'
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-cancel">
+          <h4>cancel: ドラッグできない部分を指定</h4>
+          <div class="preview">
+            <div class="box-cancel" style="width:100px; height:100px; border: 1px solid #333;">
+              <div>box</div>
+              <div class="cancel">cancel</div>
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box-cancel&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+&lt;div&gt;box&lt;/div&gt;
+&lt;div class=&quot;cancel&quot;&gt;cancel&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.box-cancel').draggable({
+cancel: '.cancel'
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-cursor">
+          <h4>cursol: カーソル変更</h4>
+          <div class="preview">
+            <div class="cursor" style="width:100px; height:100px; border: 1px solid #333;">
+              cursor 変更
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;cursor&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+cursor 変更
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.cursor').draggable({
+cursor: 'crosshair'
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-delay">
+          <h4>delay: ドラッグし始めてdelayをかける</h4>
+          <div class="preview">
+            <div class="delay" style="width:100px; height:100px; border: 1px solid #333;">
+              delay
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;delay&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+delay
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+        </div>
+        <div class="js">
+<pre>
+<code>
+<span>
+$('.delay').draggable({
+delay: 300
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-grid">
+          <h4>grid: ドラッグすると[x, y]グリッド移動</h4>
+          <div class="preview">
+            <div class="grid" style="width:100px; height:100px; border: 1px solid #333;">
+              grid
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;grid&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+grid
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$( ".grid" ).draggable({
+grid: [ 50, 20 ]
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-handle">
+          <h4>handle: 指定部分のみでドラッグできる</h4>
+          <div class="preview">
+            <div class="box-handle" style="width:100px; height:100px; border: 1px solid #333;">
+              <div>box</div>
+              <div class="handle">handle</div>
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box-handle&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+&lt;div&gt;box&lt;/div&gt;
+&lt;div class=&quot;handle&quot;&gt;handle&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$( '.box-handle' ).draggable({
+handle: '.handle'
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-helper">
+          <h4>helper: cloneでは、自分のコピーをドラッグできる</h4>
+          <div class="preview">
+            <div class="helper-clone" style="width:100px; height:100px; border: 1px solid #333;">
+              box
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;helper-clone&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+box
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.helper-clone').draggable({
+helper: 'clone'
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-opacity">
+          <h4>opacity: ドラッグするとopacityが効く</h4>
+          <div class="preview">
+            <div class="opacity" style="width:100px; height:100px; border: 1px solid #333; background-color: #333; color: #eee;">
+              opacity
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;opacity&quot; style=&quot;width:100px; height:100px; border: 1px solid #333; background-color: #333; color: #eee;&quot;&gt;
+opacity
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.opacity').draggable({
+opacity: 0.5
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-revert">
+          <h4>revert: 元の位置にアニメーションで戻る</h4>
+          <div class="preview">
+            <div class="revert" style="width:100px; height:100px; border: 1px solid #333;">
+              revert
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;revert&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+revert
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.revert').draggable({
+revert: true
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-revertDuration">
+          <h4>revertDuration: revertアニメーションの時間を決める</h4>
+          <div class="preview">
+            <div class="revert-duration" style="width:100px; height:100px; border: 1px solid #333;">
+              revertDuration
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;revert-duration&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+revertDuration
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.revert-duration').draggable({
+revert: true,
+revertDuration: 1000
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-scroll">
+          <h4>scroll: default: true, ドラッグしながらスクロールされる</h4>
+          <div class="preview">
+            <div class="scroll" style="width:100px; height:100px; border: 1px solid #333;">
+              no scroll
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;scroll&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+scroll
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.scroll').draggable({
+scroll: false
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec-draggable-snap">
+          <h4>snap: elementをsnap(吸着)させる。</h4>
+          <div class="preview">
+            <div class="snap" style="width:100px; height:100px; border: 1px solid #333; display: inline-block;">
+              snap1
+            </div>
+            <div class="snap" style="width:100px; height:100px; border: 1px solid #333; display: inline-block;">
+              snap2
+            </div>
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;snap&quot; style=&quot;width:100px; height:100px; border: 1px solid #333; display: inline-block;&quot;&gt;
+snap1
+&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;snap&quot; style=&quot;width:100px; height:100px; border: 1px solid #333; display: inline-block;&quot;&gt;
+snap2
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.snap').draggable({
+snap: true
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+      </div><!-- div-draggable-options -->
+      <div id="div-draggable-events">
+        <h4>Events</h4>
+        <section id="sec-draggable-drag">
+          <h4>drag</h4>
+          <div class="preview">
+            <div class="drag" style="width:100px; height:100px; border: 1px solid #333;">
+              drag
+            </div>
+            <div class="div-drag"></div>
+          </div>
+
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;drag&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+drag
+&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;div-drag&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span>
+$('.drag').draggable({
+drag: function(event, ui){
+$('.div-drag').text('top:' + ui.position.top + ' left:' +   ui.position.left);
+}
+});
+</span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h4></h4>
+          <div class="preview">
+
+          </div>
+          <div class="code">
+            <div class="html">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+            </div>
+            <div class="js">
+<pre>
+<code>
+<span></span>
+</code>
+</pre>
+            </div>
+          </div>
+        </section>
+
+      </div> <!-- div-draggable-events -->
+
+    </div><!-- col-xs-10 -->
+  </div><!-- row -->
+
+</section><!-- section id="sec-draggable" -->

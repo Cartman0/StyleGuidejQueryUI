@@ -1,0 +1,658 @@
+    <style>
+    .ui-resizable-helper {
+      border: 2px dotted #00F;
+    }
+    </style>
+
+    <section id="sec-resizable">
+      <h3>Resizable</h3>
+      <p><a href="https://jqueryui.com/resizable/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/resizable/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+            <ul class="nav nav-tabs nav-stacked sidebar">
+              <li>
+                <a href="#ul-ul-resizable-options" class="ul-resizable-options" aria-controls="ul-ul-resizable-options">Options</a>
+
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-resizable-options">
+                  <li>
+                    <a href="#sec-resizable-nooption">Optionなし</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-alsoResize">alsoResize</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-animate">animate</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-animateDuration">animateDuration</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-animateEasing">animateEasing</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-aspectRatio">aspectRatio</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-autoHide">autoHide</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-containment">containment</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-delay">delay</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-distance">distance</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-ghost">ghost</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-grid">grid</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-handles">handles</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-helper">helper</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-width-height">max(min)Height,<br> max(min)Width</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a id="ul-resizable-events"  aria-controls="ul-ul-resizable-events" href="#ul-ul-resizable-events">Events</a>
+                  <ul class="nav nav-pills nav-stacked collapse ul-ul-resizable-events">
+                  <li>
+                    <a href="#sec-resizable-resize">resize</a>
+                  </li>
+                  <li>
+                    <a href="#sec-resizable-stop">stop</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-resizable-options">
+            <h4>Options</h4>
+            <section id="sec-resizable-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <div class="box" style="width: 100px; height: 100px; border: 1px solid #333;">box</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.box').resizable();
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-alsoResize">
+              <h4>alsoResize</h4>
+              <div class="preview">
+                <div class="also-resize" style="width: 100px; height: 100px; border: 1px solid #333;">also-resize</div>
+                <div class="mirror" style="width: 100px; height: 100px; border: 1px solid #333;">mirror</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;also-resize&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;also-resize&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;mirror&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;mirror&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$(".also-resize").resizable({
+  alsoResize: ".mirror"
+});
+</span>
+<span>
+$('.mirror').resizable();
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-animate">
+              <h4>animate</h4>
+              <div class="preview">
+                <div class="animate" style="width: 100px; height: 100px; border: 1px solid #333;">animate</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;animate&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;animate&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.animate').resizable({
+  animate: true
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-animateDuration">
+              <h4>animateDuration</h4>
+              <div class="preview">
+                <div class="animateDuration-slow" style="width: 100px; height: 100px; border: 1px solid #333;">slow</div>
+                <div class="animateDuration-fast" style="width: 100px; height: 100px; border: 1px solid #333;">fast</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;animateDuration-slow&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;slow&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;animateDuration-fast&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;fast&lt;/div&gt;
+</span>
+</code>
+</pre>
+        </div>
+        <div class="js">
+<pre>
+<code>
+<span>
+$('.animateDuration-slow').resizable({
+  animate: true,
+  animateDuration: "slow"
+});
+</span>
+<span>
+$('.animateDuration-fast').resizable({
+  animate: true,
+  animateDuration: "fast"
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-animateEasing">
+              <h4>animateEasing: animate の仕方を変えられる</h4>
+              <div class="preview">
+                <div class="animateEasing-swing" style="width: 100px; height: 100px; border: 1px solid #333;">swing</div>
+                <div class="animateEasing-easeOutBounce" style="width: 100px; height: 100px; border: 1px solid #333;">easeOutBounce</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;animateEasing-swing&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;swing&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;animateEasing-easeOutBounce&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;easeOutBounce&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.animateEasing-swing').resizable({
+  animate: true,
+  animateEasing: 'swing'
+});
+</span>
+<span>
+$('.animateEasing-easeOutBounce').resizable({
+  animate: true,
+  animateEasing: 'easeOutBounce'
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-aspectRatio">
+              <h4>aspectRatio</h4>
+              <div class="preview">
+                <div class="aspectRatio" style="width: 100px; height: 100px; border: 1px solid #333;">aspectRatio</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;aspectRatio&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;aspectRatio&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$( ".aspectRatio" ).resizable({
+  aspectRatio: true
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+
+            <section id="sec-resizable-autoHide">
+              <h4>autoHide: hoverするまでアイコンが消えている</h4>
+              <div class="preview">
+                <div class="autoHide" style="width: 100px; height: 100px; border: 1px solid #333;">autoHide</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;autoHide&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;autoHide&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.autoHide').resizable({
+  autoHide: true
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-containment">
+              <h4>containment</h4>
+              <div class="preview">
+                <div class="containment-container" style="width: 200px; height: 200px; border: 1px solid #333;">
+                  containment-container
+                  <div class="containment" style="width: 100px; height: 100px; border: 1px solid #333;">containment</div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;containment-container&quot; style=&quot;width: 200px; height: 200px; border: 1px solid #333;&quot;&gt;
+  containment-container
+  &lt;div class=&quot;containment&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;containment&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.containment').resizable({
+  containment: '.containment-container'
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-delay">
+              <h4>delay</h4>
+              <div class="preview">
+                <div class="delay" style="width: 100px; height: 100px; border: 1px solid #333;">delay: 300[ms]</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;delay&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;delay: 300[ms]&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.delay').resizable({
+  delay: 300
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-distance">
+              <h4>distance: 指定pixel以下ではリサイズされない</h4>
+              <div class="preview">
+                <div class="distance" style="width: 100px; height: 100px; border: 1px solid #333;">distance: 30</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;distance&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;distance: 30&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.distance').resizable({
+  distance: 30
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+
+            <section id="sec-resizable-ghost">
+              <h4>ghost</h4>
+              <div class="preview">
+                <div class="ghost" style="width: 100px; height: 100px; border: 1px solid #333;">ghost</div>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;ghost&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;ghost&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.ghost').resizable({
+  ghost: true
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-grid">
+              <h4>grid</h4>
+              <div class="preview">
+                <div class="grid" style="width: 100px; height: 100px; border: 1px solid #333;">grid: [20, 10]</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;grid&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;grid: [20, 10]&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.grid').resizable({
+  grid: [ 20, 10 ]
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-handles">
+              <h4>handles: resizeできる位置を指定, n, e, s, w, ne, se, sw, nw, all</h4>
+              <div class="preview">
+                <div class="box" style="display: inline-block; width: 100px; height: 100px; border: 1px solid #333;">default: e, s, se</div>
+                <div class="handles-all" style="display: inline-block; width: 100px; height: 100px; border: 1px solid #333;">all</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;display: inline-block; width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;default: e, s, se&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;handles-all&quot; style=&quot;display: inline-block; width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;all&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.handles-all').resizable({
+  handles: 'all'
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-helper">
+              <h4>helper</h4>
+              <div class="preview">
+                <div class="helper" style="width: 100px; height: 100px; border: 1px solid #333;">helper</div>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;helper&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;helper&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="css">
+<pre>
+<code>
+<span>
+.ui-resizable-helper {
+  border: 2px dotted #00F;
+}
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.helper').resizable({
+  helper: "ui-resizable-helper"
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-width-height">
+              <h4>maxHeight, maxWidth, minHeight, minWidth</h4>
+              <div class="preview">
+                <div class="width-height" style="width: 100px; height: 100px; border: 1px solid #333; font-size: 0.5rem;">
+                  <p>minWidth: 50, minHeight: 50</p>
+                  <p>maxWidth: 300, maxHeight: 200</p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;width-height&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333; font-size: 0.5rem;&quot;&gt;
+  &lt;p&gt;minWidth: 50, minHeight: 50&lt;/p&gt;
+  &lt;p&gt;maxWidth: 300, maxHeight: 200&lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.width-height').resizable({
+  maxHeight: 200,
+  maxWidth: 300,
+  minHeight: 50,
+  minWidth: 50
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-resizable-events">
+            <h4>Events</h4>
+            <section id="sec-resizable-resize">
+              <h4>resize( event, ui )</h4>
+              <div class="preview">
+                <div class="div-resize">width: height:</div>
+                <div class="resize" style="width: 100px; height: 100px; border: 1px solid #333;">stop</div>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-resize&quot;&gt;width: height:&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;resize&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;stop&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.resize').resizable({
+  resize: function( event, ui ) {
+    $('.div-resize').text('width:' + ui.size.width + ' height:' + ui.size.height);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-resizable-stop">
+              <h4>stop</h4>
+              <div class="preview">
+                <div class="div-stop">width: height:</div>
+                <div class="stop" style="width: 100px; height: 100px; border: 1px solid #333;">stop</div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-stop&quot;&gt;width: height:&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;stop&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;stop&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.stop').resizable({
+  stop: function(event, ui){
+    $('.div-stop').text('width:' + ui.size.width + ' height:' + ui.size.height);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->

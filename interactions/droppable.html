@@ -1,0 +1,470 @@
+<style>
+  .hoverClass-hover {
+    background-color: red;
+  }
+</style>
+
+  <section id="sec-droppable">
+    <h3>Droppable</h3>
+    <p><a href="http://jqueryui.com/droppable/">公式DEMO</a></p>
+    <p><a href="http://api.jqueryui.com/droppable/">Options・Events詳細</a></p>
+
+    <div class="row">
+      <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-droppable-options" class="ul-droppable-options" aria-controls="ul-ul-droppable-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-droppable-options">
+                <li>
+                  <a href="#sec-droppable-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-droppable-accept">accept</a>
+                </li>
+                <li>
+                  <a href="#sec-droppable-greedy">greedy</a>
+                </li>
+                <li>
+                  <a href="#sec-droppable-hoverClass">hoverClass</a>
+                </li>
+                <li>
+                  <a href="#sec-droppable-scope">scope</a>
+                </li>
+                <li>
+                  <a href="#sec-droppable-tolerance">tolerance</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <!-- <a id="ul-droppable-events" data-toggle="collapse" aria-expanded="false"  aria-controls="ul-ul-droppable-events" href="#ul-ul-droppable-events">Events</a>
+              <ul class="nav nav-pills nav-stacked collapse" id="ul-ul-droppable-events"> -->
+              <a id="ul-droppable-events"  aria-controls="ul-ul-droppable-events" href="#ul-ul-droppable-events">Events</a>
+
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-droppable-events">
+                <li>
+                  <a href="#sec-droppable-drop">drop</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+        <div id="div-droppable-options">
+          <h4>Options</h4>
+          <section id="sec-droppable-nooption">
+            <h4>Optionなし</h4>
+            <div class="preview">
+              <div class="box" style="width: 100px; height: 100px; border: 1px solid #333;">box</div>
+              <div class="target" style="width: 200px; height: 200px; border: 1px solid #333;">target</div>
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box&lt;/div&gt;
+&lt;div class=&quot;target&quot; style=&quot;width: 200px; height: 200px; border: 1px solid #333;&quot;&gt;target&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$('.box').draggable();
+</span>
+<span>
+$('.target').droppable();
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec-droppable-accept">
+            <h4>accept</h4>
+            <div class="preview">
+              <div class="box box1" style="display: inline-block; width: 100px; height: 100px; border: 1px solid #333;">box1</div>
+              <div class="box box2" style="display: inline-block; width: 100px; height: 100px; border: 1px solid #333;">box2</div>
+              <div class="div-accept"></div>
+              <div class="accept" style="width: 200px; height: 200px; border: 1px solid #333;">accept box1</div>
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box box1&quot; style=&quot;display: inline-block; width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box1&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;box box2&quot; style=&quot;display: inline-block; width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box2&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;div-accept&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;accept&quot; style=&quot;width: 200px; height: 200px; border: 1px solid #333;&quot;&gt;accept box1&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$('.accept').droppable({
+accept: '.box1',
+drop: function(event, ui){
+$('.div-accept').text('dropped box1.');
+}
+});
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec-droppable-greedy">
+            <h4>greedy: nestされたdroppable要素に伝播しない</h4>
+            <div class="preview">
+              <div class="box" style="width: 100px; height: 100px; border: 1px solid #333;">box</div>
+              <div class="div-greedy"></div>
+              <div class="greedy" style="width: 250px; height: 250px; border: 1px solid #333;">greedy
+              <div class="greedy-nest-target" style="width: 100px; height: 100px; border: 1px solid #333;">nest-target</div>
+              </div>
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;div-greedy&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;greedy&quot; style=&quot;width: 250px; height: 250px; border: 1px solid #333;&quot;&gt;greedy
+</span>
+<span>
+&lt;div class=&quot;greedy-nest-target&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;nest-target&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$( ".greedy" ).droppable({
+greedy: true,
+drop: function(event, ui){
+$('.div-greedy').text('dropped box on greedy.');
+}
+});
+</span>
+<span>
+$('.greedy-nest-target').droppable({
+drop: function(event, ui){
+$('.div-greedy').text('dropped box on nest.');
+}
+});
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec-droppable-hoverClass">
+            <h4>hoverClass: hoverするとClassが追加される</h4>
+            <div class="preview">
+              <div class="box" style="width: 100px; height: 100px; border: 1px solid #333;">box</div>
+              <div class="hoverClass" style="width: 150px; height: 150px; border: 1px solid #333;">hoverClass</div>
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;hoverClass&quot; style=&quot;width: 150px; height: 150px; border: 1px solid #333;&quot;&gt;hoverClass&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="css">
+<pre>
+<code>
+<span>
+.hoverClass-hover {
+background-color: red;
+}
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$('.hoverClass').droppable({
+hoverClass: 'hoverClass-hover'
+});
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec-droppable-scope">
+            <h4>scope: scopeで同じ名前をつけたdraggable要素とdroppable要素のみドラッグ&ドロップできる</h4>
+            <div class="preview">
+              <div class="box" style="display: inline-block; width: 100px; height: 100px; border: 1px solid #333;">box</div>
+              <div class="scope-box" style="display: inline-block; width: 100px; height: 100px; border: 1px solid #333;">scope-box</div>
+              <div class="div-scope">msg:</div>
+              <div class="scope" style="width: 200px; height: 200px; border: 1px solid #333;">scope</div>
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;display: inline-block; width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;scope-box&quot; style=&quot;display: inline-block; width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;scope-box&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;div-scope&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;scope&quot; style=&quot;width: 200px; height: 200px; border: 1px solid #333;&quot;&gt;scope&lt;/div&gt;
+</span>
+</code>
+</pre>
+        </div>
+        <div class="js">
+<pre>
+<code>
+<span>
+$('.scope-box').draggable({
+scope: 'scope-box'
+});
+</span>
+<span>
+$('.scope').droppable({
+scope: 'scope-box',
+drop: function(event, ui){
+$('.div-scope').text('dropped scope-box');
+}
+});
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec-droppable-tolerance">
+            <h4>tolerance</h4>
+            <p>
+              <ul>
+                <li>
+                  <p>fit: 全体が入ったら</p>
+                </li>
+                <li>
+                  <p>intersect: default, 50%以上入ったら</p>
+                </li>
+                <li>
+                  <p>pointer: Mouse pointerが入ったら</p>
+                </li>
+                <li>
+                  <p>touch: 少しでも入ったら</p>
+                </li>
+              </ul>
+            </p>
+            <div class="preview">
+              <div class="box" style="width: 100px; height: 100px; border: 1px solid #333;">box</div>
+              <div style="display: inline-block;">
+                <div class="div-fit">msg:</div>
+                <div class="tolerance-fit" style="width: 150px; height: 150px; border: 1px solid #333;">fit</div>
+              </div>
+              <div style="display: inline-block;">
+                <div class="div-intersect">msg:</div>
+                <div class="tolerance-intersect" style="width: 150px; height: 150px; border: 1px solid #333;">intersect</div>
+              </div>
+              <div style="display: inline-block;">
+                <div class="div-pointer">msg:</div>
+                <div class="tolerance-pointer" style="width: 150px; height: 150px; border: 1px solid #333;">pointer</div>
+              </div>
+              <div style="display: inline-block;">
+                <div class="div-touch">msg:</div>
+                <div class="tolerance-touch" style="width: 150px; height: 150px; border: 1px solid #333;">touch</div>
+              </div>
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width: 100px; height: 100px; border: 1px solid #333;&quot;&gt;box&lt;/div&gt;
+</span>
+<span>
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;div class=&quot;div-fit&quot;&gt;msg:&lt;/div&gt;
+&lt;div class=&quot;tolerance-fit&quot; style=&quot;width: 150px; height: 150px; border: 1px solid #333;&quot;&gt;fit&lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;div class=&quot;div-intersect&quot;&gt;msg:&lt;/div&gt;
+&lt;div class=&quot;tolerance-intersect&quot; style=&quot;width: 150px; height: 150px; border: 1px solid #333;&quot;&gt;intersect&lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;div class=&quot;div-pointer&quot;&gt;msg:&lt;/div&gt;
+&lt;div class=&quot;tolerance-pointer&quot; style=&quot;width: 150px; height: 150px; border: 1px solid #333;&quot;&gt;pointer&lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;div class=&quot;div-touch&quot;&gt;msg:&lt;/div&gt;
+&lt;div class=&quot;tolerance-touch&quot; style=&quot;width: 150px; height: 150px; border: 1px solid #333;&quot;&gt;touch&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$('.tolerance-fit').droppable({
+tolerance: 'fit',
+drop: function(event, ui){
+$('.div-fit').text('dropped fit.');
+}
+});
+</span>
+<span>
+$('.tolerance-intersect').droppable({
+tolerance: 'intersect',
+drop: function(event, ui){
+$('.div-intersect').text('dropped intersect.');
+}
+});
+</span>
+<span>
+$('.tolerance-pointer').droppable({
+tolerance: 'pointer',
+drop: function(event, ui){
+$('.div-pointer').text('dropped pointer.');
+}
+});
+</span>
+<span>
+$('.tolerance-touch').droppable({
+tolerance: 'touch',
+drop: function(event, ui){
+$('.div-touch').text('dropped touch.');
+}
+});
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+        </div><!-- div-draggable-options -->
+
+        <div id="div-droppable-events">
+          <h4>Events</h4>
+          <section id="sec-droppable-drop">
+            <h4>drop</h4>
+            <div class="preview">
+              <div class="box" style="width:100px; height:100px; border: 1px solid #333;">
+                box
+              </div>
+              <div class="div-drop">top: left:</div>
+              <div class="drop" style="width:150px; height:150px; border: 1px solid #333;">
+                drop
+              </div>
+            </div>
+
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box&quot; style=&quot;width:100px; height:100px; border: 1px solid #333;&quot;&gt;
+box
+&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;div-drop&quot;&gt;top: left:&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;drop&quot; style=&quot;width:150px; height:150px; border: 1px solid #333;&quot;&gt;
+drop
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span>
+$('.drop').droppable({
+drop: function(event, ui){
+$('.div-drop').text('top:' + ui.position.top + ' left:' + ui.position.left);
+}
+});
+</span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h4></h4>
+            <div class="preview">
+
+            </div>
+            <div class="code">
+              <div class="html">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+              </div>
+              <div class="js">
+<pre>
+<code>
+<span></span>
+</code>
+</pre>
+              </div>
+            </div>
+          </section>
+
+        </div> <!-- div-draggable-events -->
+
+      </div><!-- col-xs-10 -->
+    </div><!-- row -->
+
+  </section><!-- section id="sec-draggable" -->

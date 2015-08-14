@@ -1,0 +1,601 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Selectable</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .selectable-nooption .ui-selecting,
+      .selectable-delay .ui-selecting
+      .selectable-distance .ui-selecting,
+      .selectable-tolerance-fit .ui-selecting,
+      .selectable-tolerance-touch .ui-selecting,
+      .selectable-selected .ui-selecting,
+      .selectable-selecting .ui-selecting,
+      .selectable-stop .ui-selected,
+      .selectable-unselected .ui-selected {
+        background: #FECA40;
+      }
+
+      .selectable-nooption .ui-selected,
+      .selectable-delay .ui-selected,
+      .selectable-distance .ui-selected,
+      .selectable-tolerance-fit .ui-selected,
+      .selectable-tolerance-touch .ui-selected,
+      .selectable-selected .ui-selected,
+      .selectable-selecting .ui-selected,
+      .selectable-stop .ui-selected,
+      .selectable-unselected .ui-selected {
+        background: #F39814;
+        color: white;
+      }
+
+    </style>
+
+  <!-- </head> -->
+  <!-- <body> -->
+    <section id="sec-selectable">
+      <h3>Selectable</h3>
+      <p><a href="https://jqueryui.com/selectable/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/selectable/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+            <ul class="nav nav-tabs nav-stacked sidebar">
+              <li>
+                <a href="#ul-ul-selectable-options" class="ul-selectable-options" aria-controls="ul-ul-selectable-options">Options</a>
+
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-selectable-options">
+                  <li>
+                    <a href="#sec-selectable-nooption">Optionなし</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-delay">delay</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-distance">distance</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-tolerance">tolerance</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a id="ul-selectable-events"  aria-controls="ul-ul-selectable-events" href="#ul-ul-selectable-events">Events</a>
+                  <ul class="nav nav-pills nav-stacked collapse ul-ul-selectablee-events">
+                  <li>
+                    <a href="#sec-selectable-selected">selected</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-selecting">selecting</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-stop">stop</a>
+                  </li>
+                  <li>
+                    <a href="#sec-selectable-unselected">unselected</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-selectable-options">
+            <h4>Options</h4>
+            <section id="sec-selectable-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <ul class="selectable-nooption">
+                  <li class="item">item1</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;nooption&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;item1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="css">
+<pre>
+<code>
+<span>
+.nooption .ui-selecting {
+  background: #FECA40;
+}
+</span>
+<span>
+.nooption .ui-selected {
+  background: #F39814;
+  color: white;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.nooption').selectable();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectable-delay">
+              <h4>delay: (※ドラッグして選択できる)</h4>
+              <div class="preview">
+                <ul class="selectable-delay">
+                  <li class="item">item1</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;selectable-delay&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;item1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.selectable-delay').selectable({
+  delay: 150
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-selectable-distance">
+              <h4>distance: 指定pixel以上ドラッグすると選択できる</h4>
+              <div class="preview">
+                <ul class="selectable-distance">
+                  <li class="item">100px以上</li>
+                  <li class="item">ドラッグ</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;selectable-distance&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;100px以上&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;ドラッグ&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.selectable-distance').selectable({
+  distance: 100
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-selectable-tolerance">
+              <h4>tolerance</h4>
+              <div class="preview">
+                <ul class="selectable-tolerance-touch">
+                  <li class="item">default: touch</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+
+                <ul class="selectable-tolerance-fit">
+                  <li class="item">fit</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;selectable-tolerance-touch&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;default: touch&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+<span>
+&lt;ul class=&quot;selectable-tolerance-fit&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;fit&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.selectable-tolerance-touch').selectable({
+  tolerance: 'touch'
+});
+</span>
+<span>
+$('.selectable-tolerance-fit').selectable({
+  tolerance: "fit"
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-selectable-events">
+            <h4>Events</h4>
+            <section id="sec-selectable-selected">
+              <h4>selected( event, ui )</h4>
+              <div class="preview">
+                <div class="div-selectable-selected">id:</div>
+                <ul class="selectable-selected">
+                  <li class="item">item1</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-selectable-selected&quot;&gt;id:&lt;/div&gt;
+</span>
+<span>
+&lt;ul class=&quot;selectable-selected&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;item1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.selectable-selected').selectable({
+  selected: function(event, ui){
+    $('.ui-selected', this ).each(function() {
+      var index = $('.selectable-selected li').index(this);
+      $('.div-selectable-selected').text(index);
+    });
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-selectable-selecting">
+              <h4>selecting( event, ui )</h4>
+              <div class="preview">
+                <div class="div-selectable-selecting">id:</div>
+                <ul class="selectable-selecting">
+                  <li class="item">item1</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-selectable-selecting&quot;&gt;id:&lt;/div&gt;
+</span>
+<span>
+&lt;ul class=&quot;selectable-selecting&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;item1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.selectable-selecting').selectable({
+  selecting: function(event, ui){
+    $('.ui-selecting', this ).each(function() {
+      var index = $('.selectable-selecting li').index(this);
+      $('.div-selectable-selecting').text(index);
+    });
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-selectable-stop">
+              <h4>stop: select命令が終わった後</h4>
+              <div class="preview">
+                <div class="div-selectable-stop">idx:</div>
+                <ul class="selectable-stop">
+                  <li class="item">item1</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-selectable-stop&quot;&gt;idx:&lt;/div&gt;
+</span>
+<span>
+&lt;ul class=&quot;selectable-stop&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;item1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.selectable-stop').selectable({
+  stop: function(event, ui){
+    $('.ui-selected', this).each(function() {
+      var index = $('.selectable-stop li').index(this);
+      $('.div-selectable-stop').text(index);
+    });
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="sec-selectable-unselected">
+              <h4>unselected</h4>
+              <div class="preview">
+                <div class="div-selectable-unselected">idx:</div>
+                <ul class="selectable-unselected">
+                  <li class="item">item1</li>
+                  <li class="item">item2</li>
+                  <li class="item">item3</li>
+                  <li class="item">item4</li>
+                  <li class="item">item5</li>
+                </ul>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-selectable-unselected&quot;&gt;idx:&lt;/div&gt;
+</span>
+<span>
+&lt;ul class=&quot;selectable-unselected&quot;&gt;
+  &lt;li class=&quot;item&quot;&gt;item1&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item2&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item3&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item4&lt;/li&gt;
+  &lt;li class=&quot;item&quot;&gt;item5&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+var selected_idx_array = new Array();
+$('.selectable-unselected').selectable({
+  selected: function(event, ui){
+    $('.ui-selected', this).each(function() {
+      var idx = $('.selectable-unselected li').index(this);
+      if(selected_idx_array.indexOf(idx)==-1){
+        selected_idx_array.push(idx);
+      }
+    });
+    $('.div-selectable-unselected').text(selected_idx_array);
+    // console.log(selected_idx_array);
+  },
+  unselected: function(event, ui){
+    console.log($('.selectable-unselected li').not('.ui-selected'));
+    $($('.selectable-unselected li').not('.ui-selected'), this).each(function() {
+      var idx = $('.selectable-unselected li').index(this);
+      selected_idx_array.splice(selected_idx_array.indexOf(idx), 1);
+    });
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+  <!-- </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+  <script>
+    $(window).load(function(){
+      // nooption
+      $('.selectable-nooption').selectable();
+
+      // delay
+      $('.selectable-delay').selectable({
+        delay: 150
+      });
+
+      // distance
+      $('.selectable-distance').selectable({
+        distance: 100
+      });
+
+      // tolerance
+      $('.selectable-tolerance-touch').selectable({
+        tolerance: 'touch'
+      });
+      $('.selectable-tolerance-fit').selectable({
+        tolerance: "fit"
+      });
+
+      // events
+      // selected
+      $('.selectable-selected').selectable({
+        selected: function(event, ui){
+          $('.ui-selected', this ).each(function() {
+            var index = $('.selectable-selected li').index(this);
+            $('.div-selectable-selected').text(index);
+          });
+        }
+      });
+
+      // selecting
+      $('.selectable-selecting').selectable({
+        selecting: function(event, ui){
+          $('.ui-selecting', this).each(function() {
+            var index = $('.selectable-selecting li').index(this);
+            $('.div-selectable-selecting').text(index);
+          });
+        }
+      });
+
+      // stop
+      $('.selectable-stop').selectable({
+        stop: function(event, ui){
+          $('.ui-selected', this).each(function() {
+            var index = $('.selectable-stop li').index(this);
+            $('.div-selectable-stop').text(index);
+          });
+        }
+      });
+
+      // unselected
+      var selected_idx_array = new Array();
+      $('.selectable-unselected').selectable({
+        selected: function(event, ui){
+          $('.ui-selected', this).each(function() {
+            var idx = $('.selectable-unselected li').index(this);
+            if(selected_idx_array.indexOf(idx)==-1){
+              selected_idx_array.push(idx);
+            }
+          });
+          $('.div-selectable-unselected').text(selected_idx_array);
+          // console.log(selected_idx_array);
+        },
+        unselected: function(event, ui){
+          console.log($('.selectable-unselected li').not('.ui-selected'));
+          $($('.selectable-unselected li').not('.ui-selected'), this).each(function() {
+            var idx = $('.selectable-unselected li').index(this);
+            selected_idx_array.splice(selected_idx_array.indexOf(idx), 1);
+          });
+        }
+      });
+
+    });
+  </script> -->
+<!-- </html> -->

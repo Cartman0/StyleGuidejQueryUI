@@ -1,0 +1,100 @@
+html, body {
+  height: 100%;
+}
+header {
+  height: 10%;
+}
+.navbar {
+  height: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  box-sizing: border-box;
+}
+
+/* sidebar */
+.sidebar > li {
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  word-break:break-all;
+}
+.sidebar > li li {
+  font-size: 0.8em;
+  word-wrap: break-word;
+  word-break:break-all;
+}
+.sidebar > li > .nav{
+  padding-left: 0.5em;
+}
+
+footer {
+  height: 10%;
+}
+
+section section {
+  border: solid #333 1px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.preview {
+  position: relative;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  padding: 3rem 1rem 1rem 1rem;
+  margin: 1rem;
+}
+.preview::before {
+  content: "preview";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8rem;
+  background-color: #eee;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.code, .html, .css, .js {
+  position: relative;
+  padding: 1rem;
+  margin: 2rem 1rem 1rem;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+}
+.code::before, .html::before, .css::before, .js::before{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.code::before {
+  content: "code";
+  background-color: #060606;
+  color: #fafafa;
+ }
+
+.html::before{
+  content: "HTML";
+  background-color: #eee;
+  border: 1px solid #ddd;
+  color: #ea3;
+}
+
+.js::before {
+    content: "JS";
+    background-color: #eee;
+    border: 1px solid #ddd;
+    color: #3e3;
+}
+.css::before {
+  content: "CSS";
+  background-color: #eee;
+  border: 1px solid #ddd;
+  color: #33e;
+}
