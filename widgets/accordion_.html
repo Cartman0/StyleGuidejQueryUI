@@ -1,0 +1,656 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Accordion</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head> -->
+  <!-- <body> -->
+    <section id="sec-accordion">
+      <h3>Accordion</h3>
+      <p><a href="http://jqueryui.com/accordion/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/accordion/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-accordion-options" class="ul-accordion-options" aria-controls="ul-ul-accordion-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-accordion-options">
+                <li>
+                  <a href="#sec-accordion-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-accordion-active">Active</a>
+                </li>
+                <li>
+                  <a href="#sec-accordion-animate">Animate</a>
+                </li>
+                <li>
+                  <a href="#sec-accordion-collapsible">Collapsible</a>
+                </li>
+                <li>
+                  <a href="#sec-accordion-event">Event</a>
+                </li>
+                <li>
+                  <a href="#sec-accordion-heightStyle">heightStyle</a>
+                </li>
+                <li>
+                  <a href="#sec-accordion-icons">Icons</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a id="ul-sortable-events"  aria-controls="ul-ul-sortable-events" href="#ul-ul-sortable-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-sortable-events">
+                <li>
+                  <a href="#sec-accordion-activate">Activate</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-sortable-options">
+            <h4>Options</h4>
+            <section id="sec-sortable-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <div class="accordion-nooption">
+                  <!-- 見出し(リンク)と中身要素が必要 -->
+                  <h3>Title1</h3>
+                  <div>おはよう。</div>
+                  <h3>Title2</h3>
+                  <div>こんにちは。</div>
+                  <h3>Title3</h3>
+                  <div>こんばんは。</div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-nooption&quot;&gt;
+  &lt;!-- 見出し(リンク)と中身要素が必要 --&gt;
+  &lt;h3&gt;Title1&lt;/h3&gt;
+  &lt;div&gt;おはよう。&lt;/div&gt;
+  &lt;h3&gt;Title2&lt;/h3&gt;
+  &lt;div&gt;こんにちは。&lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;こんばんは。&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-nooption').accordion();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-accordion-active">
+              <h4>active: default:0, 初期表示を設定</h4>
+              <div class="preview">
+                <div class="accordion-active">
+                  <h3>Title1</h3>
+                  <div>おはよう。</div>
+                  <h3>active</h3>
+                  <div>これが初期表示</div>
+                  <h3>Title3</h3>
+                  <div>こんばんは。</div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-active&quot;&gt;
+  &lt;h3&gt;Title1&lt;/h3&gt;
+  &lt;div&gt;おはよう。&lt;/div&gt;
+  &lt;h3&gt;active&lt;/h3&gt;
+  &lt;div&gt;これが初期表示&lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;こんばんは。&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-active').accordion({
+  active: 1
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-accordion-animate">
+              <h4>Animate</h4>
+              <div class="preview">
+                <div class="accordion-animate">
+                  <h3>Animate</h3>
+                  <div>animate: 100</div>
+                  <h3>Tittle2</h3>
+                  <div>こんにちは。</div>
+                  <h3>Title3</h3>
+                  <div>こんばんは。</div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-animate&quot;&gt;
+  &lt;h3&gt;Animate&lt;/h3&gt;
+  &lt;div&gt;animate: 100&lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;こんにちは。&lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;こんばんは。&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-animate').accordion({
+  animate: 100
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-accordion-collapsible">
+              <h4>Collapsible：全てを閉じることができる</h4>
+              <div class="preview">
+                <div class="accordion-collapsible">
+                  <h3>collapsible</h3>
+                  <div>閉じたままにできる。</div>
+                  <h3>Tittle2</h3>
+                  <div>こんにちは。</div>
+                  <h3>Title3</h3>
+                  <div>こんばんは。</div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-collapsible&quot;&gt;
+  &lt;h3&gt;collapsible&lt;/h3&gt;
+  &lt;div&gt;閉じたままにできる。&lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;こんにちは。&lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;こんばんは。&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-collapsible').accordion({
+  collapsible: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-accordion-event">
+              <h4>Event: default:'click'</h4>
+              <div class="preview">
+                <div class="accordion-event">
+                  <h3>event</h3>
+                  <div>mouseover</div>
+                  <h3>Tittle2</h3>
+                  <div>こんにちは。</div>
+                  <h3>Title3</h3>
+                  <div>こんばんは。</div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-event&quot;&gt;
+  &lt;h3&gt;event&lt;/h3&gt;
+  &lt;div&gt;mouseover&lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;こんにちは。&lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;こんばんは。&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-event').accordion({
+  event: "mouseover"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-accordion-heightStyle">
+              <h4>heightStyle</h4>
+              <ul>
+                <li>
+                  <p>
+                    auto:
+                    最も高さのあるパネルに合わせて全てのパネルの高さを揃える。
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    fill:
+                    アコーディオン・パネルの親要素によって高さを決定する。
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    content:
+                    それぞれのコンテンツの高さに合わせてパネルの高さを変更する。
+                  </p>
+                </li>
+              </ul>
+              <div class="preview">
+                <h3>auto</h3>
+                <div class="accordion-heightStyle-auto">
+                  <h3>auto</h3>
+                  <div>
+                    <p>おはよう。</p>
+                  </div>
+                  <h3>Tittle2</h3>
+                  <div>
+                    <p>こんにちは。</p>
+                    <p>こんにちは。</p>
+                  </div>
+                  <h3>Title3</h3>
+                  <div>
+                    <p>こんばんは。</p>
+                    <p>こんばんは。</p>
+                    <p>こんばんは。</p>
+                  </div>
+                </div>
+                <h3>fill</h3>
+                <div class="accordion-heightStyle-fill">
+                  <h3>fill</h3>
+                  <div>
+                    <p>おはよう。</p>
+                  </div>
+                  <h3>Tittle2</h3>
+                  <div>
+                    <p>こんにちは。</p>
+                    <p>こんにちは。</p>
+                  </div>
+                  <h3>Title3</h3>
+                  <div>
+                    <p>こんばんは。</p>
+                    <p>こんばんは。</p>
+                    <p>こんばんは。</p>
+                  </div>
+                </div>
+                <h3>content</h3>
+                <div class="accordion-heightStyle-content">
+                  <h3>content</h3>
+                  <div>
+                    <p>おはよう。</p>
+                  </div>
+                  <h3>Tittle2</h3>
+                  <div>
+                    <p>こんにちは。</p>
+                    <p>こんにちは。</p>
+                  </div>
+                  <h3>Title3</h3>
+                  <div>
+                    <p>こんばんは。</p>
+                    <p>こんばんは。</p>
+                    <p>こんばんは。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h3&gt;auto&lt;/h3&gt;
+&lt;div class=&quot;accordion-heightStyle-auto&quot;&gt;
+  &lt;h3&gt;auto&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;おはよう。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;h3&gt;fill&lt;/h3&gt;
+&lt;div class=&quot;accordion-heightStyle-fill&quot;&gt;
+  &lt;h3&gt;fill&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;おはよう。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;h3&gt;content&lt;/h3&gt;
+&lt;div class=&quot;accordion-heightStyle-content&quot;&gt;
+  &lt;h3&gt;content&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;おはよう。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-heightStyle-auto').accordion({
+  heightStyle: 'auto'
+});
+</span>
+<span>
+$('.accordion-heightStyle-fill').accordion({
+  heightStyle: 'fill'
+});
+</span>
+<span>
+$('.accordion-heightStyle-content').accordion({
+  heightStyle: 'content'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-accordion-icons">
+              <h4>icons: アイコンの変更</h4>
+              <div class="preview">
+                <div class="accordion-icons">
+                  <h3>icons</h3>
+                  <div>
+                    <p>おはよう。</p>
+                  </div>
+                  <h3>Tittle2</h3>
+                  <div>
+                    <p>こんにちは。</p>
+                  </div>
+                  <h3>Title3</h3>
+                  <div>
+                    <p>こんばんは。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-icons&quot;&gt;
+  &lt;h3&gt;icons&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;おはよう。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-icons').accordion({
+  icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-accordion-events">
+            <h4>Events</h4>
+            <section id="sec-accordion-activate">
+              <h4>activate( event, ui )</h4>
+              <div class="preview">
+                <div class="accordion-activate">
+                  <h3>Title1</h3>
+                  <div>
+                    <p>おはよう。</p>
+                  </div>
+                  <h3>Tittle2</h3>
+                  <div>
+                    <p>こんにちは。</p>
+                  </div>
+                  <h3>Title3</h3>
+                  <div>
+                    <p>こんばんは。</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;accordion-activate&quot;&gt;
+  &lt;h3&gt;Title1&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;おはよう。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Tittle2&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんにちは。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Title3&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;こんばんは。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+</span>
+</code>
+</pre>
+                </div>
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.accordion-activate').accordion({
+  activate: function(event, ui){
+    var old_header = ui.oldHeader.text();
+    var old_panel = ui.oldPanel.text();
+
+    ui.newHeader.text('activate Header');
+    ui.newPanel.text('activate Panel');
+
+    ui.oldHeader.text(old_header);
+    ui.oldPanel.text(old_panel);
+  }
+});
+</span>
+<span>
+</span>
+</code>
+</pre>
+                </div>
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+<!-- </body> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // nooption
+      $('.accordion-nooption').accordion();
+
+      // active
+      $('.accordion-active').accordion({
+        active: 1
+      });
+
+      // animate
+      $('.accordion-animate').accordion({
+        animate: 100
+      });
+
+      // collapsible
+      $('.accordion-collapsible').accordion({
+        collapsible: true
+      });
+
+      // event
+      $('.accordion-event').accordion({
+        event: "mouseover"
+      });
+
+      // heightStyle
+      $('.accordion-heightStyle-auto').accordion({
+        heightStyle: 'auto'
+      });
+      $('.accordion-heightStyle-fill').accordion({
+        heightStyle: 'fill'
+      });
+      $('.accordion-heightStyle-content').accordion({
+        heightStyle: 'content'
+      });
+
+      // icon
+      $('.accordion-icons').accordion({
+        icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+      });
+
+      // events
+      // activate
+      $('.accordion-activate').accordion({
+        activate: function(event, ui){
+          var old_header = ui.oldHeader.text();
+          var old_panel = ui.oldPanel.text();
+
+          ui.newHeader.text('activate Header');
+          ui.newPanel.text('activate Panel');
+
+          ui.oldHeader.text(old_header);
+          ui.oldPanel.text(old_panel);
+        }
+      });
+
+    });
+  </script> -->
+<!-- </html> -->

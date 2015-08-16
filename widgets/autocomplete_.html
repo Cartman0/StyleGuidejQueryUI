@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Autocomplete</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body>
+    <section id="sec-accordion">
+      <h3>Autocomplete</h3>
+      <p><a href="http://jqueryui.com/autocomplete/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/autocomplete/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-autocomplete-options" class="ul-autocomplete-options" aria-controls="ul-ul-autocomplete-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-autocomplete-options">
+                <li>
+                  <a href="#sec-autocomplete-source">Source</a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-autoFocus">autoFocus</a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-delay">delay</a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-minLength">minLength</a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-position">position</a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-"></a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-"></a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-"></a>
+                </li>
+
+              </ul>
+            </li>
+            <li>
+              <a id="ul-autocomplete-events"  aria-controls="ul-ul-autocomplete-events" href="#ul-ul-autocomplete-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-autocomplete-events">
+                <li>
+                  <a href="#sec-autocomplete-"></a>
+                </li>
+                <li>
+                  <a href="#sec-autocomplete-"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-autocomplete-options">
+            <h4>Options</h4>
+            <section id="sec-autocomplete-source">
+              <h4>Source</h4>
+              <div class="preview">
+                <p>langs = ['ja', 'en', 'cn', 'sp', '日本語', '英語', '中国語', 'フランス語'];</p>
+                <input type="text" class="autocomplete-source">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;p&gt;langs = ['ja', 'en', 'cn', 'sp', '日本語', '英語', '中国語', 'フランス語'];&lt;/p&gt;
+</span>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-source&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+var langs = ['ja', 'en', 'cn', 'sp', '日本語', '英語', '中国語', 'フランス語'];
+$('.autocomplete-source').autocomplete({
+  source: langs
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-autoFocus">
+              <h4>autoFocus: 検索候補が絞れたら、自動で選択される</h4>
+              <div class="preview">
+                <input type="text" class="autocomplete-autoFocus">
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-autoFocus&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.autocomplete-autoFocus').autocomplete({
+  source: langs,
+  autoFocus: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-delay">
+              <h4>delay</h4>
+              <div class="preview">
+                <input type="text" class="autocomplete-delay">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-delay&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.autocomplete-delay').autocomplete({
+  source: langs,
+  delay: 600
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-minLength">
+              <h4>minLength</h4>
+              <div class="preview">
+                <h5>minLength: 0</h5>
+                <input type="text" class="autocomplete-minLength-0">
+                <h5>minLength: 2</h5>
+                <input type="text" class="autocomplete-minLength-2">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;minLength: 0&lt;/h5&gt;
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-minLength-0&quot;&gt;
+</span>
+<span>
+&lt;h5&gt;minLength: 2&lt;/h5&gt;
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-minLength-2&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.autocomplete-minLength-0').autocomplete({
+  source: langs,
+  minLength: 0
+});
+</span>
+<span>
+$('.autocomplete-minLength-2').autocomplete({
+  source: langs,
+  minLength: 2
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-position">
+              <h4>position</h4>
+              <div class="preview">
+                <h5>
+                  default: { my: "left top", at: "left bottom", collision: "none" }
+                </h5>
+                <input type="text" class="autocomplete-source">
+                <h5>
+                  position: { my : "right top", at: "right bottom" }
+                </h5>
+                <input type="text" class="autocomplete-position">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;
+  default: { my: &quot;left top&quot;, at: &quot;left bottom&quot;, collision: &quot;none&quot; }
+&lt;/h5&gt;
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-source&quot;&gt;
+</span>
+<span>
+&lt;h5&gt;
+  position: { my : &quot;right top&quot;, at: &quot;right bottom&quot; }
+&lt;/h5&gt;
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-position&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.autocomplete-position').autocomplete({
+  source: langs,
+  position: { my : "right top", at: "right bottom" }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-label">
+              <h4>候補と表示を変更</h4>
+              <div class="preview">
+                <h5>Press key 'a'.</h5>
+                <input type="text" class="autocomplete-label">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;Press key 'a'.&lt;/h5&gt;
+&lt;input type=&quot;text&quot; class=&quot;autocomplete-label&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+var data = [
+  { label: 'acceptsメソッド', value: 'accepts' },
+  { label: 'action_nameメソッド', value: 'action_name' },
+  { label: 'addメソッド', value: 'add' },
+  { label: 'add_columnメソッド', value: 'add_column' },
+  { label: 'add_indexメソッド', value: 'add_index' },
+  { label: 'add_timestampsメソッド', value: 'add_timestamps' },
+  { label: 'after_createメソッド', value: 'after_create' },
+  { label: 'after_destroyメソッド', value: 'after_destroy' }
+];
+$('.autocomplete-label').autocomplete({
+  source: data
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-">
+              <h4></h4>
+              <div class="preview">
+            </div>
+              <div class="code">
+                <div class="html">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+                <div class="js">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-autocomplete-">
+              <h4></h4>
+              <div class="preview">
+            </div>
+              <div class="code">
+                <div class="html">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+                <div class="js">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+              </div>
+            </section>
+
+
+
+
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-autocomplete-events">
+            <h4>Events</h4>
+
+            <section id="ec-autocomplete-change">
+              <h4>change( event, ui )</h4>
+              <div class="preview">
+                <input type="text" class="autocomplete-change">
+              </div>
+              <div class="code">
+                <div class="html">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+                <div class="js">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+              </div>
+            </section>
+
+
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+</body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+  <script>
+    $(window).load(function(){
+      // options
+      // source
+      var langs = ['ja', 'en', 'cn', 'sp', '日本語', '英語', '中国語', 'フランス語'];
+      $('.autocomplete-source').autocomplete({
+        source: langs
+      });
+
+      // autoFocus
+      $('.autocomplete-autoFocus').autocomplete({
+        source: langs,
+        autoFocus: true
+      });
+
+      // delay
+      $('.autocomplete-delay').autocomplete({
+        source: langs,
+        delay: 600
+      });
+
+      // minLength
+      $('.autocomplete-minLength-0').autocomplete({
+        source: langs,
+        minLength: 0
+      });
+      $('.autocomplete-minLength-2').autocomplete({
+        source: langs,
+        minLength: 2
+      });
+
+      // position
+      $('.autocomplete-position').autocomplete({
+        source: langs,
+        position: { my : "right top", at: "right bottom" }
+      });
+
+      // label
+      var data = [
+        { label: 'acceptsメソッド', value: 'accepts' },
+        { label: 'action_nameメソッド', value: 'action_name' },
+        { label: 'addメソッド', value: 'add' },
+        { label: 'add_columnメソッド', value: 'add_column' },
+        { label: 'add_indexメソッド', value: 'add_index' },
+        { label: 'add_timestampsメソッド', value: 'add_timestamps' },
+        { label: 'after_createメソッド', value: 'after_create' },
+        { label: 'after_destroyメソッド', value: 'after_destroy' }
+      ];
+      $('.autocomplete-label').autocomplete({
+        source: data
+      });
+
+
+      // events
+      // change
+      $('.autocomplete-change').autocomplete({
+        source: langs,
+        change: function( event, ui ) {
+          console.log(ui.item);
+        }
+      });
+
+    });
+  </script>
+</html>
