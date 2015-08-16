@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>jQuery UI StyleGuide</title>
+  <title>Widgets</title>
 
   <!-- Bootstrap -->
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -48,10 +48,10 @@
         <div id="main-nav" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="interactions">
-              <a href="interactions.html">Interactions</a>
+              <a href="../interactions/interactions.html">Interactions</a>
             </li>
-            <li class="wigets active">
-              <a href="wigets.html">Wigets</a>
+            <li class="widgets active">
+              <a href="widgets.html">Wigets</a>
             </li>
             <li>
               <a href="">Effects</a>
@@ -146,8 +146,8 @@
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
   <script>
-    $(function(){
-
+    // $(function(){
+    $(window).load(function(){
       $(window).scroll(function() {
        $('#main-nav li.widgets').addClass('active');
       });
