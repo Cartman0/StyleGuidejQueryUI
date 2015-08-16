@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Button</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body>
+    <section id="sec-accordion">
+      <h3>Button</h3>
+      <p><a href="http://jqueryui.com/button/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/button/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-button-options" class="ul-button-options" aria-controls="ul-ul-button-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-button-options">
+                <li>
+                  <a href="#sec-button-nooption">nooption</a>
+                </li>
+                <li>
+                  <a href="#sec-button-disabled">disabled</a>
+                </li>
+                <li>
+                  <a href="#sec-button-icons">icons</a>
+                </li>
+                <li>
+                  <a href="#sec-button-label">label</a>
+                </li>
+
+
+              </ul>
+            </li>
+            <li>
+              <a id="ul-button-sample"  aria-controls="ul-ul-button-sample" href="#ul-ul-button-sample">Sample</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-button-sample">
+                <li>
+                  <a href="sec-button-checkbox">checkbox</a>
+                </li>
+                <li>
+                  <a href="#sec-button-radio-click">radio(click時にid取得)</a>
+                </li>
+                <li>
+                  <a href="#sec-button-toolbar">toolbar（プレイヤー）</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-button-options">
+            <h4>Options</h4>
+            <section id="sec-button-source">
+              <h4>nooption</h4>
+              <div class="preview">
+                <button class="button-nooption">button</button>
+                <a class="button-nooption">a</a>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;button-nooption&quot;&gt;button&lt;/button&gt;
+</span>
+<span>
+&lt;a class=&quot;button-nooption&quot;&gt;a&lt;/a&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-nooption').button();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-button-disabled">
+              <h4>disabled</h4>
+              <div class="preview">
+                <button class="button-disabled">button</button>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;button-disabled&quot;&gt;button&lt;/button&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-disabled').button({
+  disabled: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-button-icons">
+              <h4>icons</h4>
+              <div class="preview">
+                <button class="button-icons">button</button>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;button-icons&quot;&gt;button&lt;/button&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-icons').button({
+  icons: { primary: "ui-icon-gear", secondary: "ui-icon-triangle-1-s" }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-button-label">
+              <h4>label</h4>
+              <div class="preview">
+                <button class="button-label">button</button>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;button-label&quot;&gt;button&lt;/button&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-label').button({
+  label: "custom label"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-button-sample">
+            <h4>Sample</h4>
+
+            <section id="sec-button-checkbox">
+              <h4>checkbox</h4>
+              <div class="preview">
+                <input type="checkbox" class="button-checkbox" id="check"><label for="check">Toggle</label>
+                <div class="button-checkbox-set">
+                  <input type="checkbox" class="button-checkbox" id="check1"><label for="check1">B</label>
+                  <input type="checkbox" class="button-checkbox" id="check2"><label for="check2">I</label>
+                  <input type="checkbox" class="button-checkbox" id="check3"><label for="check3">U</label>
+                </div>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;checkbox&quot; class=&quot;button-checkbox&quot; id=&quot;check&quot;&gt;&lt;label for=&quot;check&quot;&gt;Toggle&lt;/label&gt;
+</span>
+<span>
+&lt;div class=&quot;button-checkbox-set&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; class=&quot;button-checkbox&quot; id=&quot;check1&quot;&gt;&lt;label for=&quot;check1&quot;&gt;B&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; class=&quot;button-checkbox&quot; id=&quot;check2&quot;&gt;&lt;label for=&quot;check2&quot;&gt;I&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; class=&quot;button-checkbox&quot; id=&quot;check3&quot;&gt;&lt;label for=&quot;check3&quot;&gt;U&lt;/label&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-checkbox').button();
+$('.button-checkbox-set').buttonset();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-button-radio-click">
+              <h4>radio button(click)</h4>
+              <div class="preview">
+                <div class="div-button-radio-click">id: </div>
+                <div class="button-radio-click">
+                  <input type="radio" id="radio-click1" name="radio"><label for="radio-click1">Choice 1</label>
+                  <input type="radio" id="radio-click2" name="radio" checked="checked"><label for="radio-click2">Choice 2</label>
+                  <input type="radio" id="radio-click3" name="radio"><label for="radio-click3">Choice 3</label>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-button-radio-click&quot;&gt;id: &lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;button-radio-click&quot;&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;radio-click1&quot; name=&quot;radio&quot;&gt;&lt;label for=&quot;radio-click1&quot;&gt;Choice 1&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;radio-click2&quot; name=&quot;radio&quot; checked=&quot;checked&quot;&gt;&lt;label for=&quot;radio-click2&quot;&gt;Choice 2&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;radio-click3&quot; name=&quot;radio&quot;&gt;&lt;label for=&quot;radio-click3&quot;&gt;Choice 3&lt;/label&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-radio-click').buttonset();
+</span>
+<span>
+$('.button-radio-click input[type=radio]').each(function(index, el) {
+  if($(el).attr('checked') === 'checked'){
+    console.log($(el));
+    $('.div-button-radio-click').text('id: ' + $(el)[0].id);
+  }
+});
+</span>
+<span>
+$('.button-radio-click input[type=radio]').click( function(){
+  $('.button-radio-click label').each(function(index, el) {
+    if( $(el).attr('aria-pressed') === 'true' ){
+      $('.div-button-radio-click').text( 'id: ' + $(el).attr('for'));
+    }
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+            <section id="sec-button-toolbar">
+              <h4>toolbar（プレイヤー）：<a href="http://jqueryui.com/button/#toolbar">サンプル</a></h4>
+              <div class="preview">
+                <div class="button-toolbar ui-widget-header ui-corner-all" style="display: inline-block; padding: 1rem;">
+                  <button class="beginning">go to beginning</button>
+                  <button class="rewind">rewind</button>
+                  <button class="play">play</button>
+                  <button class="stop">stop</button>
+                  <button class="forward">fast forward</button>
+                  <button class="end">go to end</button>
+
+                  <input type="checkbox" class="shuffle" id="check-shuffle"><label for="check-shuffle">Shuffle</label>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;button-toolbar ui-widget-header ui-corner-all&quot; style=&quot;display: inline-block; padding: 1rem;&quot;&gt;
+  &lt;button class=&quot;beginning&quot;&gt;go to beginning&lt;/button&gt;
+  &lt;button class=&quot;rewind&quot;&gt;rewind&lt;/button&gt;
+  &lt;button class=&quot;play&quot;&gt;play&lt;/button&gt;
+  &lt;button class=&quot;stop&quot;&gt;stop&lt;/button&gt;
+  &lt;button class=&quot;forward&quot;&gt;fast forward&lt;/button&gt;
+  &lt;button class=&quot;end&quot;&gt;go to end&lt;/button&gt;
+  &lt;input type=&quot;checkbox&quot; class=&quot;shuffle&quot; id=&quot;check-shuffle&quot;&gt;&lt;label for=&quot;check-shuffle&quot;&gt;Shuffle&lt;/label&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-toolbar .beginning').button({
+  text: false,
+  icons: {
+    primary: "ui-icon-seek-start"
+  }
+});
+$('.button-toolbar .rewind').button({
+  text: false,
+  icons: {
+    primary: "ui-icon-seek-prev"
+  }
+});
+</span>
+<span>
+// play
+$('.button-toolbar .play').button({
+  text: false,
+  icons: {
+    primary: "ui-icon-play"
+  }
+})
+.click(function() {
+  var options = {};
+  if ( $( this ).text() === "play" ) {
+    options = {
+      label: "pause",
+      icons: {
+        primary: "ui-icon-pause"
+      }
+    };
+  } else {
+    options = {
+      label: "play",
+      icons: {
+        primary: "ui-icon-play"
+      }
+    };
+  }
+  $( this ).button('option', options);
+});
+</span>
+<span>
+$('.button-toolbar .stop').button({
+  text: false,
+  icons: {
+    primary: "ui-icon-stop"
+  }
+})
+.click(function() {
+  $('.button-toolbar .play').button('option', {
+    label: 'play',
+    icons: {
+      primary: "ui-icon-play"
+    }
+  });
+});
+$('.button-toolbar .forward').button({
+  text: false,
+  icons: {
+    primary: "ui-icon-seek-next"
+  }
+});
+$('.button-toolbar .end').button({
+  text: false,
+  icons: {
+    primary: "ui-icon-seek-end"
+  }
+});
+$('.button-toolbar .shuffle').button();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+</body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+  <script>
+    $(window).load(function(){
+      // options
+      $('.button-nooption').button();
+
+      // disabled
+      $('.button-disabled').button({
+        disabled: true
+      });
+
+      // icons
+      $('.button-icons').button({
+        icons: { primary: "ui-icon-gear", secondary: "ui-icon-triangle-1-s" }
+      });
+
+      // label
+      $('.button-label').button({
+        label: "custom label"
+      });
+
+      // sample
+      //checkbox
+      $('.button-checkbox').button();
+      $('.button-checkbox-set').buttonset();
+
+      // radio
+      // radio click
+      $('.button-radio-click').buttonset();
+
+      $('.button-radio-click input[type=radio]').each(function(index, el) {
+        if($(el).attr('checked') === 'checked'){
+          console.log($(el));
+          $('.div-button-radio-click').text('id: ' + $(el)[0].id);
+        }
+      });
+
+      $('.button-radio-click input[type=radio]').click( function(){
+        $('.button-radio-click label').each(function(index, el) {
+          if( $(el).attr('aria-pressed') === 'true' ){
+            $('.div-button-radio-click').text( 'id: ' + $(el).attr('for'));
+          }
+        });
+      });
+
+      // toolbar
+      $('.button-toolbar .beginning').button({
+        text: false,
+        icons: {
+          primary: "ui-icon-seek-start"
+        }
+      });
+      $('.button-toolbar .rewind').button({
+        text: false,
+        icons: {
+          primary: "ui-icon-seek-prev"
+        }
+      });
+      // play
+      $('.button-toolbar .play').button({
+        text: false,
+        icons: {
+          primary: "ui-icon-play"
+        }
+      })
+      .click(function() {
+        var options = {};
+        if ( $( this ).text() === "play" ) {
+          options = {
+            label: "pause",
+            icons: {
+              primary: "ui-icon-pause"
+            }
+          };
+        } else {
+          options = {
+            label: "play",
+            icons: {
+              primary: "ui-icon-play"
+            }
+          };
+        }
+        $( this ).button('option', options);
+      });
+
+      $('.button-toolbar .stop').button({
+        text: false,
+        icons: {
+          primary: "ui-icon-stop"
+        }
+      })
+      .click(function() {
+        $('.button-toolbar .play').button('option', {
+          label: 'play',
+          icons: {
+            primary: "ui-icon-play"
+          }
+        });
+      });
+      $('.button-toolbar .forward').button({
+        text: false,
+        icons: {
+          primary: "ui-icon-seek-next"
+        }
+      });
+      $('.button-toolbar .end').button({
+        text: false,
+        icons: {
+          primary: "ui-icon-seek-end"
+        }
+      });
+      $('.button-toolbar .shuffle').button();
+
+    });
+  </script>
+</html>
