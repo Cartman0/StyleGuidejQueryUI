@@ -1,0 +1,643 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Dialog</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .ui-menu {
+        width: 200px;
+      }
+    </style>
+
+  <!-- </head> -->
+  <!-- <body> -->
+    <section id="sec-menu">
+      <h3>Menu</h3>
+      <p><a href="http://jqueryui.com/menu/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/menu/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-menu-options" class="ul-menu-options" aria-controls="ul-ul-menu-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-menu-options">
+                <li>
+                  <a href="#sec-menu-nooption">nooption</a>
+                </li>
+                <li>
+                  <a href="#sec-menu-icons">icons</a>
+                </li>
+                <li>
+                  <a href="#sec-menu-position">position</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a id="ul-menu-events"  aria-controls="ul-ul-menu-events" href="#ul-ul-menu-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-menu-events">
+                <li>
+                  <a href="#sec-menu-focus">focus</a>
+                </li>
+                <li>
+                  <a href="#sec-menu-select">select</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-menu-options">
+            <h4>Options</h4>
+
+            <section id="sec-menu-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <ul class="menu-nooption">
+                  <li class="ui-state-disabled">Aberdeen</li>
+                  <li>Ada</li>
+                  <li>Adamsville</li>
+                  <li>Addyston</li>
+                  <li>Delphi
+                    <ul>
+                      <li class="ui-state-disabled">Ada</li>
+                      <li>Saarland</li>
+                      <li>Salzburg an der schönen Donau</li>
+                    </ul>
+                  </li>
+                  <li>Saarland</li>
+                  <li>Salzburg
+                    <ul>
+                      <li>Delphi
+                        <ul>
+                          <li>Ada</li>
+                          <li>Saarland</li>
+                          <li>Salzburg</li>
+                        </ul>
+                      </li>
+                      <li>Perch</li>
+                    </ul>
+                  </li>
+                  <li class="ui-state-disabled">Amesville</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;menu-nooption&quot; style=&quot;width: 150px;&quot;&gt;
+  &lt;li class=&quot;ui-state-disabled&quot;&gt;Aberdeen&lt;/li&gt;
+  &lt;li&gt;Ada&lt;/li&gt;
+  &lt;li&gt;Adamsville&lt;/li&gt;
+  &lt;li&gt;Addyston&lt;/li&gt;
+  &lt;li&gt;Delphi
+    &lt;ul&gt;
+      &lt;li class=&quot;ui-state-disabled&quot;&gt;Ada&lt;/li&gt;
+      &lt;li&gt;Saarland&lt;/li&gt;
+      &lt;li&gt;Salzburg an der schönen Donau&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Saarland&lt;/li&gt;
+  &lt;li&gt;Salzburg
+    &lt;ul&gt;
+      &lt;li&gt;Delphi
+        &lt;ul&gt;
+          &lt;li&gt;Ada&lt;/li&gt;
+          &lt;li&gt;Saarland&lt;/li&gt;
+          &lt;li&gt;Salzburg&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Perch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;ui-state-disabled&quot;&gt;Amesville&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+.ui-menu {
+width: 200px;
+}
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.menu-nooption').menu();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-menu-icons">
+              <h4>icons: submenu のicon を変更</h4>
+              <div class="preview">
+                <ul class="menu-icons" style="width: 150px;">
+                  <li><span class="ui-icon ui-icon-disk"></span>Save</li>
+                  <li><span class="ui-icon ui-icon-zoomin"></span>Zoom In</li>
+                  <li><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</li>
+                  <li class="ui-state-disabled"><span class="ui-icon ui-icon-print"></span>Print...</li>
+                  <li>
+                    Playback
+                    <ul>
+                      <li><span class="ui-icon ui-icon-seek-start"></span>Prev</li>
+                      <li><span class="ui-icon ui-icon-stop"></span>Stop</li>
+                      <li><span class="ui-icon ui-icon-play"></span>Play</li>
+                      <li><span class="ui-icon ui-icon-seek-end"></span>Next</li>
+                    </ul>
+                  </li>
+                  <li>Learn more about this menu</li>
+                </ul>
+              </div>
+
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;menu-icons&quot; style=&quot;width: 150px;&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-disk&quot;&gt;&lt;/span&gt;Save&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-zoomin&quot;&gt;&lt;/span&gt;Zoom In&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-zoomout&quot;&gt;&lt;/span&gt;Zoom Out&lt;/li&gt;
+  &lt;li class=&quot;ui-state-disabled&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-print&quot;&gt;&lt;/span&gt;Print...&lt;/li&gt;
+  &lt;li&gt;
+    Playback
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-seek-start&quot;&gt;&lt;/span&gt;Prev&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-stop&quot;&gt;&lt;/span&gt;Stop&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-play&quot;&gt;&lt;/span&gt;Play&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;ui-icon ui-icon-seek-end&quot;&gt;&lt;/span&gt;Next&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Learn more about this menu&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+.ui-menu {
+  width: 200px;
+}
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.menu-icons').menu({
+  icons: {
+    submenu: "ui-icon-circle-triangle-e"
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-menu-position">
+              <h4>positon: default: { my: "left top", at: "right top" }</h4>
+              <div class="preview">
+                <ul class="menu-position">
+                  <li><a href="">トップページ</a></li>
+                  <li><a href="">文房具</a>
+                    <!--2サブメニューを入れ子で用意 -->
+                    <ul>
+                      <li><a href="">筆記具</a>
+                        <ul>
+                          <li><a href="">ボールペン</a>
+                            <ul>
+                              <li><a href="">黒ボールペン</a></li>
+                              <li><a href="">赤ボールペン</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="">えんぴつ</a>
+                            <ul>
+                              <li><a href="">HBえんぴつ</a></li>
+                              <li><a href="">Bえんぴつ</a></li>
+                              <li><a href="">2Bえんぴつ</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="">ノート</a>
+                        <ul>
+                          <li><a href="">こくごノート</a></li>
+                          <li><a href="">さんすうノート</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="">事務用品</a>
+                        <ul>
+                          <li><a href="">バインダー</a></li>
+                          <li><a href="">ホチキス</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                      <li><a href="">収納用品</a>
+                        <ul>
+                          <li><a href="">ボックス</a></li>
+                          <li><a href="">本棚</a>
+                            <ul>
+                              <li><a href="">文庫本用</a></li>
+                              <li><a href="">雑誌用</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                  </li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;ul class=&quot;menu-position&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;トップページ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;文房具&lt;/a&gt;
+    &lt;!--2サブメニューを入れ子で用意 --&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;筆記具&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;ボールペン&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;黒ボールペン&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;赤ボールペン&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;えんぴつ&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;HBえんぴつ&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;Bえんぴつ&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;2Bえんぴつ&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;ノート&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;こくごノート&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;さんすうノート&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;事務用品&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;バインダー&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;ホチキス&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+      &lt;li&gt;&lt;a href=&quot;&quot;&gt;収納用品&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;ボックス&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&quot;&gt;本棚&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;文庫本用&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;雑誌用&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+.ui-menu {
+  width: 200px;
+}
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.menu-position').menu({
+  position: {
+   at: 'center bottom',
+   my: 'left top'
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-menu-events">
+            <h4>Events</h4>
+
+            <section id="sec-menu-focus">
+              <h4>focus( event, ui ): item をfocus(maouse over)するとイベント発生</h4>
+              <div class="preview">
+                <div class="div-menu-focus">item:</div>
+                <ul class="menu-focus">
+                  <li>Ada</li>
+                  <li>Adamsville</li>
+                  <li>Addyston</li>
+                  <li>
+                    C
+                    <ul>
+                      <li>C言語</li>
+                      <li>C++</li>
+                      <li>C#</li>
+                    </ul>
+                  </li>
+                  <li>Delphi
+                    <ul>
+                      <li>Saarland</li>
+                      <li>Salzburg an der schönen Donau</li>
+                    </ul>
+                  </li>
+                  <li>Saarland</li>
+                  <li>Salzburg
+                    <ul>
+                      <li>Delphi
+                        <ul>
+                          <li>Ada</li>
+                          <li>Saarland</li>
+                          <li>Salzburg</li>
+                        </ul>
+                      </li>
+                      <li>Perch</li>
+                    </ul>
+                  </li>
+                  <li>R</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-menu-focus&quot;&gt;item:&lt;/div&gt;
+</span>
+<span>
+&lt;ul class=&quot;menu-focus&quot;&gt;
+  &lt;li&gt;Ada&lt;/li&gt;
+  &lt;li&gt;Adamsville&lt;/li&gt;
+  &lt;li&gt;Addyston&lt;/li&gt;
+  &lt;li&gt;
+    C
+    &lt;ul&gt;
+      &lt;li&gt;C言語&lt;/li&gt;
+      &lt;li&gt;C++&lt;/li&gt;
+      &lt;li&gt;C#&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Delphi
+    &lt;ul&gt;
+      &lt;li&gt;Saarland&lt;/li&gt;
+      &lt;li&gt;Salzburg an der schönen Donau&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Saarland&lt;/li&gt;
+  &lt;li&gt;Salzburg
+    &lt;ul&gt;
+      &lt;li&gt;Delphi
+        &lt;ul&gt;
+          &lt;li&gt;Ada&lt;/li&gt;
+          &lt;li&gt;Saarland&lt;/li&gt;
+          &lt;li&gt;Salzburg&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Perch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;R&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+.ui-menu {
+width: 200px;
+}
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.menu-focus').menu({
+  focus: function( event, ui ) {
+    $('.div-menu-focus').text('item: ' + ui.item.context.innerText);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-menu-select">
+              <h4>select: item を選択(click)したらイベント発生</h4>
+              <div class="preview">
+                <div class="div-menu-select">item:</div>
+                <ul class="menu-select">
+                  <li>Ada</li>
+                  <li>Adamsville</li>
+                  <li>Addyston</li>
+                  <li>
+                    C
+                    <ul>
+                      <li>C言語</li>
+                      <li>C++</li>
+                      <li>C#</li>
+                    </ul>
+                  </li>
+                  <li>Delphi
+                    <ul>
+                      <li>Saarland</li>
+                      <li>Salzburg an der schönen Donau</li>
+                    </ul>
+                  </li>
+                  <li>Saarland</li>
+                  <li>Salzburg
+                    <ul>
+                      <li>Delphi
+                        <ul>
+                          <li>Ada</li>
+                          <li>Saarland</li>
+                          <li>Salzburg</li>
+                        </ul>
+                      </li>
+                      <li>Perch</li>
+                    </ul>
+                  </li>
+                  <li>R</li>
+                </ul>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-menu-select&quot;&gt;item:&lt;/div&gt;
+</span>
+<span>
+&lt;ul class=&quot;menu-select&quot;&gt;
+  &lt;li&gt;Ada&lt;/li&gt;
+  &lt;li&gt;Adamsville&lt;/li&gt;
+  &lt;li&gt;Addyston&lt;/li&gt;
+  &lt;li&gt;
+    C
+    &lt;ul&gt;
+      &lt;li&gt;C言語&lt;/li&gt;
+      &lt;li&gt;C++&lt;/li&gt;
+      &lt;li&gt;C#&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Delphi
+    &lt;ul&gt;
+      &lt;li&gt;Saarland&lt;/li&gt;
+      &lt;li&gt;Salzburg an der schönen Donau&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Saarland&lt;/li&gt;
+  &lt;li&gt;Salzburg
+    &lt;ul&gt;
+      &lt;li&gt;Delphi
+        &lt;ul&gt;
+          &lt;li&gt;Ada&lt;/li&gt;
+          &lt;li&gt;Saarland&lt;/li&gt;
+          &lt;li&gt;Salzburg&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Perch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;R&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+.ui-menu {
+  width: 200px;
+}
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.menu-select').menu({
+  select: function( event, ui ) {
+    $('.div-menu-select').text('item: ' + ui.item.context.innerText);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // mooption
+      $('.menu-nooption').menu();
+
+      // icons
+      $('.menu-icons').menu({
+        icons: {
+          submenu: "ui-icon-circle-triangle-e"
+        }
+      });
+
+      // position
+      $('.menu-position').menu({
+        position: {
+         at: 'center bottom',
+         my: 'left top'
+        }
+      });
+
+      // events
+      // focus
+      $('.menu-focus').menu({
+        focus: function( event, ui ) {
+          $('.div-menu-focus').text('item: ' + ui.item.context.innerText);
+        }
+      });
+
+      // select
+      $('.menu-select').menu({
+        select: function( event, ui ) {
+          $('.div-menu-select').text('item: ' + ui.item.context.innerText);
+        }
+      });
+
+
+
+    });
+  </script> -->
+<!--
+  </body>
+
+</html> -->
