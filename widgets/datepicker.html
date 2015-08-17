@@ -1,0 +1,1323 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Datepicker</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body> -->
+    <section id="sec-datepicker">
+      <h3>Datepicker</h3>
+      <p><a href="http://jqueryui.com/datepicker/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/datepicker/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-datepicker-options" class="ul-datepicker-options" aria-controls="ul-ul-datepicker-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-datepicker-options">
+                <li>
+                  <a href="#sec-datepicker-nooption">nooption</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-alt">altField, altFormat</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-appendText">appendText</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-autoSize">autoSize</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-beforeShow">beforeShow</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-changeMonth">changeMonth</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-changeYear">changeYear</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-dateFormat">dateFormat</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-dayNames">dayNames</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-dayNamesMin">dayNamesMin</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-defaultDate">defaultDate</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-duration">duration</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-firstday">firstday</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-maxminDate">maxDate, minDate</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-monthNames">monthNames</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-nextprevText">nextText, prevText</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-numberOfMonths">numberOfMonths</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showAnim">showAnim</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showButtonPanel">showButtonPanel</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showCurrentAtPos">showCurrentAtPos</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showMonthAfterYear">showMonthAfterYear</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showOn">showOn</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-buttonText">buttonText</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showOtherMonths">showOtherMonths</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-selectOtherMonths">selectOtherMonths</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-showWeek">showWeek</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-stepMonths">stepMonths</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-weekHeader">weekHeader</a>
+                </li>
+                <li>
+                  <a href="#sec-datepicker-yearSuffix">yearSuffix</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a id="ul-datepicker-sample"  aria-controls="ul-ul-datepicker-sample" href="#ul-ul-datepicker-sample">Sample</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-datepicker-sample">
+                <li>
+                  <a href="#sec-datepicker-inline">inline表示</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-datepicker-options">
+            <h4>Options</h4>
+            <section id="sec-datepicker-nooption">
+              <h4>nooption</h4>
+              <div class="preview">
+                <h5>HTML5 default: &lt;input type="date"&gt;</h5>
+                <input type="date">
+                <h6>jQueryUI datepicker</h6>
+                <input type="text" class="datepicker-nooption">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;button-nooption&quot;&gt;button&lt;/button&gt;
+</span>
+<span>
+&lt;a class=&quot;button-nooption&quot;&gt;a&lt;/a&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.button-nooption').button();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-alt">
+              <h4>altField, altFormat: 別のFieldに、別のFormatに出力</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-alt">
+                <input type="text" class="datepicker-alt-alternate">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-alt&quot;&gt;
+</span>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-alt-alternate&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-alt').datepicker({
+  altField: ".datepicker-alt-alternate",
+  altFormat: "DD, d MM, yy" /* ex. Tuesday, 4 August, 2015 */
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-appendText">
+              <h4>appendText: textが挿入される</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-appendText">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-appendText&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-appendText').datepicker({
+  appendText: '[mm/dd/yyyy]'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-autoSize">
+              <h4>autoSize</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-autoSize">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-autoSize&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-autoSize').datepicker({
+  autoSize: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-beforeShow">
+              <h4>beforeShow: カレンダーがレンダリングされる直前に呼び出される + getDate</h4>
+              <div class="preview">
+                <div class="div-datepicker-beforeShow-getDate">getDate: </div>
+                <input type="text" class="datepicker-beforeShow">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-datepicker-beforeShow-getDate&quot;&gt;getDate: &lt;/div&gt;
+&lt;input type=&quot;text&quot; class=&quot;datepicker-beforeShow&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$(".datepicker-beforeShow").datepicker({
+  // カレンダーがレンダリングされる直前に呼び出される
+  beforeShow: function(input, inst) {
+    // テキストフィールドに値が入っていればその日付を、入っていなければ今日の日付を取得
+    var date = $(input).datepicker("getDate");
+    $('.div-datepicker-beforeShow-getDate').text('getDate: ' + date);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-changeMonth">
+              <h4>changeMonth: month を dropbox で変えられる</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-changeMonth">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-changeMonth&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-changeMonth').datepicker({
+  changeMonth: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-changeYear">
+              <h4>changeYear: yearRange を指定しなければならない</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-changeYear">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-changeYear&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-changeYear').datepicker({
+  changeYear: true,
+  yearRange: '2010:2020'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-dateFormat">
+              <h4>dateFormat: 日付の表示のフォーマット変更, default: "mm/dd/yy"</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-dataFormat">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-dataFormat&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-dataFormat').datepicker({
+  dateFormat: "yy-mm-dd"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-dayNames">
+              <h4>dayNames: 曜日の名前変更</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-dayNames">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-dayNames&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-dayNames').datepicker({
+  dateFormat: "yy-mm-dd-DD",
+  dayNames: ['日', '月', '火', '水', '木', '金', '土']
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-dayNamesMin">
+              <h4>dayNamesMin: datepicker上の曜日名を変更</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-dayNamesMin">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-dayNamesMin&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-dayNamesMin').datepicker({
+  dayNamesMin: ['日', '月', '火', '水', '木', '金', '土']
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-defaultDate">
+              <h4>defaultDate: ハイライトする日付を指定</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-defaultDate">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-defaultDate&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-defaultDate').datepicker({
+  defaultDate: -7
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-duration">
+              <h4>duration</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-duration">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-duration&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-duration').datepicker({
+  duration: "slow"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-firstday">
+              <h4>firstday: 曜日の始まりを変更</h4>
+              <div class="preview">
+                <h5>月曜から始まる</h5>
+                <input type="text" class="datepicker-firstday">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-firstday&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-firstday').datepicker({
+  firstDay: 1
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-maxminDate">
+              <h4>maxDate, minDate: 有効範囲を決める</h4>
+              <div class="preview">
+                <h5>2週間前から1ヶ月後まで</h5>
+                <input type="text" class="datepicker-maxminDate">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-maxminDate&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-maxminDate').datepicker({
+  maxDate: '+1m',
+  minDate: '-2w'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-monthNames">
+              <h4>monthNames: datepickerで選択したmonth名を変更</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-monthNames">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-monthNames&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-monthNames').datepicker({
+  dateFormat: 'yy-MM-dd',
+  monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-nextprevText">
+              <h4>nextText: next linkのtext変更, default: 'Next'</h4>
+              <h4>prevText: prev linkのtext変更, default: 'Prev'</h4>
+
+              <div class="preview">
+                <input type="text" class="datepicker-nextprevText">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-nextprevText&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-nextprevText').datepicker({
+  nextText: '次へ',
+  prevText: '前へ'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-numberOfMonths">
+              <h4>numberOfMonths: 表示するカレンダー数を変更</h4>
+              <div class="preview">
+                <h5>今月含めて3ヶ月分を表示</h5>
+                <input type="text" class="datepicker-numberOfMonths">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-numberOfMonths&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-numberOfMonths').datepicker({
+  numberOfMonths: 3
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-showAnim">
+              <h4>showAnim</h4>
+              <div class="preview">
+                <h5>show: default</h5>
+                <input type="text" class='datepicker-showAnim-show'>
+                <h5>slideDown</h5>
+                <input type="text" class='datepicker-showAnim-slideDown'>
+                <h5>fadeIn</h5>
+                <input type="text" class='datepicker-showAnim-fadeIn'>
+                <h5>fold</h5>
+                <input type="text" class='datepicker-showAnim-fold'>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class='datepicker-showAnim-show'&gt;
+</span>
+<span>
+&lt;input type=&quot;text&quot; class='datepicker-showAnim-slideDown'&gt;
+</span>
+<span>
+&lt;input type=&quot;text&quot; class='datepicker-showAnim-fadeIn'&gt;
+</span>
+<span>
+&lt;input type=&quot;text&quot; class='datepicker-showAnim-fold'&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showAnim-show').datepicker({
+  showAnim: 'show'
+});
+</span>
+<span>
+$('.datepicker-showAnim-slideDown').datepicker({
+  showAnim: 'slideDown'
+});
+</span>
+<span>
+$('.datepicker-showAnim-fadeIn').datepicker({
+  showAnim: 'fadeIn'
+});
+</span>
+<span>
+$('.datepicker-showAnim-fold').datepicker({
+  showAnim: 'fold'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-showButtonPanel">
+              <h4>showButtonPanel: ボタンを追加</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-showButtonPanel">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showButtonPanel&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showButtonPanel').datepicker({
+  showButtonPanel: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-showCurrentAtPos">
+              <h4>showCurrentAtPos: 最初に表示する月を、現在の月の前にする</h4>
+              <div class="preview">
+                <h5>3ヶ月前から表示</h5>
+                <input type="text" class="datepicker-showCurrentAtPos">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showCurrentAtPos&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showCurrentAtPos').datepicker({
+  numberOfMonths: 3,
+  showCurrentAtPos: 3
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+            <section id="sec-datepicker-showMonthAfterYear">
+              <h4>showMonthAfterYear: datepickerのヘッダを年, 月の順にする</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-showMonthAfterYear">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showMonthAfterYear&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showMonthAfterYear').datepicker({
+  showMonthAfterYear: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-showOn">
+              <h4>showOn</h4>
+              <div class="preview">
+                <h5>button</h5>
+                <input type="text" class="datepicker-showOn-button">
+                <h5>both</h5>
+                <input type="text" class="datepicker-showOn-both">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showOn-button&quot;&gt;
+</span>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showOn-both&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showOn-button').datepicker({
+  showOn: 'button'
+});
+</span>
+<span>
+$('.datepicker-showOn-both').datepicker({
+  showOn: 'both'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-buttonText">
+              <h4>buttonText: showOnのボタンのテキスト変更</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-buttonText">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-buttonText&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showButtonPanel').datepicker({
+  showButtonPanel: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-showOtherMonths">
+              <h4>showOtherMonths: 月ごとのカレンダーの余白に、前の月、及び次の月の終わりや最後の日付で埋める（選択はできない）</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-showOtherMonths">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showOtherMonths&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showOtherMonths').datepicker({
+  showOtherMonths: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+            <section id="sec-datepicker-selectOtherMonths">
+              <h4>selectOtherMonths: showOtherMonthsのときに、さらに選択できる。</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-selectOtherMonths">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-selectOtherMonths&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-selectOtherMonths').datepicker({
+  showOtherMonths: true,
+  selectOtherMonths: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-showWeek">
+              <h4>showWeek: 年始から何週目かを表示</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-showWeek">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-showWeek&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-showWeek').datepicker({
+  showWeek: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-stepMonths">
+              <h4>stepMonths: prev or next を押したときに何か月分移動するかを設定</h4>
+              <div class="preview">
+                 <h5>3ヶ月分移動</h5>
+                <input type="text" class="datepicker-stepMonths">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-stepMonths&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-stepMonths').datepicker({
+  stepMonths: 3
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-weekHeader">
+              <h4>weekHeader</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-weekHeader">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-weekHeader&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-weekHeader').datepicker({
+  showWeek: true,
+  weekHeader: '週'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-datepicker-yearSuffix">
+              <h4>yearSuffix: カレンダー上部に表示される年の右につける文字列を設定</h4>
+              <div class="preview">
+                <input type="text" class="datepicker-yearSuffix">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;text&quot; class=&quot;datepicker-yearSuffix&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-yearSuffix').datepicker({
+  yearSuffix: '年'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-datepicker-sample">
+            <h4>Sample</h4>
+
+            <section id="sec-datepicker-inline">
+              <h4>inline 表示</h4>
+              <div class="preview">
+                <div class="datepicker-nooption"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;datepicker-nooption&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.datepicker-nooption').datepicker();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+<!-- </body> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // nooption
+      $('.datepicker-nooption').datepicker();
+
+      // alt
+      // altField, altFormat
+      $('.datepicker-alt').datepicker({
+        altField: ".datepicker-alt-alternate",
+        altFormat: "DD, d MM, yy" /* ex. Tuesday, 4 August, 2015 */
+      });
+
+      // appendText
+      $('.datepicker-appendText').datepicker({
+        appendText: '[mm/dd/yyyy]'
+      });
+
+      // autoSize
+      $('.datepicker-autoSize').datepicker({
+        autoSize: true
+      });
+
+      // beforeShow
+      $(".datepicker-beforeShow").datepicker({
+        // カレンダーがレンダリングされる直前に呼び出される
+        beforeShow: function(input, inst) {
+          // テキストフィールドに値が入っていればその日付を、入っていなければ今日の日付を取得
+          var date = $(input).datepicker("getDate");
+          $('.div-datepicker-beforeShow-getDate').text('getDate: ' + date);
+        }
+      });
+
+      //  changeMonth
+      $('.datepicker-changeMonth').datepicker({
+        changeMonth: true
+      });
+
+      // changeYear
+      $('.datepicker-changeYear').datepicker({
+        changeYear: true,
+        yearRange: '2010:2020'
+      });
+
+      // dateFormat
+      $('.datepicker-dataFormat').datepicker({
+        dateFormat: "yy-mm-dd"
+      });
+
+      // dayNames
+      $('.datepicker-dayNames').datepicker({
+        dateFormat: "yy-mm-dd-DD",
+        dayNames: ['日', '月', '火', '水', '木', '金', '土']
+      });
+
+      // dayNamesMin
+      $('.datepicker-dayNamesMin').datepicker({
+        dayNamesMin: ['日', '月', '火', '水', '木', '金', '土']
+      });
+
+      // defaultDate
+      $('.datepicker-defaultDate').datepicker({
+        defaultDate: -7
+      });
+
+      // duration
+      $('.datepicker-duration').datepicker({
+        duration: "slow"
+      });
+
+      // firstday
+      $('.datepicker-firstday').datepicker({
+        firstDay: 1
+      });
+
+      // maxDate, minDate
+      $('.datepicker-maxminDate').datepicker({
+        maxDate: '+1m',
+        minDate: '-2w'
+      });
+
+      // monthNames
+      $('.datepicker-monthNames').datepicker({
+        dateFormat: 'yy-MM-dd',
+        monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+      });
+
+      // nextText, prevText
+      $('.datepicker-nextprevText').datepicker({
+        nextText: '次へ',
+        prevText: '前へ'
+      });
+
+      // numberOfMonths
+      $('.datepicker-numberOfMonths').datepicker({
+        numberOfMonths: 3
+      });
+
+      // showAnim
+      $('.datepicker-showAnim-show').datepicker({
+        showAnim: 'show'
+      });
+      $('.datepicker-showAnim-slideDown').datepicker({
+        showAnim: 'slideDown'
+      });
+      $('.datepicker-showAnim-fadeIn').datepicker({
+        showAnim: 'fadeIn'
+      });
+      $('.datepicker-showAnim-fold').datepicker({
+        showAnim: 'fold'
+      });
+
+      // showButtonPanel
+      $('.datepicker-showButtonPanel').datepicker({
+        showButtonPanel: true
+      });
+
+      // showCurrentAtPos
+      $('.datepicker-showCurrentAtPos').datepicker({
+        numberOfMonths: 3,
+        showCurrentAtPos: 3
+      });
+
+      // showMonthAfterYear
+      $('.datepicker-showMonthAfterYear').datepicker({
+        showMonthAfterYear: true
+      });
+
+      // showOn
+      $('.datepicker-showOn-button').datepicker({
+        showOn: 'button'
+      });
+      $('.datepicker-showOn-both').datepicker({
+        showOn: 'both'
+      });
+
+      // buttonText
+      $('.datepicker-buttonText').datepicker({
+        showOn: 'both',
+        buttonText: 'click!'
+      });
+
+      // showOtherMonths
+      $('.datepicker-showOtherMonths').datepicker({
+        showOtherMonths: true
+      });
+
+      // selectOtherMonths
+      $('.datepicker-selectOtherMonths').datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true
+      });
+
+      // showWeek
+      $('.datepicker-showWeek').datepicker({
+        showWeek: true
+      });
+
+      // stepMonths
+      $('.datepicker-stepMonths').datepicker({
+        stepMonths: 3
+      });
+
+      // weekHeader
+      $('.datepicker-weekHeader').datepicker({
+        showWeek: true,
+        weekHeader: '週'
+      });
+
+      // yearSuffix
+      $('.datepicker-yearSuffix').datepicker({
+        yearSuffix: '年'
+      });
+    });
+  </script> -->
+<!-- </html> -->
