@@ -1,0 +1,1437 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Dialog</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head> -->
+  <!-- <body> -->
+    <section id="sec-dialog">
+      <h3>Dialog</h3>
+      <p><a href="http://jqueryui.com/dialog/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/dialog/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-dialog-options" class="ul-dialog-options" aria-controls="ul-ul-dialog-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-dialog-options">
+                <li>
+                  <a href="#sec-dialog-autoOpen">autoOpen</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-buttons">buttons</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-closeText">closeText</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-height">height</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-width">width</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-hide">hide</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-show">show</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-modal">modal</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-position">position</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-resizable">resizable</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-title">title</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a id="ul-dialog-events"  aria-controls="ul-ul-dialog-events" href="#ul-ul-dialog-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-dialog-events">
+                <li>
+                  <a href="#sec-dialog-beforeClose">beforeClose</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-close">close</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-drag">drag</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-open">open</a>
+                </li>
+                <li>
+                  <a href="#sec-dialog-resize">resize</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-dialog-options">
+            <h4>Options</h4>
+            <section id="sec-dialog-autoOpen">
+              <h4>autoOpen</h4>
+              <div class="preview">
+                <button class="btn-dialog-autoOpen">Open!</button>
+                <div class="dialog-autoOpen" title="autoOpen">
+                  <p>
+                    false にしないとだdialogの本文が最初から表示される。<br>
+                    <br>
+                    The dialog window can be moved, resized and closed with the 'x' icon.
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-autoOpen&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-autoOpen&quot; title=&quot;autoOpen&quot;&gt;
+  &lt;p&gt;
+    false にしないとだdialogの本文が最初から表示される。&lt;br&gt;
+    &lt;br&gt;
+    The dialog window can be moved, resized and closed with the 'x' icon.
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-autoOpen').dialog({
+  autoOpen: false
+});
+</span>
+<span>
+$('.btn-dialog-autoOpen').click(function(){
+  $('.dialog-autoOpen').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-buttons">
+              <h4>buttons</h4>
+              <div class="preview">
+                <button class="btn-dialog-buttons">Open!</button>
+                <div class="dialog-buttons" title="buttons">
+                  <p>
+                    ボタンを追加したり、ボタンのテキストや機能を変更。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-buttons&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-buttons&quot; title=&quot;buttons&quot;&gt;
+  &lt;p&gt;
+    ボタンを追加したり、ボタンのテキストや機能を変更。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-buttons').dialog({
+  autoOpen: false,
+  buttons: [
+    {
+      text: "OK!",
+      icons: {
+        primary: "ui-icon-heart"
+      },
+      click: function() {
+        $( this ).dialog( "close" );
+      }
+    },
+    {
+      text: "Close!",
+      click: function() {
+        $( this ).dialog( "close" );
+      }
+    },
+  ]
+});
+</span>
+<span>
+$('.btn-dialog-buttons').click(function(){
+  $('.dialog-buttons').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-closeText">
+              <h4>closeText</h4>
+              <div class="preview">
+                <button class="btn-dialog-closeText">Open!</button>
+                <div class="dialog-closeText" title="closeText">
+                  <p>
+                    x をhover すると現れるテキストを変更。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-closeText&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-closeText&quot; title=&quot;closeText&quot;&gt;
+  &lt;p&gt;
+    x をhover すると現れるテキストを変更。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-closeText').dialog({
+  autoOpen: false,
+  closeText: '閉じる'
+});
+</span>
+<span>
+$('.btn-dialog-closeText').click(function(){
+  $('.dialog-closeText').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-height">
+              <h4>height</h4>
+              <div class="preview">
+                <button class="btn-dialog-height">Open!</button>
+                <div class="dialog-height" title="height">
+                  <p>
+                    height を変更。<br>
+                    height: 150
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-height&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-height&quot; title=&quot;height&quot;&gt;
+  &lt;p&gt;
+    height を変更。&lt;br&gt;
+    height: 150
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-height').dialog({
+  autoOpen: false,
+  height: 150
+});
+</span>
+<span>
+$('.btn-dialog-height').click(function(){
+  $('.dialog-height').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-width">
+              <h4>width</h4>
+              <div class="preview">
+                <button class="btn-dialog-width">Open!</button>
+                <div class="dialog-width" title="width">
+                  <p>
+                    width を変更。<br>
+                    width: 100
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-width&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-width&quot; title=&quot;width&quot;&gt;
+  &lt;p&gt;
+    width を変更。&lt;br&gt;
+    width: 100
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-width').dialog({
+  autoOpen: false,
+  width: 100
+});
+</span>
+<span>
+$('.btn-dialog-width').click(function(){
+  $('.dialog-width').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-hide">
+              <h4>hide</h4>
+              <div class="preview">
+                <!-- explode -->
+                <button class="btn-dialog-hide-explode">explode</button>
+                <div class="dialog-hide-explode" title="hide: explode">
+                  <p>
+                    閉じると、explode
+                  </p>
+                </div>
+                <!-- fadeOut -->
+                <button class="btn-dialog-hide-fadeOut">fadeOut</button>
+                <div class="dialog-hide-fadeOut" title="hide: fadeOut">
+                  <p>
+                    閉じると、fadeOut
+                  </p>
+                </div>
+                <!-- fold -->
+                <button class="btn-dialog-hide-fold">fold</button>
+                <div class="dialog-hide-fold" title="hide: fold">
+                  <p>
+                    閉じると、fold
+                  </p>
+                </div>
+                <!-- slidUp -->
+                <button class="btn-dialog-hide-slideUp">slideUp</button>
+                <div class="dialog-hide-slideUp" title="hide: slideUp">
+                  <p>
+                    閉じると、slideUp
+                  </p>
+                </div>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+
+<span>
+&lt;!-- explode --&gt;
+&lt;button class=&quot;btn-dialog-hide-explode&quot;&gt;explode&lt;/button&gt;
+&lt;div class=&quot;dialog-hide-explode&quot; title=&quot;hide: explode&quot;&gt;
+  &lt;p&gt;
+    閉じると、explode
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fadeOut --&gt;
+&lt;button class=&quot;btn-dialog-hide-fadeOut&quot;&gt;fadeOut&lt;/button&gt;
+&lt;div class=&quot;dialog-hide-fadeOut&quot; title=&quot;hide: fadeOut&quot;&gt;
+  &lt;p&gt;
+    閉じると、fadeOut
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fold --&gt;
+&lt;button class=&quot;btn-dialog-hide-fold&quot;&gt;fold&lt;/button&gt;
+&lt;div class=&quot;dialog-hide-fold&quot; title=&quot;hide: fold&quot;&gt;
+  &lt;p&gt;
+    閉じると、fold
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- slidUp --&gt;
+&lt;button class=&quot;btn-dialog-hide-slideUp&quot;&gt;slideUp&lt;/button&gt;
+&lt;div class=&quot;dialog-hide-slideUp&quot; title=&quot;hide: slideUp&quot;&gt;
+  &lt;p&gt;
+    閉じると、slideUp
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// explode
+$('.btn-dialog-hide-explode').button();
+$('.dialog-hide-explode').dialog({
+  autoOpen: false,
+  hide: {
+    effect: "explode",
+    duration: 1000
+  }
+});
+$('.btn-dialog-hide-explode').click(function(){
+  $('.dialog-hide-explode').dialog('open');
+});
+</span>
+<span>
+// fadeOut
+$('.btn-dialog-hide-fadeOut').click(function(){
+  $('.dialog-hide-fadeOut').dialog('open');
+});
+$('.btn-dialog-hide-fadeOut').button();
+$('.dialog-hide-fadeOut').dialog({
+  autoOpen: false,
+  hide: {
+    effect: "fadeOut",
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fold
+$('.btn-dialog-hide-fold').click(function(){
+  $('.dialog-hide-fold').dialog('open');
+});
+$('.btn-dialog-hide-fold').button();
+$('.dialog-hide-fold').dialog({
+  autoOpen: false,
+  hide: {
+    effect: "fold",
+    duration: 1000
+  }
+});
+</span>
+<span>
+// slideUp
+$('.btn-dialog-hide-slideUp').click(function(){
+  $('.dialog-hide-slideUp').dialog('open');
+});
+$('.btn-dialog-hide-slideUp').button();
+$('.dialog-hide-slideUp').dialog({
+  autoOpen: false,
+  hide: {
+    effect: "slideUp",
+    duration: 1000
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-show">
+              <h4>show</h4>
+              <div class="preview">
+                <!-- blind -->
+                <button class="btn-dialog-show-blind">blind</button>
+                <div class="dialog-show-blind" title="show: blind">
+                  <p>
+                    開くと、blind
+                  </p>
+                </div>
+                <!-- fadeIn -->
+                <button class="btn-dialog-show-fadeIn">fadeIn</button>
+                <div class="dialog-show-fadeIn" title="show: fadeIn">
+                  <p>
+                    開くと、fadeIn
+                  </p>
+                </div>
+                <!-- fold -->
+                <button class="btn-dialog-show-fold">fold</button>
+                <div class="dialog-show-fold" title="show: fold">
+                  <p>
+                    開くと、fold
+                  </p>
+                </div>
+                <!-- slideDown -->
+                <button class="btn-dialog-show-slideDown">slideDown</button>
+                <div class="dialog-show-slideDown" title="show: slideDown">
+                  <p>
+                    開くと、slideDown
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;!-- blind --&gt;
+&lt;button class=&quot;btn-dialog-show-blind&quot;&gt;blind&lt;/button&gt;
+&lt;div class=&quot;dialog-show-blind&quot; title=&quot;show: blind&quot;&gt;
+  &lt;p&gt;
+    開くと、blind
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fadeIn --&gt;
+&lt;button class=&quot;btn-dialog-show-fadeIn&quot;&gt;fadeIn&lt;/button&gt;
+&lt;div class=&quot;dialog-show-fadeIn&quot; title=&quot;show: fadeIn&quot;&gt;
+  &lt;p&gt;
+    開くと、fadeIn
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fold --&gt;
+&lt;button class=&quot;btn-dialog-show-fold&quot;&gt;fold&lt;/button&gt;
+&lt;div class=&quot;dialog-show-fold&quot; title=&quot;show: fold&quot;&gt;
+  &lt;p&gt;
+    開くと、fold
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- slideDown --&gt;
+&lt;button class=&quot;btn-dialog-show-slideDown&quot;&gt;slideDown&lt;/button&gt;
+&lt;div class=&quot;dialog-show-slideDown&quot; title=&quot;show: slideDown&quot;&gt;
+  &lt;p&gt;
+    開くと、slideDown
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// blind
+$('.btn-dialog-show-blind').button();
+$('.dialog-show-blind').dialog({
+  autoOpen: false,
+  show: {
+    effect: 'blind',
+    duration: 1000
+  }
+});
+$('.btn-dialog-show-blind').click(function(){
+  $('.dialog-show-blind').dialog('open');
+});
+</span>
+<span>
+// fadeIn
+$('.btn-dialog-show-fadeIn').button();
+$('.dialog-show-fadeIn').dialog({
+  autoOpen: false,
+  show: {
+    effect: 'fadeIn',
+    duration: 1000
+  }
+});
+$('.btn-dialog-show-fadeIn').click(function(){
+  $('.dialog-show-fadeIn').dialog('open');
+});
+</span>
+<span>
+// fold
+$('.btn-dialog-show-fold').button();
+$('.dialog-show-fold').dialog({
+  autoOpen: false,
+  show: {
+    effect: 'fold',
+    duration: 1000
+  }
+});
+$('.btn-dialog-show-fold').click(function(){
+  $('.dialog-show-fold').dialog('open');
+});
+</span>
+<span>
+// slideDown
+$('.btn-dialog-show-slideDown').button();
+$('.dialog-show-slideDown').dialog({
+  autoOpen: false,
+  show: {
+    effect: 'slideDown',
+    duration: 1000
+  }
+});
+$('.btn-dialog-show-slideDown').click(function(){
+  $('.dialog-show-slideDown').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-modal">
+              <h4>modal</h4>
+              <div class="preview">
+                <button class="btn-dialog-modal">Open!</button>
+                <div class="dialog-modal" title="modal">
+                  <p>
+                    背景を選択できないmodalウィンドウになる。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-modal&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-modal&quot; title=&quot;modal&quot;&gt;
+  &lt;p&gt;
+    背景を選択できないmodalウィンドウになる。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-modal').dialog({
+  autoOpen: false,
+  modal: true
+});
+</span>
+<span>
+$('.btn-dialog-modal').click(function(){
+  $('.dialog-modal').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-position">
+              <h4>position</h4>
+              <div class="preview">
+                <button class="btn-dialog-position">Open!</button>
+                <div class="dialog-position" title="position">
+                  <p>
+                    position:<br>
+                    基点となる要素（of）<br>
+                    の位置（at）と、<br>
+                    ダイアログの位置（my）とが接するように決める。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-position&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-position&quot; title=&quot;position&quot;&gt;
+  &lt;p&gt;
+    position:&lt;br&gt;
+    基点となる要素（of）&lt;br&gt;
+    の位置（at）と、&lt;br&gt;
+    ダイアログの位置（my）とが接するように決める。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-position').dialog({
+  autoOpen: false,
+  position: {
+    of: '.btn-dialog-position',
+    at: 'center bottom',
+    my: 'left top'
+  }
+});
+</span>
+<span>
+$('.btn-dialog-position').click(function(){
+  $('.dialog-position').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-resizable">
+              <h4>resizable</h4>
+              <div class="preview">
+                <button class="btn-dialog-resizable">Open!</button>
+                <div class="dialog-resizable" title="resizable">
+                  <p>
+                    resizable:<br>
+                    default: true<br>
+                    このdialog は、ドラッグはできるが、リサイズできない。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-resizable&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-resizable&quot; title=&quot;resizable&quot;&gt;
+  &lt;p&gt;
+    resizable:&lt;br&gt;
+    default: true&lt;br&gt;
+    このdialog は、ドラッグはできるが、リサイズできない。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-resizable').dialog({
+  autoOpen: false,
+  resizable: false
+});
+</span>
+<span>
+$('.btn-dialog-resizable').click(function(){
+  $('.dialog-resizable').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-title">
+              <h4>title</h4>
+              <div class="preview">
+                <button class="btn-dialog-title">Open!</button>
+                <div class="dialog-title" title="title">
+                  <p>
+                    title を変更。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-dialog-title&quot;&gt;Open!&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;dialog-title&quot; title=&quot;title&quot;&gt;
+  &lt;p&gt;
+    title を変更。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-title').dialog({
+  autoOpen: false,
+  title: 'Dialog Title'
+});
+</span>
+<span>
+$('.btn-dialog-title').click(function(){
+  $('.dialog-title').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-">
+              <h4>Option なし</h4>
+              <div class="preview">
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-dialog-events">
+            <h4>Events</h4>
+
+            <section id="sec-dialog-beforeClose">
+              <h4>beforeClose( event, ui )</h4>
+              <div class="preview">
+                <div class="div-dialog-beforeClose">msg:</div>
+                <button class="btn-dialog-beforeClose">Open!</button>
+                <div class="dialog-beforeClose" title="beforeClose">
+                  <p>
+                    beforeClose: 閉じる直前にイベント発生。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-dialog-beforeClose&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-dialog-beforeClose&quot;&gt;Open!&lt;/button&gt;
+&lt;div class=&quot;dialog-beforeClose&quot; title=&quot;beforeClose&quot;&gt;
+  &lt;p&gt;
+    beforeClose: 閉じる直前にイベント発生。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-beforeClose').dialog({
+  autoOpen: false,
+  beforeClose: function( event, ui ) {
+    $('.div-dialog-beforeClose').text('閉じる直前にイベント!');
+  }
+});
+</span>
+<span>
+$('.btn-dialog-beforeClose').click(function(){
+  $('.dialog-beforeClose').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-close">
+              <h4>close( event, ui )</h4>
+              <div class="preview">
+                <div class="div-dialog-close">msg:</div>
+                <button class="btn-dialog-close">Open!</button>
+                <div class="dialog-close" title="close">
+                  <p>
+                    close: 閉じた後にイベント発生。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-dialog-close&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-dialog-close&quot;&gt;Open!&lt;/button&gt;
+&lt;div class=&quot;dialog-close&quot; title=&quot;close&quot;&gt;
+  &lt;p&gt;
+    close: 閉じた後にイベント発生。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-close').dialog({
+  autoOpen: false,
+  close: function( event, ui ) {
+    $('.div-dialog-close').text('閉じた後にイベント!');
+  }
+});
+</span>
+<span>
+$('.btn-dialog-close').click(function(){
+  $('.dialog-close').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-drag">
+              <h4>drag</h4>
+              <div class="preview">
+                <div class="div-dialog-drag">top: left: </div>
+                <button class="btn-dialog-drag">Open!</button>
+                <div class="dialog-drag" title="drag">
+                  <p>
+                    drag: ドラッグするとイベント発生。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-dialog-drag&quot;&gt;top: left: &lt;/div&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-dialog-drag&quot;&gt;Open!&lt;/button&gt;
+&lt;div class=&quot;dialog-drag&quot; title=&quot;drag&quot;&gt;
+  &lt;p&gt;
+    drag: ドラッグするとイベント発生。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-drag').dialog({
+  autoOpen: false,
+  drag: function( event, ui ) {
+    $('.div-dialog-drag').text('top: ' + ui.position.top + ' left: ' + ui.position.left);
+  }
+});
+</span>
+<span>
+$('.btn-dialog-drag').click(function(){
+  $('.dialog-drag').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-open">
+              <h4>open( event, ui )</h4>
+              <div class="preview">
+                <div class="div-dialog-open">msg:</div>
+                <button class="btn-dialog-open">Open!</button>
+                <div class="dialog-open" title="open">
+                  <p>
+                    open: 開いた後にイベント発生。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-dialog-open&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-dialog-open&quot;&gt;Open!&lt;/button&gt;
+&lt;div class=&quot;dialog-open&quot; title=&quot;open&quot;&gt;
+  &lt;p&gt;
+    open: 開いた後にイベント発生。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-open').dialog({
+  autoOpen: false,
+  open: function( event, ui ) {
+    $('.div-dialog-open').text('開いた後にイベント!');
+  }
+});
+</span>
+<span>
+$('.btn-dialog-open').click(function(){
+  $('.dialog-open').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-dialog-resize">
+              <h4>resize</h4>
+              <div class="preview">
+                <div class="div-dialog-resize">size.width: size.height:</div>
+                <button class="btn-dialog-resize">Open!</button>
+                <div class="dialog-resize" title="resize">
+                  <p>
+                    resize: リサイズすると、イベント発生。
+                  </p>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-dialog-resize&quot;&gt;size.width: size.height:&lt;/div&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-dialog-resize&quot;&gt;Open!&lt;/button&gt;
+&lt;div class=&quot;dialog-resize&quot; title=&quot;resize&quot;&gt;
+  &lt;p&gt;
+    resize: リサイズすると、イベント発生。
+  &lt;/p&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.dialog-resize').dialog({
+  autoOpen: false,
+  resize: function( event, ui ) {
+    $('.div-dialog-resize').text('width: ' + Math.floor(ui.size.width) + ' height: ' + Math.floor(ui.size.height));
+  }
+});
+</span>
+<span>
+$('.btn-dialog-resize').click(function(){
+  $('.dialog-resize').dialog('open');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // autoOpen
+      $('.btn-dialog-autoOpen').button();
+      $('.dialog-autoOpen').dialog({
+        autoOpen: false
+      });
+      $('.btn-dialog-autoOpen').click(function(){
+        $('.dialog-autoOpen').dialog('open');
+      });
+
+      // buttons
+      $('.btn-dialog-buttons').button();
+      $('.dialog-buttons').dialog({
+        autoOpen: false,
+        buttons: [
+          {
+            text: "OK!",
+            icons: {
+              primary: "ui-icon-heart"
+            },
+            click: function() {
+              $( this ).dialog( "close" );
+            }
+          },
+          {
+            text: "Close!",
+            click: function() {
+              $( this ).dialog( "close" );
+            }
+          },
+        ]
+      });
+      $('.btn-dialog-buttons').click(function(){
+        $('.dialog-buttons').dialog('open');
+      });
+
+      // closeText
+      $('.btn-dialog-closeText').button();
+      $('.dialog-closeText').dialog({
+        autoOpen: false,
+        closeText: '閉じる'
+      });
+      $('.btn-dialog-closeText').click(function(){
+        $('.dialog-closeText').dialog('open');
+      });
+
+      // height
+      $('.btn-dialog-height').button();
+      $('.dialog-height').dialog({
+        autoOpen: false,
+        height: 150
+      });
+      $('.btn-dialog-height').click(function(){
+        $('.dialog-height').dialog('open');
+      });
+      // width
+      $('.btn-dialog-width').button();
+      $('.dialog-width').dialog({
+        autoOpen: false,
+        width: 100
+      });
+      $('.btn-dialog-width').click(function(){
+        $('.dialog-width').dialog('open');
+      });
+
+      // hide
+      // explode
+      $('.btn-dialog-hide-explode').button();
+      $('.dialog-hide-explode').dialog({
+        autoOpen: false,
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+      $('.btn-dialog-hide-explode').click(function(){
+        $('.dialog-hide-explode').dialog('open');
+      });
+      // fadeOut
+      $('.btn-dialog-hide-fadeOut').click(function(){
+        $('.dialog-hide-fadeOut').dialog('open');
+      });
+      $('.btn-dialog-hide-fadeOut').button();
+      $('.dialog-hide-fadeOut').dialog({
+        autoOpen: false,
+        hide: {
+          effect: "fadeOut",
+          duration: 1000
+        }
+      });
+      // fold
+      $('.btn-dialog-hide-fold').click(function(){
+        $('.dialog-hide-fold').dialog('open');
+      });
+      $('.btn-dialog-hide-fold').button();
+      $('.dialog-hide-fold').dialog({
+        autoOpen: false,
+        hide: {
+          effect: "fold",
+          duration: 1000
+        }
+      });
+      // slideUp
+      $('.btn-dialog-hide-slideUp').click(function(){
+        $('.dialog-hide-slideUp').dialog('open');
+      });
+      $('.btn-dialog-hide-slideUp').button();
+      $('.dialog-hide-slideUp').dialog({
+        autoOpen: false,
+        hide: {
+          effect: "slideUp",
+          duration: 1000
+        }
+      });
+
+      // show
+      // blind
+      $('.btn-dialog-show-blind').button();
+      $('.dialog-show-blind').dialog({
+        autoOpen: false,
+        show: {
+          effect: 'blind',
+          duration: 1000
+        }
+      });
+      $('.btn-dialog-show-blind').click(function(){
+        $('.dialog-show-blind').dialog('open');
+      });
+      // fadeIn
+      $('.btn-dialog-show-fadeIn').button();
+      $('.dialog-show-fadeIn').dialog({
+        autoOpen: false,
+        show: {
+          effect: 'fadeIn',
+          duration: 1000
+        }
+      });
+      $('.btn-dialog-show-fadeIn').click(function(){
+        $('.dialog-show-fadeIn').dialog('open');
+      });
+      // fold
+      $('.btn-dialog-show-fold').button();
+      $('.dialog-show-fold').dialog({
+        autoOpen: false,
+        show: {
+          effect: 'fold',
+          duration: 1000
+        }
+      });
+      $('.btn-dialog-show-fold').click(function(){
+        $('.dialog-show-fold').dialog('open');
+      });
+      // slideDown
+      $('.btn-dialog-show-slideDown').button();
+      $('.dialog-show-slideDown').dialog({
+        autoOpen: false,
+        show: {
+          effect: 'slideDown',
+          duration: 1000
+        }
+      });
+      $('.btn-dialog-show-slideDown').click(function(){
+        $('.dialog-show-slideDown').dialog('open');
+      });
+
+      // modal
+      $('.btn-dialog-modal').button();
+      $('.dialog-modal').dialog({
+        autoOpen: false,
+        modal: true
+      });
+      $('.btn-dialog-modal').click(function(){
+        $('.dialog-modal').dialog('open');
+      });
+
+      // position
+      $('.btn-dialog-position').button();
+      $('.dialog-position').dialog({
+        autoOpen: false,
+        position: {
+          of: '.btn-dialog-position',
+          at: 'center bottom',
+          my: 'left top'
+        }
+      });
+      $('.btn-dialog-position').click(function(){
+        $('.dialog-position').dialog('open');
+      });
+
+      // resizable
+      $('.btn-dialog-resizable').button();
+      $('.dialog-resizable').dialog({
+        autoOpen: false,
+        resizable: false
+      });
+      $('.btn-dialog-resizable').click(function(){
+        $('.dialog-resizable').dialog('open');
+      });
+
+      // title
+      $('.btn-dialog-title').button();
+      $('.dialog-title').dialog({
+        autoOpen: false,
+        title: 'Dialog Title'
+      });
+      $('.btn-dialog-title').click(function(){
+        $('.dialog-title').dialog('open');
+      });
+
+      //events
+      // beforeClose
+      $('.btn-dialog-beforeClose').button();
+      $('.dialog-beforeClose').dialog({
+        autoOpen: false,
+        beforeClose: function( event, ui ) {
+          $('.div-dialog-beforeClose').text('閉じる直前にイベント!');
+        }
+      });
+      $('.btn-dialog-beforeClose').click(function(){
+        $('.dialog-beforeClose').dialog('open');
+      });
+
+      // close
+      $('.btn-dialog-close').button();
+      $('.dialog-close').dialog({
+        autoOpen: false,
+        close: function( event, ui ) {
+          $('.div-dialog-close').text('閉じた後にイベント!');
+        }
+      });
+      $('.btn-dialog-close').click(function(){
+        $('.dialog-close').dialog('open');
+      });
+
+      // drag
+      $('.btn-dialog-drag').button();
+      $('.dialog-drag').dialog({
+        autoOpen: false,
+        drag: function( event, ui ) {
+          $('.div-dialog-drag').text('top: ' + ui.position.top + ' left: ' + ui.position.left);
+        }
+      });
+      $('.btn-dialog-drag').click(function(){
+        $('.dialog-drag').dialog('open');
+      });
+
+      // open
+      $('.btn-dialog-open').button();
+      $('.dialog-open').dialog({
+        autoOpen: false,
+        open: function( event, ui ) {
+          $('.div-dialog-open').text('開いた後にイベント!');
+        }
+      });
+      $('.btn-dialog-open').click(function(){
+        $('.dialog-open').dialog('open');
+      });
+
+      // resize
+      $('.btn-dialog-resize').button();
+      $('.dialog-resize').dialog({
+        autoOpen: false,
+        resize: function( event, ui ) {
+          $('.div-dialog-resize').text('width: ' + Math.floor(ui.size.width) + ' height: ' + Math.floor(ui.size.height));
+        }
+      });
+      $('.btn-dialog-resize').click(function(){
+        $('.dialog-resize').dialog('open');
+      });
+
+    });
+  </script> -->
+
+  <!-- </body>
+
+</html> -->
