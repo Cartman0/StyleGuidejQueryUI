@@ -1,0 +1,677 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Slider</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head> -->
+
+  <!-- <body> -->
+    <section id="sec-selectmenu">
+      <h3>Slider</h3>
+      <p><a href="http://jqueryui.com/slider/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/slider/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-slider-options" class="ul-slider-options" aria-controls="ul-ul-slider-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-slider-options">
+                <li>
+                  <a href="#sec-slider-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-animate">animate</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-disabled">disabled</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-maxmin">max, min</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-orientation">orientation</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-range">range</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-step">step</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-value">value</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-values">values</a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-slider-methods"  aria-controls="ul-ul-slider-methods" href="#ul-ul-slider-methods">Methods</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-slider-methods">
+                <li>
+                  <a href="#sec-slider-methods-value">value()</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-slider-events"  aria-controls="ul-ul-slider-events" href="#ul-ul-slider-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-slider-events">
+                <li>
+                  <a href="#sec-slider-change">change</a>
+                </li>
+                <li>
+                  <a href="#sec-slider-slide">slide</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-slider-samples"  aria-controls="ul-ul-slider-samples" href="#ul-ul-slider-samples">Samples</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-slider-samples">
+                <li>
+                  <a href="#sec-slider-progressbarandslider">progressbar and slider</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-slider-options">
+            <h4>Options</h4>
+
+            <section id="sec-slider-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <h5>HTML5: range</h5>
+                <input type="range">
+                <h5>jQuery UI: slider</h5>
+                <div class="slider-nooption"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;HTML5: range&lt;/h5&gt;
+&lt;input type=&quot;range&quot;&gt;
+&lt;h5&gt;jQuery UI: slider&lt;/h5&gt;
+&lt;div class=&quot;slider-nooption&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-nooption').slider();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-animate">
+              <h4>animate</h4>
+              <div class="preview">
+                <h5>slow</h5>
+                <div class="slider-animate-slow"></div>
+                <h5>fast</h5>
+                <div class="slider-animate-fast"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;slow&lt;/h5&gt;
+&lt;div class=&quot;slider-animate-slow&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;h5&gt;fast&lt;/h5&gt;
+&lt;div class=&quot;slider-animate-fast&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-animate-slow').slider({
+  animate: "slow"
+});
+</span>
+<span>
+$('.slider-animate-fast').slider({
+  animate: "fast"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-disabled">
+              <h4>disabled</h4>
+              <div class="preview">
+                <div class="slider-disabled"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-disabled&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-disabled').slider({
+  disabled: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-maxmin">
+              <h4>max, min: 最大値、最小値を変更</h4>
+              <div class="preview">
+                <div class="slider-maxmin"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-maxmin&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-maxmin').slider({
+  max: 200,
+  min: 50
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-orientation">
+              <h4>orientation</h4>
+              <div class="preview">
+                <h5>horizontal</h5>
+                <div class="slider-orientation-horizontal"></div>
+                <h5>vertical</h5>
+                <div class="slider-orientation-vertical"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;horizontal&lt;/h5&gt;
+&lt;div class=&quot;slider-orientation-horizontal&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;h5&gt;vertical&lt;/h5&gt;
+&lt;div class=&quot;slider-orientation-vertical&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-orientation-horizontal').slider({
+  orientation: "horizontal"
+});
+</span>
+<span>
+$('.slider-orientation-vertical').slider({
+  orientation: "vertical"
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-range">
+              <h4>range: slider が2つになり、最小値と最大値を決定できる</h4>
+              <div class="preview">
+                <div class="slider-range"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-range&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-range').slider({
+  range: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-step">
+              <h4>step: step 数を変更</h4>
+              <div class="preview">
+                <div class="slider-step"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-step&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-step').slider({
+  step: 10
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-value">
+              <h4>value</h4>
+              <div class="preview">
+                <div class="slider-value"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-value&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-value').slider({
+  value: 50
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-values">
+              <h4>values</h4>
+              <div class="preview">
+                <div class="slider-values"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-values&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-values').slider({
+  values: [ 25, 75 ]
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-selectmenu-options -->
+
+          <div id="div-slider-methods">
+            <h4>Methods</h4>
+
+            <section id="sec-slider-methods-value">
+              <h4>value()</h4>
+              <div class="preview">
+                <div class="slider-methods-value"></div>
+                <button class="btn-slider-methods-value">Get</button>
+                <input type="number" class="input-slider-methods-value">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-methods-value&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-slider-methods-value&quot;&gt;Get&lt;/button&gt;
+&lt;input type=&quot;number&quot; class=&quot;input-slider-methods-value&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-methods-value').slider();
+</span>
+<span>
+$('.btn-slider-methods-value')
+.button()
+.click(function() {
+  var v = $('.slider-methods-value').slider( "value" );
+  $('.input-slider-methods-value').val(v);
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+          <div id="div-slider-events">
+            <h4>Events</h4>
+
+            <section id="sec-slider-change">
+              <h4>change: slideして、マウスのドラッグが終わり、値が決定したらイベント発生</h4>
+              <div class="preview">
+                <div class="slider-change"></div>
+                <input type="number" class="input-slider-change">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-change&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;input type=&quot;number&quot; class=&quot;input-slider-change&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-change').slider({
+  change: function(event, ui){
+    $('.input-slider-change').val(ui.value);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-slider-slide">
+              <h4>slide( event, ui ): slide している間、イベント発生</h4>
+              <div class="preview">
+                <div class="slider-slide"></div>
+                <input type="number" class="input-slider-slide">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-slide&quot;&gt;&lt;/div&gt;
+&lt;input type=&quot;number&quot; class=&quot;input-slider-slide&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-slide').slider({
+  slide: function(event, ui){
+    $('.input-slider-slide').val(ui.value);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+          <div id="div-slider-samples">
+            <h4>Samples</h4>
+
+            <section id="sec-slider-progressbarandslider">
+              <h4>progressbar and slider</h4>
+              <div class="preview">
+                <div class="slider-slider-progressbarandslider" style="margin: 1rem;"></div>
+                <div class="slider-progressbar-progressbarandslider" style="margin: 1rem;"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;slider-slider-progressbarandslider&quot; style=&quot;margin: 1rem;&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;slider-progressbar-progressbarandslider&quot; style=&quot;margin: 1rem;&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.slider-slider-progressbarandslider').slider({
+  slide: function(event, ui){
+    $('.slider-progressbar-progressbarandslider').progressbar( 'option', 'value', ui.value);
+  }
+});
+</span>
+<span>
+$('.slider-progressbar-progressbarandslider').progressbar();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // nooptin
+      $('.slider-nooption').slider();
+
+      // animate
+      $('.slider-animate-slow').slider({
+        animate: "slow"
+      });
+      $('.slider-animate-fast').slider({
+        animate: "fast"
+      });
+
+      // disabled
+      $('.slider-disabled').slider({
+        disabled: true
+      });
+
+      // max, min
+      $('.slider-maxmin').slider({
+        max: 200,
+        min: 50
+      });
+
+      // orientation
+      $('.slider-orientation-horizontal').slider({
+        orientation: "horizontal"
+      });
+      $('.slider-orientation-vertical').slider({
+        orientation: "vertical"
+      });
+
+      // range
+      $('.slider-range').slider({
+        range: true
+      });
+
+      // step
+      $('.slider-step').slider({
+        step: 10
+      });
+
+      // value
+      $('.slider-value').slider({
+        value: 50
+      });
+
+      // values
+      $('.slider-values').slider({
+        values: [ 25, 75 ]
+      });
+
+      // methods
+      // value
+      $('.slider-methods-value').slider();
+      $('.btn-slider-methods-value')
+      .button()
+      .click(function() {
+        var v = $('.slider-methods-value').slider( "value" );
+        $('.input-slider-methods-value').val(v);
+      });
+
+      // events
+      // change
+      $('.slider-change').slider({
+        change: function(event, ui){
+          $('.input-slider-change').val(ui.value);
+        }
+      });
+
+      // slide
+      $('.slider-slide').slider({
+        slide: function(event, ui){
+          $('.input-slider-slide').val(ui.value);
+        }
+      });
+
+      // samples
+      // progressbar and slider
+      $('.slider-slider-progressbarandslider').slider({
+        slide: function(event, ui){
+          $('.slider-progressbar-progressbarandslider').progressbar( 'option', 'value', ui.value);
+        }
+      });
+      $('.slider-progressbar-progressbarandslider').progressbar();
+
+    });
+  </script> -->
+<!--
+  </body>
+
+</html> -->
