@@ -1,0 +1,391 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Progressbar</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head> -->
+  <!-- <body> -->
+    <section id="sec-progressbar">
+      <h3>Progressbar</h3>
+      <p><a href="http://jqueryui.com/progressbar/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/progressbar/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-progressbar-options" class="ul-progressbar-options" aria-controls="ul-ul-progressbar-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-progressbar-options">
+                <li>
+                  <a href="#sec-progressbar-value">value</a>
+                </li>
+                <li>
+                  <a href="#sec-progressbar-disabled">disabled</a>
+                </li>
+                <li>
+                  <a href="#sec-progressbar-max">max</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-progressbar-methods"  aria-controls="ul-ul-progressbar-methods" href="#ul-ul-progressbar-methods">Methods</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-progressbar-methods">
+                <li>
+                  <a href="#sec-progressbar-methods-value">value( value )</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-progressbar-events"  aria-controls="ul-ul-progressbar-events" href="#ul-ul-progressbar-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-progressbar-events">
+                <li>
+                  <a href="#sec-progressbar-change">change</a>
+                </li>
+                <li>
+                  <a href="#sec-progressbar-complete">complete</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-progressbar-options">
+            <h4>Options</h4>
+
+            <section id="sec-progressbar-value">
+              <h4>value</h4>
+              <div class="preview">
+                <h5>HTML5 default</h5>
+                <progress value="37" max="100">37%</progress>
+                <h5>jQueryUI progressbar</h5>
+                <div class="progressbar-value"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;HTML5 default&lt;/h5&gt;
+&lt;progress value=&quot;37&quot; max=&quot;100&quot;&gt;37%&lt;/progress&gt;
+</span>
+<span>
+&lt;h5&gt;jQueryUI progressbar&lt;/h5&gt;
+&lt;div class=&quot;progressbar-value&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.progressbar-value').progressbar({
+  value: 37
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-progressbar-disabled">
+              <h4>disabled</h4>
+              <div class="preview">
+                <div class="progressbar-disabled"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;progressbar-disabled&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.progressbar-disabled').progressbar({
+  value: 37,
+  disabled: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-progressbar-max">
+              <h4>max</h4>
+              <div class="preview">
+                <div class="progressbar-max"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;progressbar-max&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.progressbar-max').progressbar({
+  max: 1024,
+  value: 512
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-draggable-options -->
+
+          <div id="div-progressbar-methods">
+            <h4>Methods</h4>
+
+            <section id="sec-progressbar-methods-value">
+              <h4>value( value )</h4>
+              <div class="preview">
+                <input type="number" min="0" max="100" class="input-progressbar-methods-value">
+                <button class="btn-progressbar-methods-value">Set</button>
+                <div class="progressbar-methods-value"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;input type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; class=&quot;input-progressbar-methods-value&quot;&gt;
+&lt;button class=&quot;btn-progressbar-methods-value&quot;&gt;Set&lt;/button&gt;
+</span>
+<span>
+&lt;div class=&quot;progressbar-methods-value&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.progressbar-methods-value').progressbar({
+  value: 50
+});
+$('.btn-progressbar-methods-value').click( function(){
+  var value = Number($('.input-progressbar-methods-value').val());
+  $('.progressbar-methods-value').progressbar('option','value', value);
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+          <div id="div-progressbar-events">
+            <h4>Events</h4>
+
+            <section id="sec-progressbar-change">
+              <h4>change( event, ui ): value が変わるとイベント発生</h4>
+              <div class="preview">
+                <div class="div-progressbar-change">msg:</div>
+
+                <input type="number" min="0" max="100" class="input-progressbar-change">
+                <button class="btn-progressbar-change">Set</button>
+                <div class="progressbar-change"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-progressbar-change&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;input type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot;　class=&quot;input-progressbar-change&quot;&gt;
+&lt;button class=&quot;btn-progressbar-change&quot;&gt;Set&lt;/button&gt;
+&lt;div class=&quot;progressbar-change&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.progressbar-change').progressbar({
+  value: 50,
+  change: function(event, ui){
+    $('.div-progressbar-change').text('changed!');
+  }
+});
+</span>
+<span>
+$('.btn-progressbar-change').click( function(){
+  var value = Number($('.input-progressbar-change').val());
+  $('.progressbar-change').progressbar('option','value', value);
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-progressbar-complete">
+              <h4>complete( event, ui ): 最大値に達するとイベント発生</h4>
+              <div class="preview">
+                <div class="div-progressbar-complete">msg:</div>
+
+                <input type="number" min="0" max="100" class="input-progressbar-complete">
+                <button class="btn-progressbar-complete">Set</button>
+                <div class="progressbar-complete"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-progressbar-complete&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;input type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; class=&quot;input-progressbar-complete&quot;&gt;
+&lt;button class=&quot;btn-progressbar-complete&quot;&gt;Set&lt;/button&gt;
+&lt;div class=&quot;progressbar-complete&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.progressbar-complete').progressbar({
+  value: 50,
+  complete: function(event, ui){
+    $('.div-progressbar-complete').text('completed!');
+  }
+});
+</span>
+<span>
+$('.btn-progressbar-complete').click( function(){
+  var value = Number($('.input-progressbar-complete').val());
+  console.log($('.input-progressbar-complete'));
+  $('.progressbar-complete').progressbar('option','value', value);
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // value
+      $('.progressbar-value').progressbar({
+        value: 37
+      });
+
+      // disabled
+      $('.progressbar-disabled').progressbar({
+        value: 37,
+        disabled: true
+      });
+
+      // max
+      $('.progressbar-max').progressbar({
+        max: 1024,
+        value: 512
+      });
+
+      // methods
+      // value
+      $('.btn-progressbar-methods-value').button();
+      $('.progressbar-methods-value').progressbar({
+        value: 50
+      });
+      $('.btn-progressbar-methods-value').click( function(){
+        var value = Number($('.input-progressbar-methods-value').val());
+        $('.progressbar-methods-value').progressbar('option','value', value);
+      });
+
+      // events
+      // change
+      $('.btn-progressbar-change').button();
+      $('.progressbar-change').progressbar({
+        value: 50,
+        change: function(event, ui){
+          $('.div-progressbar-change').text('changed!');
+        }
+      });
+      $('.btn-progressbar-change').click( function(){
+        var value = Number($('.input-progressbar-change').val());
+        $('.progressbar-change').progressbar('option','value', value);
+      });
+
+      // complete
+      $('.btn-progressbar-complete').button();
+      $('.progressbar-complete').progressbar({
+        value: 50,
+        complete: function(event, ui){
+          $('.div-progressbar-complete').text('completed!');
+        }
+      });
+      $('.btn-progressbar-complete').click( function(){
+        var value = Number($('.input-progressbar-complete').val());
+        console.log($('.input-progressbar-complete'));
+        $('.progressbar-complete').progressbar('option','value', value);
+      });
+
+    });
+  </script> -->
+
+  <!-- </body>
+
+</html> -->
