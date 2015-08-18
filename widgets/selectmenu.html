@@ -1,0 +1,1027 @@
+<!-- <!DOCTYPE html>
+<html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Selectmenu</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .selectmenu label, .selectmenu-label-block label {
+        display: block;
+      }
+      .selectmenu select {
+        width: 200px;
+      }
+      .selectmenu-circle {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        border: 1px solid #333;
+        border-radius: 50%;
+        margin: 1rem;
+      }
+    </style>
+
+  <!-- </head>
+  <body> -->
+    <section id="sec-selectmenu">
+      <h3>Selectmenu</h3>
+      <p><a href="http://jqueryui.com/selectmenu/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/selectmenu/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-selectmenu-options" class="ul-selectmenu-options" aria-controls="ul-ul-selectmenu-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-selectmenu-options">
+                <li>
+                  <a href="#sec-selectmenu-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-selectmenu-icons">icons</a>
+                </li>
+                <li>
+                  <a href="#sec-selectmenu-postion">postion</a>
+                </li>
+                <li>
+                  <a href="#sec-selectmenu-width">width</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-selectmenu-events"  aria-controls="ul-ul-selectmenu-events" href="#ul-ul-selectmenu-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-selectmenu-events">
+                <li>
+                  <a href="#sec-selectmenu-change">change</a>
+                </li>
+                <li>
+                  <a href="#sec-selectmenu-focus">focus</a>
+                </li>
+                <li>
+                  <a href="#sec-selectmenu-select">select</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-selectmenu-samples"  aria-controls="ul-ul-selectmenu-samples" href="#ul-ul-selectmenu-samples">Sample</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-selectmenu-samples">
+                <li>
+                  <a href="#sec-selectmenu-productselection">productselection</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+          <div id="div-selectmenu-options">
+            <h4>Options</h4>
+
+            <section id="sec-selectmenu-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <fieldset class="selectmenu"> <!-- fieldset フォームの入力項目をグループ化する -->
+                  <legend>HTML5</legend>
+                  <label for="speed">Select a speed</label>
+                  <select name="speed" id="speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+
+                  <label for="files">Select a file</label>
+                  <select name="files" id="files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                </fieldset>
+
+                <fieldset class="selectmenu">
+                  <legend>jQuery UI: selectmenu</legend>
+                  <label for="selectmenu-nooption-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-nooption-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+
+                  <label for="selectmenu-nooption-files">Select a file</label>
+                  <select name="files" id="selectmenu-nooption-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                </fieldset>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu&quot;&gt; &lt;!-- fieldset フォームの入力項目をグループ化する --&gt;
+  &lt;legend&gt;HTML5&lt;/legend&gt;
+  &lt;label for=&quot;speed&quot;&gt;Select a speed&lt;/label&gt;
+  &lt;select name=&quot;speed&quot; id=&quot;speed&quot;&gt;
+    &lt;option&gt;Slower&lt;/option&gt;
+    &lt;option&gt;Slow&lt;/option&gt;
+    &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+    &lt;option&gt;Fast&lt;/option&gt;
+    &lt;option&gt;Faster&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for=&quot;files&quot;&gt;Select a file&lt;/label&gt;
+  &lt;select name=&quot;files&quot; id=&quot;files&quot;&gt;
+    &lt;optgroup label=&quot;Scripts&quot;&gt;
+      &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+      &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Other files&quot;&gt;
+      &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+      &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+    &lt;/optgroup&gt;
+  &lt;/select&gt;
+&lt;/fieldset&gt;
+</span>
+<span>
+&lt;fieldset class=&quot;selectmenu&quot;&gt;
+  &lt;legend&gt;jQuery UI: selectmenu&lt;/legend&gt;
+  &lt;label for=&quot;selectmenu-nooption-speed&quot;&gt;Select a speed&lt;/label&gt;
+  &lt;select name=&quot;speed&quot; id=&quot;selectmenu-nooption-speed&quot;&gt;
+    &lt;option&gt;Slower&lt;/option&gt;
+    &lt;option&gt;Slow&lt;/option&gt;
+    &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+    &lt;option&gt;Fast&lt;/option&gt;
+    &lt;option&gt;Faster&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for=&quot;selectmenu-nooption-files&quot;&gt;Select a file&lt;/label&gt;
+  &lt;select name=&quot;files&quot; id=&quot;selectmenu-nooption-files&quot;&gt;
+    &lt;optgroup label=&quot;Scripts&quot;&gt;
+      &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+      &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Other files&quot;&gt;
+      &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+      &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+    &lt;/optgroup&gt;
+  &lt;/select&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu label {
+  display: block;
+}
+</span>
+<span>
+.selectmenu select {
+  width: 200px;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-nooption-speed, #selectmenu-nooption-files').selectmenu();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectmenu-icons">
+              <h4>icons: アイコン変更, default: { button: "ui-icon-triangle-1-s" }</h4>
+              <div class="preview">
+                <fieldset class="selectmenu">
+                  <label for="selectmenu-icons-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-icons-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+
+                  <label for="selectmenu-icons-files">Select a file</label>
+                  <select name="files" id="selectmenu-icons-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu&quot;&gt;
+&lt;label for=&quot;selectmenu-icons-speed&quot;&gt;Select a speed&lt;/label&gt;
+&lt;select name=&quot;speed&quot; id=&quot;selectmenu-icons-speed&quot;&gt;
+  &lt;option&gt;Slower&lt;/option&gt;
+  &lt;option&gt;Slow&lt;/option&gt;
+  &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+  &lt;option&gt;Fast&lt;/option&gt;
+  &lt;option&gt;Faster&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label for=&quot;selectmenu-icons-files&quot;&gt;Select a file&lt;/label&gt;
+&lt;select name=&quot;files&quot; id=&quot;selectmenu-icons-files&quot;&gt;
+  &lt;optgroup label=&quot;Scripts&quot;&gt;
+    &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+    &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label=&quot;Other files&quot;&gt;
+    &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+    &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu label {
+display: block;
+}
+</span>
+<span>
+.selectmenu select {
+width: 200px;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-icons-speed, #selectmenu-icons-files').selectmenu({
+  icons: {
+    button: "ui-icon-circle-triangle-s"
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectmenu-postion">
+              <h4>postion: default: { my: "left top", at: "left bottom", collision: "none" }</h4>
+              <div class="preview">
+                <fieldset class="selectmenu">
+                  <label for="selectmenu-position-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-position-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+
+                  <label for="selectmenu-position-files">Select a file</label>
+                  <select name="files" id="selectmenu-position-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu&quot;&gt;
+  &lt;label for=&quot;selectmenu-position-speed&quot;&gt;Select a speed&lt;/label&gt;
+  &lt;select name=&quot;speed&quot; id=&quot;selectmenu-position-speed&quot;&gt;
+    &lt;option&gt;Slower&lt;/option&gt;
+    &lt;option&gt;Slow&lt;/option&gt;
+    &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+    &lt;option&gt;Fast&lt;/option&gt;
+    &lt;option&gt;Faster&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for=&quot;selectmenu-position-files&quot;&gt;Select a file&lt;/label&gt;
+  &lt;select name=&quot;files&quot; id=&quot;selectmenu-position-files&quot;&gt;
+    &lt;optgroup label=&quot;Scripts&quot;&gt;
+      &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+      &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Other files&quot;&gt;
+      &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+      &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+    &lt;/optgroup&gt;
+  &lt;/select&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu label {
+display: block;
+}
+</span>
+<span>
+.selectmenu select {
+width: 200px;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-position-speed, #selectmenu-position-files').selectmenu({
+  position: {
+    at: 'right center',
+    my: 'left+10 center'
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectmenu-width">
+              <h4>width</h4>
+              <div class="preview">
+                <fieldset class="selectmenu-label-block">
+                  <label for="selectmenu-width-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-width-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+
+                  <label for="selectmenu-width-files">Select a file</label>
+                  <select name="files" id="selectmenu-width-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu-width&quot;&gt;
+&lt;label for=&quot;selectmenu-width-speed&quot;&gt;Select a speed&lt;/label&gt;
+&lt;select name=&quot;speed&quot; id=&quot;selectmenu-width-speed&quot;&gt;
+  &lt;option&gt;Slower&lt;/option&gt;
+  &lt;option&gt;Slow&lt;/option&gt;
+  &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+  &lt;option&gt;Fast&lt;/option&gt;
+  &lt;option&gt;Faster&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label for=&quot;selectmenu-width-files&quot;&gt;Select a file&lt;/label&gt;
+&lt;select name=&quot;files&quot; id=&quot;selectmenu-width-files&quot;&gt;
+  &lt;optgroup label=&quot;Scripts&quot;&gt;
+    &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+    &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label=&quot;Other files&quot;&gt;
+    &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+    &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu-label-block label {
+  display: block;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-width-speed, #selectmenu-width-files').selectmenu({
+  width: 300
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-selectmenu-options -->
+
+          <div id="div-selectmenu-events">
+            <h4>Events</h4>
+
+            <section id="sec-selectmenu-change">
+              <h4>change( event, ui )</h4>
+              <div class="preview">
+                <fieldset class="selectmenu-label-block">
+                  <label for="selectmenu-change-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-change-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+                  <div class="div-selectmenu-change-speed">item:</div>
+
+                  <label for="selectmenu-change-files">Select a file</label>
+                  <select name="files" id="selectmenu-change-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                  <div class="div-selectmenu-change-files">item:</div>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu-label-block&quot;&gt;
+  &lt;label for=&quot;selectmenu-change-speed&quot;&gt;Select a speed&lt;/label&gt;
+  &lt;select name=&quot;speed&quot; id=&quot;selectmenu-change-speed&quot;&gt;
+    &lt;option&gt;Slower&lt;/option&gt;
+    &lt;option&gt;Slow&lt;/option&gt;
+    &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+    &lt;option&gt;Fast&lt;/option&gt;
+    &lt;option&gt;Faster&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;div class=&quot;div-selectmenu-change-speed&quot;&gt;item:&lt;/div&gt;
+
+  &lt;label for=&quot;selectmenu-change-files&quot;&gt;Select a file&lt;/label&gt;
+  &lt;select name=&quot;files&quot; id=&quot;selectmenu-change-files&quot;&gt;
+    &lt;optgroup label=&quot;Scripts&quot;&gt;
+      &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+      &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Other files&quot;&gt;
+      &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+      &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+    &lt;/optgroup&gt;
+  &lt;/select&gt;
+  &lt;div class=&quot;div-selectmenu-change-files&quot;&gt;item:&lt;/div&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu-label-block label {
+  display: block;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-change-speed').selectmenu({
+  width: 200,
+  change: function( event, ui ) {
+    $('.div-selectmenu-change-speed').text(ui.item.value);
+  }
+});
+</span>
+<span>
+$('#selectmenu-change-files').selectmenu({
+  width: 200,
+  change: function( event, ui ) {
+    console.log(ui.item);
+    $('.div-selectmenu-change-files').text(ui.item.value);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectmenu-focus">
+              <h4>focus( event, ui )</h4>
+              <div class="preview">
+                <fieldset class="selectmenu-label-block">
+                  <label for="selectmenu-focus-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-focus-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+                  <div class="div-selectmenu-focus-speed" style="display: inline-block;">item:</div>
+
+                  <label for="selectmenu-focus-files">Select a file</label>
+                  <select name="files" id="selectmenu-focus-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                  <div class="div-selectmenu-focus-files" style="display: inline-block;">item:</div>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu-label-block&quot;&gt;
+&lt;label for=&quot;selectmenu-focus-speed&quot;&gt;Select a speed&lt;/label&gt;
+&lt;select name=&quot;speed&quot; id=&quot;selectmenu-focus-speed&quot;&gt;
+  &lt;option&gt;Slower&lt;/option&gt;
+  &lt;option&gt;Slow&lt;/option&gt;
+  &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+  &lt;option&gt;Fast&lt;/option&gt;
+  &lt;option&gt;Faster&lt;/option&gt;
+&lt;/select&gt;
+&lt;div class=&quot;div-selectmenu-focus-speed&quot; style=&quot;display: inline-block;&quot;&gt;item:&lt;/div&gt;
+
+&lt;label for=&quot;selectmenu-focus-files&quot;&gt;Select a file&lt;/label&gt;
+&lt;select name=&quot;files&quot; id=&quot;selectmenu-focus-files&quot;&gt;
+  &lt;optgroup label=&quot;Scripts&quot;&gt;
+    &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+    &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label=&quot;Other files&quot;&gt;
+    &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+    &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+&lt;div class=&quot;div-selectmenu-focus-files&quot; style=&quot;display: inline-block;&quot;&gt;item:&lt;/div&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu-label-block label {
+  display: block;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-focus-speed').selectmenu({
+  width: 200,
+  focus: function( event, ui ) {
+    $('.div-selectmenu-focus-speed').text(ui.item.value);
+  }
+});
+</span>
+<span>
+$('#selectmenu-focus-files').selectmenu({
+  width: 200,
+  focus: function( event, ui ) {
+    $('.div-selectmenu-focus-files').text(ui.item.value);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-selectmenu-select">
+              <h4>select</h4>
+              <div class="preview">
+                <fieldset class="selectmenu-label-block">
+                  <label for="selectmenu-select-speed">Select a speed</label>
+                  <select name="speed" id="selectmenu-select-speed">
+                    <option>Slower</option>
+                    <option>Slow</option>
+                    <option selected="selected">Medium</option>
+                    <option>Fast</option>
+                    <option>Faster</option>
+                  </select>
+                  <div class="div-selectmenu-select-speed" style="display: inline-block;">item:</div>
+
+                  <label for="selectmenu-select-files">Select a file</label>
+                  <select name="files" id="selectmenu-select-files">
+                    <optgroup label="Scripts">
+                      <option value="jquery">jQuery.js</option>
+                      <option value="jqueryui">ui.jQuery.js</option>
+                    </optgroup>
+                    <optgroup label="Other files">
+                      <option value="somefile">Some unknown file</option>
+                      <option value="someotherfile">Some other file with a very long option text</option>
+                    </optgroup>
+                  </select>
+                  <div class="div-selectmenu-select-files" style="display: inline-block;">item:</div>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;fieldset class=&quot;selectmenu-label-block&quot;&gt;
+  &lt;label for=&quot;selectmenu-select-speed&quot;&gt;Select a speed&lt;/label&gt;
+  &lt;select name=&quot;speed&quot; id=&quot;selectmenu-select-speed&quot;&gt;
+    &lt;option&gt;Slower&lt;/option&gt;
+    &lt;option&gt;Slow&lt;/option&gt;
+    &lt;option selected=&quot;selected&quot;&gt;Medium&lt;/option&gt;
+    &lt;option&gt;Fast&lt;/option&gt;
+    &lt;option&gt;Faster&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;div class=&quot;div-selectmenu-select-speed&quot; style=&quot;display: inline-block;&quot;&gt;item:&lt;/div&gt;
+
+  &lt;label for=&quot;selectmenu-select-files&quot;&gt;Select a file&lt;/label&gt;
+  &lt;select name=&quot;files&quot; id=&quot;selectmenu-select-files&quot;&gt;
+    &lt;optgroup label=&quot;Scripts&quot;&gt;
+      &lt;option value=&quot;jquery&quot;&gt;jQuery.js&lt;/option&gt;
+      &lt;option value=&quot;jqueryui&quot;&gt;ui.jQuery.js&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Other files&quot;&gt;
+      &lt;option value=&quot;somefile&quot;&gt;Some unknown file&lt;/option&gt;
+      &lt;option value=&quot;someotherfile&quot;&gt;Some other file with a very long option text&lt;/option&gt;
+    &lt;/optgroup&gt;
+  &lt;/select&gt;
+  &lt;div class=&quot;div-selectmenu-select-files&quot; style=&quot;display: inline-block;&quot;&gt;item:&lt;/div&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu-label-block label {
+  display: block;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#selectmenu-select-speed').selectmenu({
+  width: 200,
+  select: function( event, ui ) {
+    $('.div-selectmenu-select-speed').text(ui.item.value);
+  }
+});
+</span>
+<span>
+$('#selectmenu-select-files').selectmenu({
+  width: 200,
+  select: function( event, ui ) {
+    $('.div-selectmenu-select-files').text(ui.item.value);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+          <div id="div-selectmenu-samples">
+            <h4>Samples</h4>
+
+            <section id="sec-selectmenu-productselection">
+              <h4>productSelection
+                <a href="http://jqueryui.com/selectmenu/#product-selection">demo</a>
+              </h4>
+              <div class="preview">
+                <div class="selectmenu-circle"></div>
+
+                <fieldset class="selectmenu-label-block">
+                  <label for="selectmenu-radius">Circle radius</label>
+                  <select name="radius" id="selectmenu-radius">
+                    <option value="50" selected="selected">50px</option>
+                    <option value="100">100px</option>
+                    <option value="150">150px</option>
+                    <option value="200">200px</option>
+                    <option value="250">250px</option>
+                  </select>
+
+                  <label for="selectmenu-color">Circle color</label>
+                  <select name="color" id="selectmenu-color">
+                    <option value="black" selected="selected">Black</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;selectmenu-circle&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;fieldset class=&quot;selectmenu-label-block&quot;&gt;
+  &lt;label for=&quot;selectmenu-radius&quot;&gt;Circle radius&lt;/label&gt;
+  &lt;select name=&quot;radius&quot; id=&quot;selectmenu-radius&quot;&gt;
+    &lt;option value=&quot;50&quot; selected=&quot;selected&quot;&gt;50px&lt;/option&gt;
+    &lt;option value=&quot;100&quot;&gt;100px&lt;/option&gt;
+    &lt;option value=&quot;150&quot;&gt;150px&lt;/option&gt;
+    &lt;option value=&quot;200&quot;&gt;200px&lt;/option&gt;
+    &lt;option value=&quot;250&quot;&gt;250px&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for=&quot;selectmenu-color&quot;&gt;Circle color&lt;/label&gt;
+  &lt;select name=&quot;color&quot; id=&quot;selectmenu-color&quot;&gt;
+    &lt;option value=&quot;black&quot; selected=&quot;selected&quot;&gt;Black&lt;/option&gt;
+    &lt;option value=&quot;red&quot;&gt;Red&lt;/option&gt;
+    &lt;option value=&quot;yellow&quot;&gt;Yellow&lt;/option&gt;
+    &lt;option value=&quot;blue&quot;&gt;Blue&lt;/option&gt;
+    &lt;option value=&quot;green&quot;&gt;Green&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/fieldset&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.selectmenu-label-block label {
+  display: block;
+}
+</span>
+<span>
+.selectmenu-circle {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border: 1px solid #333;
+  border-radius: 50%;
+  margin: 1rem;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+var circle = $('.selectmenu-circle');
+</span>
+<span>
+$('#selectmenu-radius').selectmenu({
+  width: 200,
+  change: function( event, data ) {
+    circle.css({
+      width: data.item.value,
+      height: data.item.value
+    });
+  }
+ });
+</span>
+<span>
+$('#selectmenu-color').selectmenu({
+  width: 200,
+  change: function( event, data ) {
+    circle.css( "background", data.item.value );
+  }
+ });
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+  <script>
+    $(window).load(function(){
+      // options
+      // nooptin
+      $('#selectmenu-nooption-speed, #selectmenu-nooption-files').selectmenu();
+
+      // icons
+      $('#selectmenu-icons-speed, #selectmenu-icons-files').selectmenu({
+        icons: {
+          button: "ui-icon-circle-triangle-s"
+        }
+      });
+
+      // position
+      $('#selectmenu-position-speed, #selectmenu-position-files').selectmenu({
+        position: {
+          at: 'right center',
+          my: 'left+10 center'
+        }
+      });
+
+      // width
+      $('#selectmenu-width-speed, #selectmenu-width-files').selectmenu({
+        width: 300
+      });
+
+      // events
+      // change
+      $('#selectmenu-change-speed').selectmenu({
+        width: 200,
+        change: function( event, ui ) {
+          $('.div-selectmenu-change-speed').text(ui.item.value);
+        }
+      });
+      $('#selectmenu-change-files').selectmenu({
+        width: 200,
+        change: function( event, ui ) {
+          $('.div-selectmenu-change-files').text(ui.item.value);
+        }
+      });
+
+      // focus
+      $('#selectmenu-focus-speed').selectmenu({
+        width: 200,
+        focus: function( event, ui ) {
+          $('.div-selectmenu-focus-speed').text(ui.item.value);
+        }
+      });
+      $('#selectmenu-focus-files').selectmenu({
+        width: 200,
+        focus: function( event, ui ) {
+          $('.div-selectmenu-focus-files').text(ui.item.value);
+        }
+      });
+
+      // select
+      $('#selectmenu-select-speed').selectmenu({
+        width: 200,
+        select: function( event, ui ) {
+          $('.div-selectmenu-select-speed').text(ui.item.value);
+        }
+      });
+      $('#selectmenu-select-files').selectmenu({
+        width: 200,
+        select: function( event, ui ) {
+          $('.div-selectmenu-select-files').text(ui.item.value);
+        }
+      });
+
+      // samples
+      // circle
+      var circle = $('.selectmenu-circle');
+
+      $('#selectmenu-radius').selectmenu({
+        width: 200,
+        change: function( event, data ) {
+          circle.css({
+            width: data.item.value,
+            height: data.item.value
+          });
+        }
+       });
+
+      $('#selectmenu-color').selectmenu({
+        width: 200,
+        change: function( event, data ) {
+          circle.css( "background", data.item.value );
+        }
+       });
+
+    });
+  </script> -->
+
+  <!-- </body>
+
+</html> -->
