@@ -1,0 +1,1212 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Tabs</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head> -->
+  <!-- <body> -->
+    <section id="sec-spinner">
+      <h3>Tabs</h3>
+      <p><a href="http://jqueryui.com/tabs/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/tabs/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-tabs-options" class="ul-tabs-options" aria-controls="ul-ul-tabs-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-tabs-options">
+                <li>
+                  <a href="#sec-tabs-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-active">active</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-collapsible">collapsible</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-disabled">disabled</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-event">event</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-heightStyle">heightStyle</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-hide">hide</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-show">show</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-tabs-events"  aria-controls="ul-ul-tabs-events" href="#ul-ul-tabs-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-tabs-events">
+                <li>
+                  <a href="#sec-tabs-activate">activate</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-beforeLoad">beforeLoad</a>
+                </li>
+                <li>
+                  <a href="#sec-tabs-load">load</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-tabs-options">
+            <h4>Options</h4>
+
+            <section id="sec-tabs-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <div class="tabs-nooption">
+                  <ul>
+                    <li><a href="#tabs-nooption-menu-1">Menu1</a></li>
+                    <li><a href="#tabs-nooption-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-nooption-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-nooption-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-nooption-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-nooption-menu-3">
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-nooption&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-nooption-menu-1&quot;&gt;Menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-nooption-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-nooption-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-nooption-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-nooption-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-nooption-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-nooption').tabs();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-active">
+              <h4>active: default: 0</h4>
+              <div class="preview">
+                <div class="tabs-active">
+                  <ul>
+                    <li><a href="#tabs-active-menu-1">Menu1</a></li>
+                    <li><a href="#tabs-active-menu-2">active: Menu2</a></li>
+                    <li><a href="#tabs-active-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-active-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-active-menu-2">
+                    <p>active: content of menu2</p>
+                  </div>
+                  <div id="tabs-active-menu-3">
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-active&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-active-menu-1&quot;&gt;Menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-active-menu-2&quot;&gt;active: Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-active-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-active-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-active-menu-2&quot;&gt;
+    &lt;p&gt;active: content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-active-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-active').tabs({
+  active: 1
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-collapsible">
+              <h4>collapsible</h4>
+              <div class="preview">
+                <div class="tabs-collapsible">
+                  <ul>
+                    <li><a href="#tabs-collapsible-menu-1">collapsible Menu1</a></li>
+                    <li><a href="#tabs-collapsible-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-collapsible-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-collapsible-menu-1">
+                    <p>collapsible: content of menu1</p>
+                  </div>
+                  <div id="tabs-collapsible-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-collapsible-menu-3">
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-collapsible&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-collapsible-menu-1&quot;&gt;collapsible Menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-collapsible-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-collapsible-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-collapsible-menu-1&quot;&gt;
+    &lt;p&gt;collapsible: content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-collapsible-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-collapsible-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-collapsible').tabs({
+  collapsible: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-disabled">
+              <h4>disabled</h4>
+              <div class="preview">
+                <div class="tabs-disabled">
+                  <ul>
+                    <li><a href="#tabs-disabled-menu-1">disabled Menu1</a></li>
+                    <li><a href="#tabs-disabled-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-disabled-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-disabled-menu-1">
+                    <p>disabled: content of menu1</p>
+                  </div>
+                  <div id="tabs-disabled-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-disabled-menu-3">
+                    <p>disabled: content of menu3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-disabled&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-disabled-menu-1&quot;&gt;disabled Menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-disabled-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-disabled-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-disabled-menu-1&quot;&gt;
+    &lt;p&gt;disabled: content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-disabled-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-disabled-menu-3&quot;&gt;
+    &lt;p&gt;disabled: content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-disabled').tabs({
+  disabled: [ 0, 2 ]
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-event">
+              <h4>event: default: 'click'</h4>
+              <div class="preview">
+                <div class="tabs-event">
+                  <ul>
+                    <li><a href="#tabs-event-menu-1">Mouseover Menu1</a></li>
+                    <li><a href="#tabs-event-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-event-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-event-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-event-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-event-menu-3">
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-event&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-event-menu-1&quot;&gt;Mouseover Menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-event-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-event-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-event-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-event-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-event-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-event').tabs({
+  event: 'mouseover'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-heightStyle">
+              <h4>heightStyle: default: 'content'</h4>
+              <div class="preview">
+                <!-- auto -->
+                <div class="tabs-heightStyle-auto">
+                  <ul>
+                    <li><a href="#tabs-heightStyle-auto-menu-1">auto: 最も高いheight のパネルに合わせる</a></li>
+                    <li><a href="#tabs-heightStyle-auto-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-heightStyle-auto-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-heightStyle-auto-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-heightStyle-auto-menu-2">
+                    <p>content of menu2</p>
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-heightStyle-auto-menu-3">
+                    <p>content of menu3</p>
+                    <p>content of menu3</p>
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+
+                <!-- fill -->
+                <div class="tabs-heightStyle-fill">
+                  <ul>
+                    <li><a href="#tabs-heightStyle-fill-menu-1">fill: 親の高さに合わせる</a></li>
+                    <li><a href="#tabs-heightStyle-fill-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-heightStyle-fill-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-heightStyle-fill-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-heightStyle-fill-menu-2">
+                    <p>content of menu2</p>
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-heightStyle-fill-menu-3">
+                    <p>content of menu3</p>
+                    <p>content of menu3</p>
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+
+                <!-- content -->
+                <div class="tabs-heightStyle-content">
+                  <ul>
+                    <li><a href="#tabs-heightStyle-content-menu-1">content: 各パネルの高さに合わせる</a></li>
+                    <li><a href="#tabs-heightStyle-content-menu-2">Menu2</a></li>
+                    <li><a href="#tabs-heightStyle-content-menu-3">Menu3</a></li>
+                  </ul>
+                  <div id="tabs-heightStyle-content-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-heightStyle-content-menu-2">
+                    <p>content of menu2</p>
+                    <p>content of menu2</p>
+                  </div>
+                  <div id="tabs-heightStyle-content-menu-3">
+                    <p>content of menu3</p>
+                    <p>content of menu3</p>
+                    <p>content of menu3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;!-- auto --&gt;
+&lt;div class=&quot;tabs-heightStyle-auto&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-auto-menu-1&quot;&gt;auto: 最も高いheight のパネルに合わせる&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-auto-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-auto-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-heightStyle-auto-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-heightStyle-auto-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-heightStyle-auto-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- fill --&gt;
+&lt;div class=&quot;tabs-heightStyle-fill&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-fill-menu-1&quot;&gt;fill: 親の高さに合わせる&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-fill-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-fill-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-heightStyle-fill-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-heightStyle-fill-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-heightStyle-fill-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- content --&gt;
+&lt;div class=&quot;tabs-heightStyle-content&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-content-menu-1&quot;&gt;content: 各パネルの高さに合わせる&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-content-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-heightStyle-content-menu-3&quot;&gt;Menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-heightStyle-content-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-heightStyle-content-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-heightStyle-content-menu-3&quot;&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+    &lt;p&gt;content of menu3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// auto
+$('.tabs-heightStyle-auto').tabs({
+  heightStyle: 'auto'
+});
+</span>
+<span>
+// fill
+$('.tabs-heightStyle-fill').tabs({
+  heightStyle: 'fill'
+});
+</span>
+<span>
+// content
+$('.tabs-heightStyle-content').tabs({
+  heightStyle: 'content'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-hide">
+              <h4>hide</h4>
+              <div class="preview">
+                <!-- explode -->
+                <div class="tabs-hide-explode">
+                  <ul>
+                    <li><a href="#tabs-hide-explode-menu-1">hide: explode</a></li>
+                    <li><a href="#tabs-hide-explode-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-hide-explode-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-hide-explode-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+
+                <!-- fadeOut -->
+                <div class="tabs-hide-fadeOut">
+                  <ul>
+                    <li><a href="#tabs-hide-fadeOut-menu-1">hide: fadeOut</a></li>
+                    <li><a href="#tabs-hide-fadeOut-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-hide-fadeOut-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-hide-fadeOut-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+
+                <!-- fold -->
+                <div class="tabs-hide-fold">
+                  <ul>
+                    <li><a href="#tabs-hide-fold-menu-1">hide: fold</a></li>
+                    <li><a href="#tabs-hide-fold-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-hide-fold-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-hide-fold-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+
+                <!-- slideUp -->
+                <div class="tabs-hide-slideUp">
+                  <ul>
+                    <li><a href="#tabs-hide-slideUp-menu-1">hide: slideUp</a></li>
+                    <li><a href="#tabs-hide-slideUp-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-hide-slideUp-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-hide-slideUp-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-hide-explode&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-explode-menu-1&quot;&gt;hide: explode&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-explode-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-hide-explode-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-hide-explode-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fadeOut --&gt;
+&lt;div class=&quot;tabs-hide-fadeOut&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-fadeOut-menu-1&quot;&gt;hide: fadeOut&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-fadeOut-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-hide-fadeOut-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-hide-fadeOut-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fold --&gt;
+&lt;div class=&quot;tabs-hide-fold&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-fold-menu-1&quot;&gt;hide: fold&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-fold-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-hide-fold-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-hide-fold-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- slideUp --&gt;
+&lt;div class=&quot;tabs-hide-slideUp&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-slideUp-menu-1&quot;&gt;hide: slideUp&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-hide-slideUp-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-hide-slideUp-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-hide-slideUp-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// explode
+$('.tabs-hide-explode').tabs({
+  hide: {
+    effect: "explode",
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fadeOut
+$('.tabs-hide-fadeOut').tabs({
+  hide: {
+    effect: 'fadeOut',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fold
+$('.tabs-hide-fold').tabs({
+  hide: {
+    effect: 'fold',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// slideUp
+$('.tabs-hide-slideUp').tabs({
+  hide: {
+    effect: 'slideUp',
+    duration: 1000
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-show">
+              <h4>show</h4>
+              <div class="preview">
+                <!-- blind -->
+                <div class="tabs-show-blind">
+                  <ul>
+                    <li><a href="#tabs-show-blind-menu-1">show: blind</a></li>
+                    <li><a href="#tabs-show-blind-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-show-blind-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-show-blind-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+                <!-- fadeIn -->
+                <div class="tabs-show-fadeIn">
+                  <ul>
+                    <li><a href="#tabs-show-fadeIn-menu-1">show: fadeIn</a></li>
+                    <li><a href="#tabs-show-fadeIn-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-show-fadeIn-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-show-fadeIn-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+                <!-- fold -->
+                <div class="tabs-show-fold">
+                  <ul>
+                    <li><a href="#tabs-show-fold-menu-1">show: fold</a></li>
+                    <li><a href="#tabs-show-fold-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-show-fold-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-show-fold-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+                <!-- slideDown -->
+                <div class="tabs-show-slideDown">
+                  <ul>
+                    <li><a href="#tabs-show-slideDown-menu-1">show: slideDown</a></li>
+                    <li><a href="#tabs-show-slideDown-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-show-slideDown-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-show-slideDown-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;!-- blind --&gt;
+&lt;div class=&quot;tabs-show-blind&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-blind-menu-1&quot;&gt;show: blind&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-blind-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-show-blind-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-show-blind-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fadeIn --&gt;
+&lt;div class=&quot;tabs-show-fadeIn&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-fadeIn-menu-1&quot;&gt;show: fadeIn&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-fadeIn-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-show-fadeIn-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-show-fadeIn-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- fold --&gt;
+&lt;div class=&quot;tabs-show-fold&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-fold-menu-1&quot;&gt;show: fold&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-fold-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-show-fold-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-show-fold-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;!-- slideDown --&gt;
+&lt;div class=&quot;tabs-show-slideDown&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-slideDown-menu-1&quot;&gt;show: slideDown&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-show-slideDown-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-show-slideDown-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-show-slideDown-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// blind
+$('.tabs-show-blind').tabs({
+  show: {
+    effect: "blind",
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fadeOut
+$('.tabs-show-fadeIn').tabs({
+  show: {
+    effect: 'fadeIn',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fold
+$('.tabs-show-fold').tabs({
+  show: {
+    effect: 'fold',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// slideDown
+$('.tabs-show-slideDown').tabs({
+  show: {
+    effect: 'slideDown',
+    duration: 1000
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+          <div id="div-tabs-events">
+            <h4>Events</h4>
+
+            <section id="sec-tabs-activate">
+              <h4>activate( event, ui )</h4>
+              <div class="preview">
+                <div class="div-tabs-activate">msg:</div>
+                <div class="tabs-activate">
+                  <ul>
+                    <li><a href="#tabs-activate-menu-1">activate</a></li>
+                    <li><a href="#tabs-activate-menu-2">Menu2</a></li>
+                  </ul>
+                  <div id="tabs-activate-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-activate-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-tabs-activate&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;tabs-activate&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-activate-menu-1&quot;&gt;activate&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-activate-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-activate-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-activate-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-activate').tabs({
+  activate: function( event, ui ) {
+    var txt = ui.newTab.text();
+    $('.div-tabs-activate').text(txt);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-beforeLoad">
+              <h4>beforeLoad( event, ui ): Ajax で読み込む際の設定をできる</h4>
+              <div class="preview">
+                <div class="tabs-beforeLoad">
+                  <ul>
+                    <li><a href="#tabs-beforeLoad-menu-1">beforeLoad</a></li>
+                    <li><a href="tabs/tabs_beforeLoad.html">外部htmlファイル</a></li>
+                    <li><a href=".html">Failed</a></li>
+                  </ul>
+                  <div id="tabs-beforeLoad-menu-1">
+                    <p>これはローカルのdivタグ</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;tabs-beforeLoad&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-beforeLoad-menu-1&quot;&gt;beforeLoad&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;tabs/tabs_beforeLoad.html&quot;&gt;外部htmlファイル&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;.html&quot;&gt;Failed&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-beforeLoad-menu-1&quot;&gt;
+    &lt;p&gt;これはローカルのdivタグ&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-beforeLoad').tabs({
+  beforeLoad: function(event, ui) {
+    ui.jqXHR.fail(function() {
+      ui.panel.html(
+        "Couldn't load this tab. We'll try to fix this as soon as possible. ");
+    });
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tabs-load">
+              <h4>load: 外部htmlファイルなどのリモートタブをロードした後にイベント発生</h4>
+              <div class="preview">
+                <div class="div-tabs-load">panel:</div>
+                <div class="tabs-load">
+                  <ul>
+                    <li><a href="#tabs-load-menu-1">load</a></li>
+                    <li><a href="#tabs-load-menu-2">Menu2</a></li>
+                    <li><a href="tabs/tabs_load.html">tabs_load.html</a></li>
+                  </ul>
+                  <div id="tabs-load-menu-1">
+                    <p>content of menu1</p>
+                  </div>
+                  <div id="tabs-load-menu-2">
+                    <p>content of menu2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-tabs-load&quot;&gt;panel:&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;tabs-load&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-load-menu-1&quot;&gt;load&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-load-menu-2&quot;&gt;Menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;tabs/tabs_load.html&quot;&gt;tabs_load.html&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-load-menu-1&quot;&gt;
+    &lt;p&gt;content of menu1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-load-menu-2&quot;&gt;
+    &lt;p&gt;content of menu2&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tabs-load').tabs({
+  load: function( event, ui ) {
+    var txt = ui.panel.text();
+    $('.div-tabs-load').text('panel:' + txt);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // nooptin
+      $('.tabs-nooption').tabs();
+
+      //active
+      $('.tabs-active').tabs({
+        active: 1
+      });
+
+      //collapsible
+      $('.tabs-collapsible').tabs({
+        collapsible: true
+      });
+
+      // disabled
+      $('.tabs-disabled').tabs({
+        disabled: [ 0, 2 ]
+      });
+
+      // event
+      $('.tabs-event').tabs({
+        event: 'mouseover'
+      });
+
+      // heightStyle
+      // auto
+      $('.tabs-heightStyle-auto').tabs({
+        heightStyle: 'auto'
+      });
+      // fill
+      $('.tabs-heightStyle-fill').tabs({
+        heightStyle: 'fill'
+      });
+      // content
+      $('.tabs-heightStyle-content').tabs({
+        heightStyle: 'content'
+      });
+
+      // hide
+      // explode
+      $('.tabs-hide-explode').tabs({
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+      // fadeOut
+      $('.tabs-hide-fadeOut').tabs({
+        hide: {
+          effect: 'fadeOut',
+          duration: 1000
+        }
+      });
+      // fold
+      $('.tabs-hide-fold').tabs({
+        hide: {
+          effect: 'fold',
+          duration: 1000
+        }
+      });
+      // slideUp
+      $('.tabs-hide-slideUp').tabs({
+        hide: {
+          effect: 'slideUp',
+          duration: 1000
+        }
+      });
+
+      // show
+      // blind
+      $('.tabs-show-blind').tabs({
+        show: {
+          effect: "blind",
+          duration: 1000
+        }
+      });
+      // fadeOut
+      $('.tabs-show-fadeIn').tabs({
+        show: {
+          effect: 'fadeIn',
+          duration: 1000
+        }
+      });
+      // fold
+      $('.tabs-show-fold').tabs({
+        show: {
+          effect: 'fold',
+          duration: 1000
+        }
+      });
+      // slideDown
+      $('.tabs-show-slideDown').tabs({
+        show: {
+          effect: 'slideDown',
+          duration: 1000
+        }
+      });
+
+      // events
+      // activate
+      $('.tabs-activate').tabs({
+        activate: function( event, ui ) {
+          var txt = ui.newTab.text();
+          $('.div-tabs-activate').text(txt);
+        }
+      });
+
+      // beforeLoad
+      $('.tabs-beforeLoad').tabs({
+        beforeLoad: function(event, ui) {
+          ui.jqXHR.fail(function() {
+            ui.panel.html(
+              "Couldn't load this tab. We'll try to fix this as soon as possible. ");
+          });
+        }
+      });
+
+      // load
+      $('.tabs-load').tabs({
+        load: function( event, ui ) {
+          var txt = ui.panel.text();
+          $('.div-tabs-load').text('panel:' + txt);
+        }
+      });
+
+
+
+    });
+  </script> -->
+
+  <!-- </body> -->
+
+<!-- </html> -->
