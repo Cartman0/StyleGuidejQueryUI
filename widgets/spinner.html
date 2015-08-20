@@ -1,0 +1,762 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Spinner</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+  </head> -->
+  <!-- <body> -->
+    <section id="sec-spinner">
+      <h3>Spinner</h3>
+      <p><a href="http://jqueryui.com/spinner/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/spinner/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-spinner-options" class="ul-spinner-options" aria-controls="ul-ul-spinner-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-spinner-options">
+                <li>
+                  <a href="#sec-spinner-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-spinner-disabled">disabled</a>
+                </li>
+                <li>
+                  <a href="#sec-spinner-icons">icons</a>
+                </li>
+                <li>
+                  <a href="#sec-spinner-maxmin">maxmin</a>
+                </li>
+                <li>
+                  <a href="#sec-spinner-step">step</a>
+                </li>
+                <li>
+                  <a href="#sec-spinner-culture">culture, numberFormat</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-spinner-methods"  aria-controls="ul-ul-spinner-methods" href="#ul-ul-spinner-methods">Methods</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-spinner-methods">
+                <li>
+                  <a href="#sec-spinner-methods-value">value()</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-spinner-events"  aria-controls="ul-ul-spinner-events" href="#ul-ul-spinner-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-spinner-events">
+                <li>
+                  <a href="#sec-spinner-change">change</a>
+                </li>
+                <li>
+                  <a href="#sec-spinner-spin">spin</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-spinner-options">
+            <h4>Options</h4>
+
+            <section id="sec-spinner-nooption">
+              <h4>Optionなし</h4>
+              <div class="preview">
+                <h5>HTML5: range</h5>
+                <input type="number">
+                <h5>jQuery UI: spinner</h5>
+                <label for="spinner-nooption">Select a value:</label>
+                <input id="spinner-nooption" name="value">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;HTML5: range&lt;/h5&gt;
+&lt;input type=&quot;number&quot;&gt;
+</span>
+<span>
+&lt;h5&gt;jQuery UI: spinner&lt;/h5&gt;
+&lt;label for=&quot;spinner-nooption&quot;&gt;Select a value:&lt;/label&gt;
+&lt;input id=&quot;spinner-nooption&quot; name=&quot;value&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-nooption').spinner();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-spinner-disabled">
+              <h4>disabled</h4>
+              <div class="preview">
+                <label for="spinner-disabled">disabled:</label>
+                <input id="spinner-disabled" name="value">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-disabled&quot;&gt;disabled:&lt;/label&gt;
+</span>
+<span>
+&lt;input id=&quot;spinner-disabled&quot; name=&quot;value&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-disabled').spinner({
+  disabled: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-spinner-icons">
+              <h4>icons: default: { down: "ui-icon-triangle-1-s", up: "ui-icon-triangle-1-n" }</h4>
+              <div class="preview">
+                <label for="spinner-icons">icons:</label>
+                <input id="spinner-icons" name="value">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-icons&quot;&gt;icons:&lt;/label&gt;
+&lt;input id=&quot;spinner-icons&quot; name=&quot;value&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-icons').spinner({
+  icons: {
+    down: "ui-icon-arrow-1-s",
+    up: "ui-icon-arrow-1-n"
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-spinner-maxmin">
+              <h4>max, min: 最大値、最小値を変更</h4>
+              <div class="preview">
+                <label for="spinner-maxmin">maxmin:</label>
+                <input id="spinner-maxmin" name="value" value="0">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-maxmin&quot;&gt;maxmin:&lt;/label&gt;
+&lt;input id=&quot;spinner-maxmin&quot; name=&quot;value&quot; value=&quot;0&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-maxmin').spinner({
+  min: 0,
+  max: 50
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-spinner-step">
+              <h4>step</h4>
+              <div class="preview">
+                <label for="spinner-step">step:</label>
+                <input id="spinner-step" name="value" value="0">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-step&quot;&gt;step:&lt;/label&gt;
+&lt;input id=&quot;spinner-step&quot; name=&quot;value&quot; value=&quot;0&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-step').spinner({
+  step: 5
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-spinner-page">
+              <h4>page</h4>
+              <div class="preview">
+                <label for="spinner-page">page:</label>
+                <input id="spinner-page" name="value" value="0">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-page&quot;&gt;page:&lt;/label&gt;
+&lt;input id=&quot;spinner-page&quot; name=&quot;value&quot; value=&quot;0&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-page').spinner({
+  page: 15
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+            <section id="sec-spinner-culture">
+              <h4>culture, numberFormat</h4>
+              <p>https://github.com/jquery/globalize</p>
+              <p>※Note: /development-bundle/externalフォルダに含まれる「globalize.js」「globalize.culture.ja-JP.js」（日本語の場合）をあらかじめインクルードしておく必要</p>
+              <div class="preview">
+                <div>
+                  <h5>numberFormat: 'n'; 数値</h5>
+                  <label for="spinner-numberFormat-n-jaJP">ja-JP</label>
+                  <input id="spinner-numberFormat-n-jaJP" name="value" value="50">
+
+                  <label for="spinner-numberFormat-n-enUS">en-US</label>
+                  <input id="spinner-numberFormat-n-enUS" name="value" value="50">
+                </div>
+
+                <div>
+                  <h5>numberFormat: 'd'; 10進数</h5>
+                  <label for="spinner-numberFormat-d-jaJP">ja-JP</label>
+                  <input id="spinner-numberFormat-d-jaJP" name="value" value="50">
+
+                  <label for="spinner-numberFormat-d-enUS">en-US</label>
+                  <input id="spinner-numberFormat-d-enUS" name="value" value="50">
+                </div>
+
+                <div>
+                  <h5>numberFormat: 'c'; 通貨</h5>
+                  <label for="spinner-numberFormat-c-jaJP">ja-JP</label>
+                  <input id="spinner-numberFormat-c-jaJP" name="value" value="50">
+
+                  <label for="spinner-numberFormat-c-enUS">en-US</label>
+                  <input id="spinner-numberFormat-c-enUS" name="value" value="50">
+                </div>
+
+                <div>
+                  <h5>numberFormat: 'p'; パーセント(※うまく動作しない)</h5>
+                  <label for="spinner-numberFormat-p-jaJP">ja-JP</label>
+                  <input id="spinner-numberFormat-p-jaJP" name="value" value="0.5">
+
+                  <label for="spinner-numberFormat-p-enUS">en-US</label>
+                  <input id="spinner-numberFormat-p-enUS" name="value" value="0.5">
+                </div>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div&gt;
+  &lt;h5&gt;numberFormat: 'n'; 数値&lt;/h5&gt;
+  &lt;label for=&quot;spinner-numberFormat-n-jaJP&quot;&gt;ja-JP&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-n-jaJP&quot; name=&quot;value&quot; value=&quot;50&quot;&gt;
+
+  &lt;label for=&quot;spinner-numberFormat-n-enUS&quot;&gt;en-US&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-n-enUS&quot; name=&quot;value&quot; value=&quot;50&quot;&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div&gt;
+  &lt;h5&gt;numberFormat: 'd'; 10進数&lt;/h5&gt;
+  &lt;label for=&quot;spinner-numberFormat-d-jaJP&quot;&gt;ja-JP&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-d-jaJP&quot; name=&quot;value&quot; value=&quot;50&quot;&gt;
+
+  &lt;label for=&quot;spinner-numberFormat-d-enUS&quot;&gt;en-US&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-d-enUS&quot; name=&quot;value&quot; value=&quot;50&quot;&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div&gt;
+  &lt;h5&gt;numberFormat: 'c'; 通貨&lt;/h5&gt;
+  &lt;label for=&quot;spinner-numberFormat-c-jaJP&quot;&gt;ja-JP&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-c-jaJP&quot; name=&quot;value&quot; value=&quot;50&quot;&gt;
+
+  &lt;label for=&quot;spinner-numberFormat-c-enUS&quot;&gt;en-US&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-c-enUS&quot; name=&quot;value&quot; value=&quot;50&quot;&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div&gt;
+  &lt;h5&gt;numberFormat: 'p'; パーセント(※うまく動作しない)&lt;/h5&gt;
+  &lt;label for=&quot;spinner-numberFormat-p-jaJP&quot;&gt;ja-JP&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-p-jaJP&quot; name=&quot;value&quot; value=&quot;0.5&quot;&gt;
+
+  &lt;label for=&quot;spinner-numberFormat-p-enUS&quot;&gt;en-US&lt;/label&gt;
+  &lt;input id=&quot;spinner-numberFormat-p-enUS&quot; name=&quot;value&quot; value=&quot;0.5&quot;&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-numberFormat-n-jaJP').spinner({
+  culture: 'ja-JP',
+  numberFormat: "n",
+  step: 1,
+  min: 0,
+  max: 100
+});
+$('#spinner-numberFormat-n-enUS').spinner({
+  culture: 'en-US',
+  numberFormat: "n",
+  step: 1,
+  min: 0,
+  max: 100
+});
+</span>
+<span>
+$('#spinner-numberFormat-d-jaJP').spinner({
+  culture: 'ja-JP',
+  numberFormat: "d",
+  step: 1,
+  min: 0,
+  max: 100
+});
+$('#spinner-numberFormat-d-enUS').spinner({
+  culture: 'en-US',
+  numberFormat: "d",
+  step: 1,
+  min: 0,
+  max: 100
+});
+</span>
+<span>
+$('#spinner-numberFormat-c-jaJP').spinner({
+  culture: 'ja-JP',
+  numberFormat: "c",
+  step: 1,
+  min: 0,
+  max: 100
+});
+$('#spinner-numberFormat-c-enUS').spinner({
+  culture: 'en-US',
+  numberFormat: "c",
+  step: 1,
+  min: 0,
+  max: 100
+});
+</span>
+<span>
+$('#spinner-numberFormat-p-jaJP').spinner({
+  culture: 'ja-JP',
+  numberFormat: "p",
+  step: 0.01,
+  min: 0.0,
+  max: 1.0
+});
+$('#spinner-numberFormat-p-enUS').spinner({
+  culture: 'en-US',
+  numberFormat: "p",
+  step: 0.01,
+  min: 0.0,
+  max: 1.0
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- div-selectmenu-options -->
+
+          <div id="div-spinner-methods">
+            <h4>Methods</h4>
+
+            <section id="sec-spinner-methods-value">
+              <h4>value()</h4>
+              <div class="preview">
+                <label for="spinner-methods-value">input: </label>
+                <input id="spinner-methods-value" name="input" value="0"></input>
+                <button class="btn-spinner-methods-value">Get</button>
+                <input type="number" name="output" class="input-spinner-methods-value"></input>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-methods-value&quot;&gt;input: &lt;/label&gt;
+&lt;input id=&quot;spinner-methods-value&quot; name=&quot;input&quot; value=&quot;0&quot;&gt;&lt;/input&gt;
+</span>
+<span>
+&lt;button class=&quot;btn-spinner-methods-value&quot;&gt;Get&lt;/button&gt;
+&lt;input type=&quot;number&quot; name=&quot;output&quot; class=&quot;input-spinner-methods-value&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-methods-value').spinner();
+</span>
+<span>
+$('.btn-spinner-methods-value')
+.click( function() {
+  var val = $('#spinner-methods-value').spinner('value');
+  $('.input-spinner-methods-value').val(val);
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+          <div id="div-spinner-events">
+            <h4>Events</h4>
+
+            <section id="sec-spinner-change">
+              <h4>change( event, ui ): 値を変えてフォーカスを外したらイベント発生</h4>
+              <div class="preview">
+                <label for="spinner-change">input: </label>
+                <input id="spinner-change" name="input" value="0"></input>
+                <input type="number" name="output" class="input-spinner-change"></input>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-change&quot;&gt;input: &lt;/label&gt;
+&lt;input id=&quot;spinner-change&quot; name=&quot;input&quot; value=&quot;0&quot;&gt;&lt;/input&gt;
+</span>
+<span>
+&lt;input type=&quot;number&quot; name=&quot;output&quot; class=&quot;input-spinner-change&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-change').spinner({
+  change: function(event, ui) {
+    var val = $(this).spinner('value');
+    $('.input-spinner-change').val(val);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-spinner-spin">
+              <h4>spin</h4>
+              <div class="preview">
+                <label for="spinner-spin">input: </label>
+                <input id="spinner-spin" name="input" value="0"></input>
+                <input type="number" name="output" class="input-spinner-spin"></input>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;spinner-spin&quot;&gt;input: &lt;/label&gt;
+&lt;input id=&quot;spinner-spin&quot; name=&quot;input&quot; value=&quot;0&quot;&gt;&lt;/input&gt;
+</span>
+<span>
+&lt;input type=&quot;number&quot; name=&quot;output&quot; class=&quot;input-spinner-spin&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#spinner-spin').spinner({
+  spin: function(event, ui) {
+    var val = $(this).spinner('value');
+    $('.input-spinner-spin').val(val);
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+          <!-- <div id="div-spinner-samples">
+            <h4>Samples</h4>
+
+            <section id="sec-spinner-samples-percent">
+              <h4>%表示</h4>
+              <div class="preview">
+                <label for="spinner-samples-percent">input: </label>
+                <input id="spinner-samples-percent" name="input"></input>
+
+              </div>
+              <div class="code">
+                <div class="html">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+                <div class="js">
+            <pre>
+            <code>
+            <span>
+
+            </span>
+            </code>
+            </pre>
+                </div>
+
+              </div>
+            </section>
+
+
+          </div> div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <script src="../external/globalize/globalize.js"></script>
+  <script src="../external/globalize/globalize.culture.ja-JP.js"></script>
+  <!-- <script src="../external/globalize/globalize.culture.de-DE.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // options
+      // nooptin
+      $('#spinner-nooption').spinner();
+
+      // disabled
+      $('#spinner-disabled').spinner({
+        disabled: true
+      });
+
+      // icons
+      $('#spinner-icons').spinner({
+        icons: {
+          down: "ui-icon-arrow-1-s",
+          up: "ui-icon-arrow-1-n"
+        }
+      });
+
+      // max, min
+      $('#spinner-maxmin').spinner({
+        min: 0,
+        max: 50
+      });
+
+      // step
+      $('#spinner-step').spinner({
+        step: 5
+      });
+
+      // page
+      $('#spinner-page').spinner({
+        page: 15
+      });
+
+      // culture, numberFormat
+      $('#spinner-numberFormat-n-jaJP').spinner({
+        culture: 'ja-JP',
+        numberFormat: "n",
+        step: 1,
+        min: 0,
+        max: 100
+      });
+      $('#spinner-numberFormat-n-enUS').spinner({
+        culture: 'en-US',
+        numberFormat: "n",
+        step: 1,
+        min: 0,
+        max: 100
+      });
+
+      $('#spinner-numberFormat-d-jaJP').spinner({
+        culture: 'ja-JP',
+        numberFormat: "d",
+        step: 1,
+        min: 0,
+        max: 100
+      });
+      $('#spinner-numberFormat-d-enUS').spinner({
+        culture: 'en-US',
+        numberFormat: "d",
+        step: 1,
+        min: 0,
+        max: 100
+      });
+
+      $('#spinner-numberFormat-c-jaJP').spinner({
+        culture: 'ja-JP',
+        numberFormat: "c",
+        step: 1,
+        min: 0,
+        max: 100
+      });
+      $('#spinner-numberFormat-c-enUS').spinner({
+        culture: 'en-US',
+        numberFormat: "c",
+        step: 1,
+  //       min: 0,
+  //       max: 100
+  //     });
+  //
+  //     $('#spinner-numberFormat-p-jaJP').spinner({
+  //       culture: 'ja-JP',
+  //       numberFormat: "p",
+  //       step: 0.01,
+  //       min: 0.0,
+  //       max: 1.0
+  //     });
+  //     $('#spinner-numberFormat-p-enUS').spinner({
+  //       culture: 'en-US',
+  //       numberFormat: "p",
+  //       step: 0.01,
+  //       min: 0.0,
+  //       max: 1.0
+  //     });
+  //
+  //     // methods
+  //     // value()
+  //     $('#spinner-methods-value').spinner();
+  //     $('.btn-spinner-methods-value')
+  //     .button()
+  //     .click( function() {
+  //       var val = $('#spinner-methods-value').spinner('value');
+  //       $('.input-spinner-methods-value').val(val);
+  //     });
+  //
+  //     // events
+  //     // change
+  //     $('#spinner-change').spinner({
+  //       change: function(event, ui) {
+  //         var val = $(this).spinner('value');
+  //         $('.input-spinner-change').val(val);
+  //       }
+  //     });
+  //
+  //     // spin
+  //     $('#spinner-spin').spinner({
+  //       spin: function(event, ui) {
+  //         var val = $(this).spinner('value');
+  //         $('.input-spinner-spin').val(val);
+  //       }
+  //     });
+  //
+  //
+  //   });
+  // </script>
+
+   </body>
+ </html> -->
