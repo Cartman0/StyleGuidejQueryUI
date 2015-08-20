@@ -1,0 +1,669 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Tooltip</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .danger {
+        color: #c33;
+      }
+    </style>
+
+  <!-- </head> -->
+  <!-- <body> -->
+    <section id="sec-tooltip">
+      <h3>Tooltip</h3>
+      <p><a href="http://jqueryui.com/tooltip/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/tooltip/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-tooltip-options" class="ul-tooltip-options" aria-controls="ul-ul-tooltip-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-tooltip-options">
+                <li>
+                  <a href="#sec-tooltip-nooption">Optionなし</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-content">content</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-disabled">disabled</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-hide">hide</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-show">show</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-items">items</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-position">position</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-tooltipClass">tooltipClass</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-track">track</a>
+                </li>
+
+
+              </ul>
+            </li>
+
+            <li>
+              <a id="ul-tooltip-events"  aria-controls="ul-ul-tooltip-events" href="#ul-ul-tooltip-events">Events</a>
+                <ul class="nav nav-pills nav-stacked collapse ul-ul-tooltip-events">
+                <li>
+                  <a href="#sec-tooltip-close">close</a>
+                </li>
+                <li>
+                  <a href="#sec-tooltip-open">open</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-tooltip-options">
+            <h4>Options</h4>
+
+            <section id="sec-tooltip-nooption">
+              <h4>オプションなし</h4>
+              <div class="preview">
+                <div>
+                  <h5>HTML5 default</h5>
+                  <label for="tooltip-nooption-default">age:</label>
+                  <input type="number" id="tooltip-nooption-default" title="We ask for your age only for statistical purposes.">
+                </div>
+                <div>
+                  <h5>jQuery UI tooltip</h5>
+                  <label for="tooltip-nooption">age:</label>
+                  <input type="number" id="tooltip-nooption" title="We ask for your age only for statistical purposes.">
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;h5&gt;HTML5 default&lt;/h5&gt;
+  &lt;label for=&quot;tooltip-nooption-default&quot;&gt;age:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-nooption-default&quot; title=&quot;We ask for your age only for statistical purposes.&quot;&gt;
+&lt;/div&gt;
+</span>
+<span>
+&lt;div&gt;
+  &lt;h5&gt;jQuery UI tooltip&lt;/h5&gt;
+  &lt;label for=&quot;tooltip-nooption&quot;&gt;age:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-nooption&quot; title=&quot;We ask for your age only for statistical purposes.&quot;&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-nooption').tooltip();
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-content">
+              <h4>content: 表示させるcontent を指定</h4>
+              <div class="preview">
+                <label for="tooltip-content">age:</label>
+                <input type="number" id="tooltip-content" title="this msg is in tittle attribute.">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;tooltip-content&quot;&gt;age:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-content&quot; title=&quot;this msg is in tittle attribute.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-content').tooltip({
+  content: 'set msg on content'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-disabled">
+              <h4>disabled: focus してもtitle属性のcontentは表示されない</h4>
+              <div class="preview">
+                <label for="tooltip-disabled">age:</label>
+                <input type="number" id="tooltip-disabled" title="this msg is disabled">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;tooltip-disabled&quot;&gt;age:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-disabled&quot; title=&quot;this msg is disabled.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-disabled').tooltip({
+  disabled: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-hide">
+              <h4>hide</h4>
+              <div class="preview">
+                <!-- explode -->
+                <p>
+                  <label for="tooltip-hide-explode">explode:</label>
+                  <input type="number" id="tooltip-hide-explode" title="this msg hide explode">
+                </p>
+
+                <!-- fadeOut -->
+                <p>
+                  <label for="tooltip-hide-fadeOut">fadeOut:</label>
+                  <input type="number" id="tooltip-hide-fadeOut" title="this msg hide fadeOut">
+                </p>
+
+                <!-- fold -->
+                <p>
+                  <label for="tooltip-hide-fold">fold:</label>
+                  <input type="number" id="tooltip-hide-fold" title="this msg hide fold">
+                </p>
+
+                <!-- slideUp -->
+                <p>
+                  <label for="tooltip-hide-slideUp">slideUp:</label>
+                  <input type="number" id="tooltip-hide-slideUp" title="this msg hide slideUp">
+                </p>
+
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;!-- explode --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-hide-explode&quot;&gt;explode:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-hide-explode&quot; title=&quot;this msg hide explode&quot;&gt;
+&lt;/p&gt;
+</span>
+<span>
+&lt;!-- fadeOut --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-hide-fadeOut&quot;&gt;fadeOut:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-hide-fadeOut&quot; title=&quot;this msg hide fadeOut&quot;&gt;
+&lt;/p&gt;
+</span>
+<span>
+&lt;!-- fold --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-hide-fold&quot;&gt;fold:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-hide-fold&quot; title=&quot;this msg hide fold&quot;&gt;
+&lt;/p&gt;
+</span>
+<span>
+&lt;!-- slideUp --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-hide-slideUp&quot;&gt;slideUp:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-hide-slideUp&quot; title=&quot;this msg hide slideUp&quot;&gt;
+&lt;/p&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// explode
+$('#tooltip-hide-explode').tooltip({
+  hide: {
+    effect: "explode",
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fadeOut
+$('#tooltip-hide-fadeOut').tooltip({
+  hide: {
+    effect: 'fadeOut',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fold
+$('#tooltip-hide-fold').tooltip({
+  hide: {
+    effect: 'fold',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// slideUp
+$('#tooltip-hide-slideUp').tooltip({
+  hide: {
+    effect: 'slideUp',
+    duration: 1000
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-show">
+              <h4>show</h4>
+              <div class="preview">
+                <!-- blind -->
+                <p>
+                  <label for="tooltip-show-blind">blind:</label>
+                  <input type="number" id="tooltip-show-blind" title="this msg show blind">
+                </p>
+
+                <!-- fadeIn -->
+                <p>
+                  <label for="tooltip-show-fadeIn">fadeIn:</label>
+                  <input type="number" id="tooltip-show-fadeIn" title="this msg show fadeIn">
+                </p>
+
+                <!-- fold -->
+                <p>
+                  <label for="tooltip-show-fold">fold:</label>
+                  <input type="number" id="tooltip-show-fold" title="this msg show fold">
+                </p>
+
+                <!-- slideDown -->
+                <p>
+                  <label for="tooltip-show-slideDown">slideDown:</label>
+                  <input type="number" id="tooltip-show-slideDown" title="this msg show slideDown">
+                </p>
+
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;!-- blind --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-show-blind&quot;&gt;blind:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-show-blind&quot; title=&quot;this msg show blind&quot;&gt;
+&lt;/p&gt;
+</span>
+<span>
+&lt;!-- fadeIn --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-show-fadeIn&quot;&gt;fadeIn:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-show-fadeIn&quot; title=&quot;this msg show fadeIn&quot;&gt;
+&lt;/p&gt;
+</span>
+<span>
+&lt;!-- fold --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-show-fold&quot;&gt;fold:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-show-fold&quot; title=&quot;this msg show fold&quot;&gt;
+&lt;/p&gt;
+</span>
+<span>
+&lt;!-- slideDown --&gt;
+&lt;p&gt;
+  &lt;label for=&quot;tooltip-show-slideDown&quot;&gt;slideDown:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;tooltip-show-slideDown&quot; title=&quot;this msg show slideDown&quot;&gt;
+&lt;/p&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+// blind
+$('#tooltip-show-blind').tooltip({
+  show: {
+    effect: "blind",
+    duration: 1000
+  }
+});
+
+</span>
+<span>
+// fadeIn
+$('#tooltip-show-fadeIn').tooltip({
+  show: {
+    effect: 'fadeIn',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// fold
+$('#tooltip-show-fold').tooltip({
+  show: {
+    effect: 'fold',
+    duration: 1000
+  }
+});
+</span>
+<span>
+// slideDown
+$('#tooltip-show-slideDown').tooltip({
+  show: {
+    effect: 'slideDown',
+    duration: 1000
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-items">
+              <h4>items: 何の属性をtooltip として表示するか指定, default: [title]</h4>
+              <p style="color: #c33">
+                ※Note: <a href="#sec-tooltip-content">content</a> を指定しなければならない。
+              </p>
+              <div class="preview">
+                <img src="http://placehold.jp/100x100.png" alt="alt attribute is tooltip" class="tooltip-items" width="100" height="100">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;preview&quot;&gt;
+  &lt;img src=&quot;http://placehold.jp/100x100.png&quot; alt=&quot;alt attribute is tooltip&quot; class=&quot;tooltip-items&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.tooltip-items').tooltip({
+  items: "img[alt]",
+  content: 'This is img[alt] attribute.'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-position">
+              <h4>position: tooltipを表示する位置を指定, default: { my: "left top+15", at: "left bottom", collision: "flipfit" }</h4>
+              <div class="preview">
+                <label for="tooltip-position">changed position:</label>
+                <input type="number" id="tooltip-position" title="this tooltip changed position.">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;tooltip-position&quot;&gt;changed position:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-position&quot; title=&quot;this tooltip changed position.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-position').tooltip({
+  position: {
+    at: 'right center',
+    my: 'left+15 center',
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-tooltipClass">
+              <h4>tooltipClass: tooltipに適用するclassを指定</h4>
+              <div class="preview">
+                <label for="tooltip-tooltipClass">tooltipClass:</label>
+                <input type="number" id="tooltip-tooltipClass" title="this tooltip use tooltipClass, then changed color to red.">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;tooltip-tooltipClass&quot;&gt;tooltipClass:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-tooltipClass&quot; title=&quot;this tooltip use tooltipClass, then changed color to red.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.danger {
+  color: #c33;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-tooltipClass').tooltip({
+  tooltipClass: 'danger'
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-track">
+              <h4>track: tooltipが表示されている間、マウスに付いてくる</h4>
+              <div class="preview">
+                <label for="tooltip-track">track:</label>
+                <input type="number" id="tooltip-track" title="this tooltip is tracked.">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;label for=&quot;tooltip-track&quot;&gt;track:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-track&quot; title=&quot;this tooltip is tracked.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-track').tooltip({
+  track: true
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+          </div> <!-- div-slider-methods -->
+
+          <div id="div-tooltip-events">
+            <h4>Events</h4>
+
+            <section id="sec-tooltip-close">
+              <h4>close( event, ui ): focusout or mouseleave をしたら、イベント発生</h4>
+              <div class="preview">
+                <div class="div-tooltip-close">msg:</div>
+                <label for="tooltip-close">close:</label>
+                <input type="number" id="tooltip-close" title="if focusout or mouseleave, trigger.">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-tooltip-close&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;label for=&quot;tooltip-close&quot;&gt;close:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-close&quot; title=&quot;if focusout or mouseleave, trigger.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-close').tooltip({
+  close: function( event, ui ) {
+    $('.div-tooltip-close').text(ui.tooltip.text());
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-tooltip-open">
+              <h4>open( event, ui ): focusin or mouseoverをしたら、イベント発生</h4>
+              <div class="preview">
+                <div class="div-tooltip-open">msg:</div>
+                <label for="tooltip-open">open:</label>
+                <input type="number" id="tooltip-open" title="if &quot;focusin&quot; or &quot;mouseover&quot;, trigger.">
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;div-tooltip-open&quot;&gt;msg:&lt;/div&gt;
+</span>
+<span>
+&lt;label for=&quot;tooltip-open&quot;&gt;open:&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;tooltip-open&quot; title=&quot;if &amp;quot;focusin&amp;quot; or &amp;quot;mouseover&amp;quot;, trigger.&quot;&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('#tooltip-open').tooltip({
+  open: function( event, ui ) {
+    $('.div-tooltip-open').text(ui.tooltip.text());
+  },
+  close: function( event, ui ) {
+    $('.div-tooltip-open').text('msg:');
+  }
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-draggable-events -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- </body> -->
+
+<!-- </html> -->
