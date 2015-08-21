@@ -1,0 +1,2101 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Easings</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+
+    <style>
+      .easings-box{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #333;
+        box-sizing: border-box;
+        padding: 0 5px;
+        margin: 0;
+      }
+      .easings-ball{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #333;
+        border-radius: 50%;
+        background-color: #d33;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+
+  <!-- </head> -->
+  <!-- <body> -->
+    <section id="sec-easings">
+      <h3>Easings</h3>
+      <p><a href="http://jqueryui.com/easing/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/easings/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-easings" class="ul-easings" aria-controls="ul-ul-easings">easings</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-easings">
+                <li>
+                  <a href="#sec-easings-linear">linear</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-swing">swing</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInQuad">easeInQuad</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutQuad">easeOutQuad</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutQuad">easeInOutQuad</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInCubic">easeInCubic</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutCubic">easeOutCubic</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutCubic">easeInOutCubic</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInQuart">easeInQuart</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutQuart">easeOutQuart</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutQuart">easeInOutQuart</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInQuint">easeInQuint</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutQuint">easeOutQuint</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutQuint">easeInOutQuint</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInExpo">easeInExpo</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutExpo">easeOutExpo</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutExpo">easeInOutExpo</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInSine">easeInSine</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutSine">easeOutSine</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutSine">easeInOutSine</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInCirc">easeInCirc</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutCirc">easeOutCirc</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutCirc">easeInOutCirc</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInElastic">easeInElastic</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutElastic">easeOutElastic</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutElastic">easeInOutElastic</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInBack">easeInBack</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutBack">easeOutBack</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutBack">easeInOutBack</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInBounce">easeInBounce</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeOutBounce">easeOutBounce</a>
+                </li>
+                <li>
+                  <a href="#sec-easings-easeInOutBounce">easeInOutBounce</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-easings">
+            <h4>easings</h4>
+
+            <section id="sec-easings-linear">
+              <h4>linear</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-linear"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-linear" href="#easings-linear-code">code</a>
+              <div class="code collapse" id="easings-linear-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-linear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.easings-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin: 0;
+}
+</span>
+<span>
+.easings-ball{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background-color: #d33;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</span>
+</code>
+</pre>
+
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-linear').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'linear')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'linear');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-swing">
+              <h4>swing</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-swing"></div>
+                </div>
+              </div>
+                <a data-toggle="collapse" data-parent="#sec-easings-swing" href="#easings-swing-code">code</a>
+              <div class="code collapse" id="easings-swing-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-swing&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-swing').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'swing')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'swing');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInQuad">
+              <h4>easeInQuad</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInQuad"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInQuad" href="#easings-easeInQuad-code">code</a>
+              <div class="code collapse" id="easings-easeInQuad-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInQuad&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInQuad').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInQuad')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInQuad');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutQuad">
+              <h4>easeOutQuad</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutQuad"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutQuad" href="#easings-easeOutQuad-code">code</a>
+              <div class="code collapse" id="easings-easeOutQuad-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutQuad&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutQuad').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutQuad')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutQuad');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutQuad">
+              <h4>easeInOutQuad</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutQuad"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutQuad" href="#easings-easeInOutQuad-code">code</a>
+              <div class="code collapse" id="easings-easeInOutQuad-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutQuad&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutQuad').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutQuad')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutQuad');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInCubic">
+              <h4>easeInCubic</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInCubic"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInCubic" href="#easings-easeInCubic-code">code</a>
+              <div class="code collapse" id="easings-easeInCubic-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInCubic&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInCubic').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInCubic')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInCubic');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutCubic">
+              <h4>easeOutCubic</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutCubic"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutCubic" href="#easings-easeOutCubic-code">code</a>
+              <div class="code collapse" id="easings-easeOutCubic-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutCubic&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutCubic').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutCubic')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutCubic');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutCubic">
+              <h4>easeInOutCubic</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutCubic"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutCubic" href="#easings-easeInOutCubic-code">code</a>
+              <div class="code collapse" id="easings-easeInOutCubic-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutCubic&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutCubic').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutCubic')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutCubic');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInQuart">
+              <h4>easeInQuart</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInQuart"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInQuart" href="#easings-easeInQuart-code">code</a>
+              <div class="code collapse" id="easings-easeInQuart-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInQuart&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInQuart').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInQuart')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInQuart');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutQuart">
+              <h4>easeOutQuart</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutQuart"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutQuart" href="#easings-easeOutQuart-code">code</a>
+              <div class="code collapse" id="easings-easeOutQuart-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutQuart&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutQuart').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutQuart')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutQuart');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutQuart">
+              <h4>easeInOutQuart</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutQuart"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutQuart" href="#easings-easeInOutQuart-code">code</a>
+              <div class="code collapse" id="easings-easeInOutQuart-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutQuart&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutQuart').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutQuart')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutQuart');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInQuint">
+              <h4>easeInQuint</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInQuint"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInQuint" href="#easings-easeInQuint-code">code</a>
+              <div class="code collapse" id="easings-easeInQuint-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInQuint&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInQuint').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInQuint')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInQuint');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutQuint">
+              <h4>easeOutQuint</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutQuint"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutQuint" href="#easings-easeOutQuint-code">code</a>
+              <div class="code collapse" id="easings-easeOutQuint-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutQuint&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutQuint').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutQuint')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutQuint');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutQuint">
+              <h4>easeInOutQuint</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutQuint"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutQuint" href="#easings-easeInOutQuint-code">code</a>
+              <div class="code collapse" id="easings-easeInOutQuint-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutQuint&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutQuint').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutQuint')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutQuint');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInExpo">
+              <h4>easeInExpo</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInExpo"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInExpo" href="#easings-easeInExpo-code">code</a>
+              <div class="code collapse" id="easings-easeInExpo-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInExpo&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInExpo').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInExpo')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInExpo');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutExpo">
+              <h4>easeOutExpo</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutExpo"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutExpo" href="#easings-easeOutExpo-code">code</a>
+              <div class="code collapse" id="easings-easeOutExpo-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutExpo&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutExpo').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutExpo')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutExpo');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutExpo">
+              <h4>easeInOutExpo</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutExpo"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutExpo" href="#easings-easeInOutExpo-code">code</a>
+              <div class="code collapse" id="easings-easeInOutExpo-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutExpo&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutExpo').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutExpo')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutExpo');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInSine">
+              <h4>easeInSine</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInSine"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInSine" href="#easings-easeInSine-code">code</a>
+              <div class="code collapse" id="easings-easeInSine-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInSine&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInSine').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInSine')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInSine');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutSine">
+              <h4>easeOutSine</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutSine"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutSine" href="#easings-easeOutSine-code">code</a>
+              <div class="code collapse" id="easings-easeOutSine-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutSine&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutSine').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutSine')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutSine');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutSine">
+              <h4>easeInOutSine</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutSine"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutSine" href="#easings-easeInOutSine-code">code</a>
+              <div class="code collapse" id="easings-easeInOutSine-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutSine&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutSine').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutSine')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutSine');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInCirc">
+              <h4>easeInCirc</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInCirc"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInCirc" href="#easings-easeInCirc-code">code</a>
+              <div class="code collapse" id="easings-easeInCirc-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInCirc&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInCirc').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInCirc')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInCirc');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutCirc">
+              <h4>easeOutCirc</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutCirc"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutCirc" href="#easings-easeOutCirc-code">code</a>
+              <div class="code collapse" id="easings-easeOutCirc-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutCirc&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutCirc').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutCirc')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutCirc');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutCirc">
+              <h4>easeInOutCirc</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutCirc"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutCirc" href="#easings-easeInOutCirc-code">code</a>
+              <div class="code collapse" id="easings-easeInOutCirc-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutCirc&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutCirc').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutCirc')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutCirc');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInElastic">
+              <h4>easeInElastic</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInElastic"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInElastic" href="#easings-easeInElastic-code">code</a>
+              <div class="code collapse" id="easings-easeInElastic-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInElastic&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInElastic').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInElastic')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInElastic');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutElastic">
+              <h4>easeOutElastic</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutElastic"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutElastic" href="#easings-easeOutElastic-code">code</a>
+              <div class="code collapse" id="easings-easeOutElastic-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutElastic&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutElastic').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutElastic')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutElastic');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutElastic">
+              <h4>easeInOutElastic</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutElastic"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutElastic" href="#easings-easeInOutElastic-code">code</a>
+              <div class="code collapse" id="easings-easeInOutElastic-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutElastic&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutElastic').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutElastic')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutElastic');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInBack">
+              <h4>easeInBack</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInBack"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInBack" href="#easings-easeInBack-code">code</a>
+              <div class="code collapse" id="easings-easeInBack-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInBack&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInBack').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInBack')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInBack');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutBack">
+              <h4>easeOutBack</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutBack"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutBack" href="#easings-easeOutBack-code">code</a>
+              <div class="code collapse" id="easings-easeOutBack-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutBack&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutBack').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutBack')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutBack');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutBack">
+              <h4>easeInOutBack</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutBack"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutBack" href="#easings-easeInOutBack-code">code</a>
+              <div class="code collapse" id="easings-easeInOutBack-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutBack&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutBack').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutBack')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutBack');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInBounce">
+              <h4>easeInBounce</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInBounce"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInBounce" href="#easings-easeInBounce-code">code</a>
+              <div class="code collapse" id="easings-easeInBounce-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInBounce&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInBounce').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInBounce')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInBounce');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeOutBounce">
+              <h4>easeOutBounce</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeOutBounce"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeOutBounce" href="#easings-easeOutBounce-code">code</a>
+              <div class="code collapse" id="easings-easeOutBounce-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeOutBounce&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeOutBounce').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeOutBounce')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeOutBounce');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-easings-easeInOutBounce">
+              <h4>easeInOutBounce</h4>
+              <div class="preview">
+                <div class="easings-box">
+                  <div class="easings-ball easings-easeInOutBounce"></div>
+                </div>
+              </div>
+              <a data-toggle="collapse" data-parent="#sec-easings-easeInOutBounce" href="#easings-easeInOutBounce-code">code</a>
+              <div class="code collapse" id="easings-easeInOutBounce-code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;easings-box&quot;&gt;
+  &lt;div class=&quot;easings-ball easings-easeInOutBounce&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.easings-easeInOutBounce').click(function() {
+  $.when(
+    $(this).animate({
+      left: $(this).parent().width() - $(this).width() + 10
+    }, 1000, 'easeInOutBounce')
+  )
+  .done(function(){
+    $(this).animate({
+      left: 5
+    }, 1000, 'easeInOutBounce');
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+
+
+
+
+          </div> <!-- div-slider-methods -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+
+  <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    // $(window).load(function(){
+    //   // easings
+    //   // linear
+    //   $('.easings-linear').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'linear')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'linear');
+    //     });
+    //   });
+    //
+    //   // swing
+    //   $('.easings-swing').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'swing')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'swing');
+    //     });
+    //   });
+    //
+    //   // easeInQuad
+    //   $('.easings-easeInQuad').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInQuad')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInQuad');
+    //     });
+    //   });
+    //
+    //   // easeOutQuad
+    //   $('.easings-easeOutQuad').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutQuad')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutQuad');
+    //     });
+    //   });
+    //
+    //   // easeInOutQuad
+    //   $('.easings-easeInOutQuad').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutQuad')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutQuad');
+    //     });
+    //   });
+    //
+    //   // easeInCubic
+    //   $('.easings-easeInCubic').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInCubic')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInCubic');
+    //     });
+    //   });
+    //
+    //   // easeOutCubic
+    //   $('.easings-easeOutCubic').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutCubic')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutCubic');
+    //     });
+    //   });
+    //
+    //   // easeInOutCubic
+    //   $('.easings-easeInOutCubic').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutCubic')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutCubic');
+    //     });
+    //   });
+    //
+    //   // easeInQuart
+    //   $('.easings-easeInQuart').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInQuart')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInQuart');
+    //     });
+    //   });
+    //
+    //   // easeOutQuart
+    //   $('.easings-easeOutQuart').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutQuart')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutQuart');
+    //     });
+    //   });
+    //
+    //   // easeInOutQuart
+    //   $('.easings-easeInOutQuart').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutQuart')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutQuart');
+    //     });
+    //   });
+    //
+    //   // easeInQuint
+    //   $('.easings-easeInQuint').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInQuint')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInQuint');
+    //     });
+    //   });
+    //
+    //   // easeOutQuint
+    //   $('.easings-easeOutQuint').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutQuint')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutQuint');
+    //     });
+    //   });
+    //
+    //   // easeInOutQuint
+    //   $('.easings-easeInOutQuint').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutQuint')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutQuint');
+    //     });
+    //   });
+    //
+    //   // easeInExpo
+    //   $('.easings-easeInExpo').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInExpo')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInExpo');
+    //     });
+    //   });
+    //
+    //   // easeOutExpo
+    //   $('.easings-easeOutExpo').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutExpo')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutExpo');
+    //     });
+    //   });
+    //
+    //   // easeInOutExpo
+    //   $('.easings-easeInOutExpo').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutExpo')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutExpo');
+    //     });
+    //   });
+    //
+    //   // easeInSine
+    //   $('.easings-easeInSine').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInSine')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInSine');
+    //     });
+    //   });
+    //
+    //   // easeOutSine
+    //   $('.easings-easeOutSine').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutSine')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutSine');
+    //     });
+    //   });
+    //
+    //   // easeInOutSine
+    //   $('.easings-easeInOutSine').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutSine')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutSine');
+    //     });
+    //   });
+    //
+    //   // easeInCirc
+    //   $('.easings-easeInCirc').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInCirc')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInCirc');
+    //     });
+    //   });
+    //
+    //   // easeOutCirc
+    //   $('.easings-easeOutCirc').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutCirc')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutCirc');
+    //     });
+    //   });
+    //
+    //   // easeInOutCirc
+    //   $('.easings-easeInOutCirc').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutCirc')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutCirc');
+    //     });
+    //   });
+    //
+    //   // easeInElastic
+    //   $('.easings-easeInElastic').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInElastic')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInElastic');
+    //     });
+    //   });
+    //
+    //   // easeOutElastic
+    //   $('.easings-easeOutElastic').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutElastic')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutElastic');
+    //     });
+    //   });
+    //
+    //   // easeInOutElastic
+    //   $('.easings-easeInOutElastic').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutElastic')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutElastic');
+    //     });
+    //   });
+    //
+    //   // easeInBack
+    //   $('.easings-easeInBack').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInBack')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInBack');
+    //     });
+    //   });
+    //
+    //   // easeOutBack
+    //   $('.easings-easeOutBack').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutBack')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutBack');
+    //     });
+    //   });
+    //
+    //   // easeInOutBack
+    //   $('.easings-easeInOutBack').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutBack')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutBack');
+    //     });
+    //   });
+    //
+    //   // easeInBounce
+    //   $('.easings-easeInBounce').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInBounce')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInBounce');
+    //     });
+    //   });
+    //
+    //   // easeOutBounce
+    //   $('.easings-easeOutBounce').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeOutBounce')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeOutBounce');
+    //     });
+    //   });
+    //
+    //   // easeInOutBounce
+    //   $('.easings-easeInOutBounce').click(function() {
+    //     $.when(
+    //       $(this).animate({
+    //         left: $(this).parent().width() - $(this).width() + 10
+    //       }, 1000, 'easeInOutBounce')
+    //     )
+    //     .done(function(){
+    //       $(this).animate({
+    //         left: 5
+    //       }, 1000, 'easeInOutBounce');
+    //     });
+    //   });
+    //
+    // });
+  </script> -->
+
+  <!-- </body> -->
+
+<!-- </html> -->
