@@ -1,0 +1,106 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Tooltip</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .effeccts-addClass-box {
+        width:100px;
+        height:100px;
+        border: 1px solid #333;
+      }
+
+      .effeccts-addClass__big-danger {
+        background-color: #c33;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+
+  <!-- </head> -->
+  <!-- <body> -->
+    <section id="sec-addClass">
+      <h3>addClass</h3>
+      <p><a href="http://jqueryui.com/addClass/">公式DEMO</a></p>
+      <p><a href="http://api.jqueryui.com/addClass/">Options・Events詳細</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-addClass-options" class="ul-addClass-options" aria-controls="ul-ul-addClass-options">Options</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-addClass-options">
+                <li>
+                  <a href="#sec-addClass-addClass">.addClass</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-tooltip-options">
+            <h4>Options</h4>
+
+            <section id="sec-addClass-addClass">
+              <h4>.addClass( className [, duration ] [, easing ] [, complete ] )</h4>
+              <p>easing でアニメーション(effect)を付与しながら、classを追加できる。</p>
+              <div class="preview">
+                <div class="effeccts-addClass-box"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;box div-addClass&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.div-addClass').click( function() {
+  $(this).addClass('big-danger', 1000, "easeOutBounce" );
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+
+  <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <script>
+    $(window).load(function(){
+      // options
+      $('.effeccts-addClass-box').click( function() {
+        $(this).addClass('effeccts-addClass__big-danger', 1000, "easeOutBounce" );
+      });
+
+    });
+  </script>
+
+  <!-- </body> -->
+
+<!-- </html> -->
