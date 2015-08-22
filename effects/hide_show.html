@@ -1,0 +1,159 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Effect</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .hide-show-box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #333
+      }
+    </style>
+
+  <!-- </head> -->
+  <!-- <body> -->
+    <section id="sec-hide-show">
+      <h3>hide, show</h3>
+      <p><a href="http://jqueryui.com/hide/">hide 公式DEMO</a></p>
+      <p><a href="http://jqueryui.com/show/">show 公式DEMO</a></p>
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-hide" class="ul-hide" aria-controls="ul-ul-hide">hide</a>
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-hide" >
+                <li>
+                  <a href="#sec-hide">hide</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#ul-ul-show" class="ul-show" aria-controls="ul-ul-show">show</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-show">
+                <li>
+                  <a href="#sec-show">show</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-effects-hide">
+            <h4>hide</h4>
+
+            <section id="sec-hide">
+              <h4>.hide( effect [, options ] [, duration ] [, complete ] )</h4>
+              <p><a href="http://api.jqueryui.com/hide/">hide API Doc</a></p>
+              <div class="preview">
+                <div class="hide-show-box effects-hide"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;hide-show-box hide&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.hide').click(function() {
+  $(this).hide( "drop", { direction: "down" }, "slow" );
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+          <div id="div-effects-show">
+            <h4>show</h4>
+
+            <section id="sec-show">
+              <h4>.show( effect [, options ] [, duration ] [, complete ] )</h4>
+              <p><a href="http://api.jqueryui.com/show/">show API Doc</a></p>
+              <div class="preview">
+                <div class="hide-show-box effects-show"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;hide-show-box show&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.show').click(function() {
+  $.when(
+    $(this).css('display', 'none')
+  ).done(function(){
+    $(this).show( "fold", 1000);
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+
+  <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+
+  <!-- <script>
+    $(window).load(function(){
+      // eefect
+      // hide
+      $('.hide').click(function() {
+        $(this).hide( "drop", { direction: "down" }, "slow" );
+      });
+
+      // show
+      $('.show').click(function() {
+        $.when(
+          $(this).css('display', 'none')
+        ).done(function(){
+          $(this).show( "fold", 1000);
+        });
+      });
+
+    });
+  </script> -->
+
+  <!-- </body> -->
+
+<!-- </html> -->
