@@ -1,0 +1,865 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="ja"> -->
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Effect</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+    <style>
+      .effect-box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #333
+      }
+      .div-effect-transfer{
+        width: 50px;
+        height: 50px;
+        border: 1px solid #333;
+        margin: 1rem;"
+      }
+
+      .ui-effects-transfer {
+        border: 1px dotted black;
+      }
+
+    </style>
+
+  <!-- </head> -->
+
+  <!-- <body> -->
+    <section id="sec-effect">
+      <h3>Effect</h3>
+      <p><a href="http://jqueryui.com/effect/">公式DEMO</a></p>
+
+      <div class="row">
+        <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
+          <ul class="nav nav-tabs nav-stacked sidebar">
+            <li>
+              <a href="#ul-ul-effect" class="ul-effect" aria-controls="ul-ul-effect">Effect</a>
+
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-effect">
+                <li>
+                  <a href="#sec-effect-blind">blind</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-bounce">bounce</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-clip">clip</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-drop">drop</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-explode">explode</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-fade">fade</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-fold">fold</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-highlight">highlight</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-puff">puff</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-pulsate">pulsate</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-scale">scale</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-shake">shake</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-size">size</a>
+                </li>
+                <li>
+                  <a href="#sec-effect-slide">slide/a>
+                </li>
+                <li>
+                  <a href="#sec-effect-transfer">transfer</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+
+          <div id="div-effect">
+            <h4>Effect</h4>
+
+            <section id="sec-effect-blind">
+              <h4>blind</h4
+              <p><a href="http://api.jqueryui.com/blind-effect/">blind API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-blind"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-blind&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-blind').click(function() {
+  $(this).effect('blind', 1000, function(){
+      setTimeout(function() {
+        $('.effect-blind').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-bounce">
+              <h4>bounce</h4>
+              <p><a href="http://api.jqueryui.com/bounce-effect/">bounce API Doc</a></p>
+              <div class="preview">
+                <div class="preview">
+                  <div class="effect-box effect-bounce"></div>
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;preview&quot;&gt;
+  &lt;div class=&quot;effect-box effect-bounce&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-bounce').click(function() {
+  $(this).effect('bounce', 1000, function(){
+      setTimeout(function() {
+        $('.effect-bounce').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-clip">
+              <h4>clip</h4>
+              <p><a href="http://api.jqueryui.com/clip-effect/">clip API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-clip"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-clip&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-clip').click(function() {
+  $(this).effect('clip', 1000, function(){
+      setTimeout(function() {
+        $('.effect-clip').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-drop">
+              <h4>drop</h4>
+              <p><a href="http://api.jqueryui.com/drop-effect/">drop API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-drop"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-drop&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-drop').click(function() {
+  $(this).effect('drop', 1000, function(){
+      setTimeout(function() {
+        $('.effect-drop').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-explode">
+              <h4>explode</h4>
+              <p><a href="http://api.jqueryui.com/explode-effect/">explode API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-explode"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-explode&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-explode').click(function() {
+  $(this).effect('explode', 1000, function(){
+      setTimeout(function() {
+        $('.effect-explode').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-fade">
+              <h4>fade</h4>
+              <p><a href="http://api.jqueryui.com/fade-effect/">fade API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-fade"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-fade&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-fade').click(function() {
+  $(this).effect('fade', 1000, function(){
+      setTimeout(function() {
+        $('.effect-fade').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-fold">
+              <h4>fold</h4>
+              <p><a href="http://api.jqueryui.com/fold-effect/">fold API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-fold"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+div class=&quot;effect-box effect-fold&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-fold').click(function() {
+  $(this).effect('fold', 1000, function(){
+      setTimeout(function() {
+        $('.effect-fold').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-highlight">
+              <h4>highlight</h4>
+              <p><a href="http://api.jqueryui.com/highlight-effect/">highlight API DOC</a></p>
+              <div class="preview">
+                <div class="effect-box effect-highlight"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-highlight&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-highlight').click(function() {
+  $(this).effect('highlight', 1000, function(){
+      setTimeout(function() {
+        $('.effect-highlight').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-puff">
+              <h4>puff</h4>
+              <p><a href="http://api.jqueryui.com/puff-effect/">puff API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-puff"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-puff&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-puff').click(function() {
+  $(this).effect('puff', 1000, function(){
+      setTimeout(function() {
+        $('.effect-puff').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-pulsate">
+              <h4>pulsate</h4>
+              <p><a href="http://api.jqueryui.com/pulsate-effect/">pulsate API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-pulsate"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-pulsate&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-pulsate').click(function() {
+  $(this).effect('pulsate', 1000, function(){
+      setTimeout(function() {
+        $('.effect-pulsate').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-scale">
+              <h4>scale</h4>
+              <p><a href="http://api.jqueryui.com/scale-effect/">scale API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-scale"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-scale&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-scale').click(function() {
+  $(this).effect('scale', {
+    percent: 0
+  }, 1000, function(){
+      setTimeout(function() {
+        $('.effect-scale').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-shake">
+              <h4>shake</h4>
+              <p><a href="http://api.jqueryui.com/shake-effect/">shake API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-shake"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-shake&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-shake').click(function() {
+  $(this).effect('shake', {
+    percent: 0
+  }, 1000, function(){
+      setTimeout(function() {
+        $('.effect-shake').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-size">
+              <h4>size</h4>
+              <p><a href="http://api.jqueryui.com/size-effect/">size API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-size">
+                  size-effetct
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-size&quot;&gt;
+  size-effetct
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-size').click(function() {
+  $(this).effect('size', {
+    to: {
+      width: 50,
+      height: 50
+    }
+  }, 1000, function(){
+      setTimeout(function() {
+        $('.effect-size').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-slide">
+              <h4>slide</h4>
+              <p><a href="http://api.jqueryui.com/slide-effect/">slide API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-slide">
+                  slide-effetct
+                </div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-slide&quot;&gt;
+  slide-effetct
+&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-slide').click(function() {
+  $(this).effect('slide', {
+    to: {
+      width: 50,
+      height: 50
+    }
+  }, 1000, function(){
+      setTimeout(function() {
+        $('.effect-slide').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="sec-effect-transfer">
+              <h4>transfer</h4>
+              <p><a href="http://api.jqueryui.com/transfer-effect/">transfer API Doc</a></p>
+              <div class="preview">
+                <div class="effect-box effect-transfer"></div>
+                <div class="div-effect-transfer"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effect-box effect-transfer&quot;&gt;&lt;/div&gt;
+</span>
+<span>
+&lt;div class=&quot;div-effect-transfer&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.div-effect-transfer{
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+  margin: 1rem;"
+}
+</span>
+<span>
+.ui-effects-transfer {
+  border: 1px dotted black;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effect-transfer').click(function() {
+  $(this).effect('transfer', {
+    to: '.div-effect-transfer',
+    class: 'ui-effects-transfer'
+  }, 1000, function(){
+      console.log(1);
+      setTimeout(function() {
+        $('.effect-transfer').removeAttr( "style" ).hide().fadeIn();
+      }, 2000 );
+  });
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods -->
+
+        </div><!-- col-xs-10 -->
+      </div><!-- row -->
+
+    </section><!-- section id="sec-draggable" -->
+
+  <!-- /*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>*/ -->
+
+  <!-- /*<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>*/ -->
+
+  <!-- /*<script>
+    $(window).load(function(){
+      // eefect
+      // blind
+      $('.effect-blind').click(function() {
+        $(this).effect('blind', 1000, function(){
+            setTimeout(function() {
+              $('.effect-blind').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // bounce
+      $('.effect-bounce').click(function() {
+        $(this).effect('bounce', 1000, function(){
+            setTimeout(function() {
+              $('.effect-bounce').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // clip
+      $('.effect-clip').click(function() {
+        $(this).effect('clip', 1000, function(){
+            setTimeout(function() {
+              $('.effect-clip').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // drop
+      $('.effect-drop').click(function() {
+        $(this).effect('drop', 1000, function(){
+            setTimeout(function() {
+              $('.effect-drop').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // explode
+      $('.effect-explode').click(function() {
+        $(this).effect('explode', 1000, function(){
+            setTimeout(function() {
+              $('.effect-explode').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      //fade
+      $('.effect-fade').click(function() {
+        $(this).effect('fade', 1000, function(){
+            setTimeout(function() {
+              $('.effect-fade').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // fold
+      $('.effect-fold').click(function() {
+        $(this).effect('fold', 1000, function(){
+            setTimeout(function() {
+              $('.effect-fold').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // highlight
+      $('.effect-highlight').click(function() {
+        $(this).effect('highlight', 1000, function(){
+            setTimeout(function() {
+              $('.effect-highlight').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // puff
+      $('.effect-puff').click(function() {
+        $(this).effect('puff', 1000, function(){
+            setTimeout(function() {
+              $('.effect-puff').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // pulsate
+      $('.effect-pulsate').click(function() {
+        $(this).effect('pulsate', 1000, function(){
+            setTimeout(function() {
+              $('.effect-pulsate').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // scale
+      $('.effect-scale').click(function() {
+        $(this).effect('scale', {
+          percent: 0
+        }, 1000, function(){
+            setTimeout(function() {
+              $('.effect-scale').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // shake
+      $('.effect-shake').click(function() {
+        $(this).effect('shake', {
+          percent: 0
+        }, 1000, function(){
+            setTimeout(function() {
+              $('.effect-shake').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // size
+      $('.effect-size').click(function() {
+        $(this).effect('size', {
+          to: {
+            width: 50,
+            height: 50
+          }
+        }, 1000, function(){
+            setTimeout(function() {
+              $('.effect-size').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // slide
+      $('.effect-slide').click(function() {
+        $(this).effect('slide', {
+          to: {
+            width: 50,
+            height: 50
+          }
+        }, 1000, function(){
+            setTimeout(function() {
+              $('.effect-slide').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+      // transfer
+      $('.effect-transfer').click(function() {
+        $(this).effect('transfer', {
+          to: '.div-effect-transfer',
+          class: 'ui-effects-transfer'
+        }, 1000, function(){
+            console.log(1);
+            setTimeout(function() {
+              $('.effect-transfer').removeAttr( "style" ).hide().fadeIn();
+            }, 2000 );
+        });
+      });
+
+    });
+  </script>*/ -->
+
+  <!-- /*</body>*/ -->
+
+<!-- /*</html>*/ -->
