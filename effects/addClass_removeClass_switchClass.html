@@ -2,7 +2,7 @@
 <!-- <html lang="ja"> -->
   <!-- <head>
     <meta charset="utf-8">
-    <title>addClass removeClass</title>
+    <title>addClass removeClass switchClass</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../css/style.css"> -->
@@ -14,7 +14,7 @@
         border: 1px solid #333;
       }
 
-      .effeccts-addClass__big-danger {
+      .effeccts-addClass__big-danger, .effects-switchClass-danger {
         background-color: #c33;
         width: 200px;
         height: 200px;
@@ -26,14 +26,18 @@
         height: 200px;
       }
 
+      .effects-switchClass-info {
+        background-color: #37c;
+        width: 100px;
+        height: 100px;
+      }
+
     </style>
 
   <!-- </head> -->
   <!-- <body> -->
-    <section id="sec-addClass-removeClass">
-      <h3>addClass</h3>
-      <p><a href="http://jqueryui.com/addClass/">公式DEMO</a></p>
-      <p><a href="http://api.jqueryui.com/addClass/">Options・Events詳細</a></p>
+    <section id="sec-addClass-removeClass-switchClass">
+      <h3>addClass, removeClass, switchClass</h3>
 
       <div class="row">
         <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
@@ -57,6 +61,15 @@
               </ul>
             </li>
 
+            <li>
+              <a href="#ul-ul-switchClass" class="ul-switchClass" aria-controls="ul-ul-switchClass">switchClass</a>
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-switchClass">
+                <li>
+                  <a href="#sec-switchClass">.switchClass</a>
+                </li>
+              </ul>
+            </li>
+
           </ul>
         </nav>
 
@@ -64,7 +77,10 @@
 
           <div id="div-addClass">
             <h4>addClass</h4>
-
+            <p>
+              <a href="http://jqueryui.com/addClass/">addClass 公式DEMO</a>
+              <a href="http://api.jqueryui.com/addClass/">addClass Options・Events詳細</a>
+            </p>
             <section id="sec-addClass">
               <h4>.addClass( className [, duration ] [, easing ] [, complete ] )</h4>
               <p>easing でアニメーション(effect)を付与しながら、classを追加できる。</p>
@@ -122,7 +138,10 @@ $('.effeccts-addClass-box').click( function() {
 
           <div id="div-removeClass">
             <h4>removeClass</h4>
-
+            <p>
+              <a href="http://jqueryui.com/removeClass/">removeClass 公式DEMO</a>
+              <a href="http://api.jqueryui.com/removeClass/">removeClass Options・Events詳細</a>
+            </p>
             <section id="sec-removeClass">
               <h4>.removeClass( className [, duration ] [, easing ] [, complete ] )</h4>
               <p>easing でアニメーション(effect)を付与しながら、classを削除できる。</p>
@@ -179,6 +198,68 @@ $('.effeccts-removeClass-box').click(function() {
 
           </div> <!-- div-slider-methods removeClass-->
 
+          <div id="div-switchClass">
+            <h4>switchClass</h4>
+            <p>
+              <a href="http://jqueryui.com/switchClass/">switchClass 公式DEMO</a>
+              <a href="http://api.jqueryui.com/switchClass/">switchClass Options・Events詳細</a>
+            </p>
+            <section id="sec-switchClass">
+              <h4>.switchClass( className [, duration ] [, easing ] [, complete ] )</h4>
+              <p>addClass, removeClassを指定。</p>
+              <div class="preview">
+                <div class="effects-switch-box effects-switchClass-info"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effects-switch-box effects-switchClass-info&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.effects-switchClass-info {
+  background-color: #37c;
+  width: 100px;
+  height: 100px;
+}
+</span>
+<span>
+.effects-switchClass-danger {
+  background-color: #c33;
+  width: 200px;
+  height: 200px;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effects-switch-box').click(function() {
+  $('.effects-switchClass-info').switchClass('effects-switchClass-info',  'effects-switchClass-danger', 1000, 'easeInBack');
+  $('.effects-switchClass-danger').switchClass('effects-switchClass-danger', 'effects-switchClass-info', 1000, 'easeInBack');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods removeClass-->
+
         </div><!-- col-xs-10 -->
       </div><!-- row -->
 
@@ -197,8 +278,13 @@ $('.effeccts-removeClass-box').click(function() {
 
       // removeClass
       $('.effeccts-removeClass-box').click(function() {
-        console.log(1);
         $( this ).removeClass('effeccts-removeClass__big-info', 1000, 'easeInBack');
+      });
+
+      // switchClass
+      $('.effects-switch-box').click(function() {
+        $('.effects-switchClass-info').switchClass('effects-switchClass-info',  'effects-switchClass-danger', 1000, 'easeInBack');
+        $('.effects-switchClass-danger').switchClass('effects-switchClass-danger', 'effects-switchClass-info', 1000, 'easeInBack');
       });
 
     });

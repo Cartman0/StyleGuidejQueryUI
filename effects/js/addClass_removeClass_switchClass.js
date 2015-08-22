@@ -6,8 +6,13 @@ $(function(){
 
   // removeClass
   $('.effeccts-removeClass-box').click(function() {
-    console.log(1);
     $( this ).removeClass('effeccts-removeClass__big-info', 1000, 'easeInBack');
+  });
+
+  // switchClass
+  $('.effects-switch-box').click(function() {
+    $('.effects-switchClass-info').switchClass('effects-switchClass-info',  'effects-switchClass-danger', 1000, 'easeInBack');
+    $('.effects-switchClass-danger').switchClass('effects-switchClass-danger', 'effects-switchClass-info', 1000, 'easeInBack');
   });
 
 });
