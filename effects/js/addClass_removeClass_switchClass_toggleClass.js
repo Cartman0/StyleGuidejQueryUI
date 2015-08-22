@@ -15,4 +15,10 @@ $(function(){
     $('.effects-switchClass-danger').switchClass('effects-switchClass-danger', 'effects-switchClass-info', 1000, 'easeInBack');
   });
 
+  // toggleClass
+  $('.effects-toggleClass-box').click(function() {
+    $(this).toggleClass('effects-toggleClass-danger', 1000, "easeOutSine" );
+
+  });
+
 });

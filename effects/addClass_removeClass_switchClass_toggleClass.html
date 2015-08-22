@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../css/style.css"> -->
 
     <style>
-      .effeccts-addClass-box, .effeccts-removeClass-box {
+      .effeccts-addClass-box, .effeccts-removeClass-box, .effects-toggleClass-box {
         width:100px;
         height:100px;
         border: 1px solid #333;
       }
 
-      .effeccts-addClass__big-danger, .effects-switchClass-danger {
+      .effeccts-addClass__big-danger, .effects-switchClass-danger, .effects-toggleClass-danger {
         background-color: #c33;
         width: 200px;
         height: 200px;
@@ -31,20 +31,19 @@
         width: 100px;
         height: 100px;
       }
-
     </style>
 
   <!-- </head> -->
   <!-- <body> -->
     <section id="sec-addClass-removeClass-switchClass">
-      <h3>addClass, removeClass, switchClass</h3>
+      <h3>addClass, removeClass, switchClass, toggleClass</h3>
 
       <div class="row">
         <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
           <ul class="nav nav-tabs nav-stacked sidebar">
+
             <li>
               <a href="#ul-ul-addClass" class="ul-addClass" aria-controls="ul-ul-addClass-options">addClass</a>
-
               <ul class="nav nav-pills nav-stacked collapse ul-ul-addClass">
                 <li>
                   <a href="#sec-addClass">.addClass</a>
@@ -66,6 +65,15 @@
               <ul class="nav nav-pills nav-stacked collapse ul-ul-switchClass">
                 <li>
                   <a href="#sec-switchClass">.switchClass</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#ul-ul-toggleClass" class="ul-toggleClass" aria-controls="ul-ul-toggleClass">toggleClass</a>
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-toggleClass">
+                <li>
+                  <a href="#sec-toggleClass">.toggleClass</a>
                 </li>
               </ul>
             </li>
@@ -260,6 +268,69 @@ $('.effects-switch-box').click(function() {
 
           </div> <!-- div-slider-methods removeClass-->
 
+          <div id="div-toggleClass">
+            <h4>toggleClass</h4>
+            <p>
+              <a href="http://jqueryui.com/toggleClass/">toggleClass 公式DEMO</a>
+              <a href="http://api.jqueryui.com/toggleClass/">toggleClass Options・Events詳細</a>
+            </p>
+            <section id="sec-toggleClass">
+              <h4>.toggleClass( className [, switch ] [, duration ] [, easing ] [, complete ] )</h4>
+              <p></p>
+              <div class="preview">
+                <div class="effects-toggleClass-box"></div>
+              </div>
+              <div class="code">
+                <div class="html">
+<pre>
+<code>
+<span>
+&lt;div class=&quot;effects-switch-box effects-switchClass-info&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="css">
+<pre>
+<code>
+<span>
+.effects-switchClass-info {
+  background-color: #37c;
+  width: 100px;
+  height: 100px;
+}
+</span>
+<span>
+.effects-switchClass-danger {
+  background-color: #c33;
+  width: 200px;
+  height: 200px;
+}
+</span>
+</code>
+</pre>
+                </div>
+
+                <div class="js">
+<pre>
+<code>
+<span>
+$('.effects-switch-box').click(function() {
+  $('.effects-switchClass-info').switchClass('effects-switchClass-info',  'effects-switchClass-danger', 1000, 'easeInBack');
+  $('.effects-switchClass-danger').switchClass('effects-switchClass-danger', 'effects-switchClass-info', 1000, 'easeInBack');
+});
+</span>
+</code>
+</pre>
+                </div>
+
+              </div>
+            </section>
+
+          </div> <!-- div-slider-methods removeClass-->
+
+
         </div><!-- col-xs-10 -->
       </div><!-- row -->
 
@@ -285,6 +356,12 @@ $('.effects-switch-box').click(function() {
       $('.effects-switch-box').click(function() {
         $('.effects-switchClass-info').switchClass('effects-switchClass-info',  'effects-switchClass-danger', 1000, 'easeInBack');
         $('.effects-switchClass-danger').switchClass('effects-switchClass-danger', 'effects-switchClass-info', 1000, 'easeInBack');
+      });
+
+      // toggleClass
+      $('.effects-toggleClass-box').click(function() {
+        $(this).toggleClass('effects-toggleClass-danger', 1000, "easeOutSine" );
+
       });
 
     });
