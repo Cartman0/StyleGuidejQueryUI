@@ -18,9 +18,7 @@
   <!-- </head> -->
   <!-- <body> -->
     <section id="sec-hide-show">
-      <h3>hide, show</h3>
-      <p><a href="http://jqueryui.com/hide/">hide 公式DEMO</a></p>
-      <p><a href="http://jqueryui.com/show/">show 公式DEMO</a></p>
+      <h3>hide show toggle</h3>
       <div class="row">
         <nav class="hidden-xs hidden-sm col-md-1 col-lg-2" role="complementary">
           <ul class="nav nav-tabs nav-stacked sidebar">
@@ -32,12 +30,21 @@
                 </li>
               </ul>
             </li>
+
             <li>
               <a href="#ul-ul-show" class="ul-show" aria-controls="ul-ul-show">show</a>
-
               <ul class="nav nav-pills nav-stacked collapse ul-ul-show">
                 <li>
                   <a href="#sec-show">show</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#ul-ul-show" class="ul-toggle" aria-controls="ul-ul-toggle">toggle</a>
+              <ul class="nav nav-pills nav-stacked collapse ul-ul-toggle">
+                <li>
+                  <a href="#sec-toggle">toggle</a>
                 </li>
               </ul>
             </li>
@@ -49,10 +56,12 @@
 
           <div id="div-effects-hide">
             <h4>hide</h4>
-
+            <p>
+              <a href="http://jqueryui.com/hide/">hide 公式DEMO</a>
+              <a href="http://api.jqueryui.com/hide/">hide API Doc</a>
+            </p>
             <section id="sec-hide">
               <h4>.hide( effect [, options ] [, duration ] [, complete ] )</h4>
-              <p><a href="http://api.jqueryui.com/hide/">hide API Doc</a></p>
               <div class="preview">
                 <div class="hide-show-box effects-hide"></div>
               </div>
@@ -86,7 +95,10 @@ $('.hide').click(function() {
 
           <div id="div-effects-show">
             <h4>show</h4>
-
+            <p>
+              <a href="http://jqueryui.com/show/">show 公式DEMO</a>
+              <a href="http://api.jqueryui.com/show/">show API Doc</a>
+            </p>
             <section id="sec-show">
               <h4>.show( effect [, options ] [, duration ] [, complete ] )</h4>
               <p><a href="http://api.jqueryui.com/show/">show API Doc</a></p>
@@ -123,6 +135,46 @@ $('.show').click(function() {
               </div>
             </section>
 
+            <div id="div-effects-show">
+              <h4>show</h4>
+              <p>
+                <a href="http://jqueryui.com/toggle/">toggle 公式DEMO</a>
+                <a href="http://api.jqueryui.com/toggle/">toggle API Doc</a>
+              </p>
+              <section id="sec-toggle">
+                <h4>.toggle( effect [, options ] [, duration ] [, complete ] )</h4>
+                <p><a href="http://api.jqueryui.com/toggle/">toggle API Doc</a></p>
+                <div class="preview">
+                  <button class="btn-toggle">toggle</button>
+                  <div class="hide-show-box effects-toggle"></div>
+                </div>
+                <div class="code">
+                  <div class="html">
+<pre>
+<code>
+<span>
+&lt;button class=&quot;btn-toggle&quot;&gt;toggle&lt;/button&gt;
+&lt;div class=&quot;hide-show-box effects-toggle&quot;&gt;&lt;/div&gt;
+</span>
+</code>
+</pre>
+                  </div>
+
+                  <div class="js">
+<pre>
+<code>
+<span>
+$('.btn-toggle').click( function() {
+   $('.effects-toggle').toggle( "fold", 1000 );
+});
+</span>
+</code>
+</pre>
+                  </div>
+
+                </div>
+              </section>
+
           </div> <!-- div-slider-methods -->
 
         </div><!-- col-xs-10 -->
@@ -134,16 +186,16 @@ $('.show').click(function() {
 
   <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
 
-  <!-- <script>
+  <script>
     $(window).load(function(){
       // eefect
       // hide
-      $('.hide').click(function() {
+      $('.effects-hide').click(function() {
         $(this).hide( "drop", { direction: "down" }, "slow" );
       });
 
       // show
-      $('.show').click(function() {
+      $('.effects-show').click(function() {
         $.when(
           $(this).css('display', 'none')
         ).done(function(){
@@ -151,9 +203,15 @@ $('.show').click(function() {
         });
       });
 
+      // toggle
+      $('.btn-toggle').button();
+      $('.btn-toggle').click( function() {
+         $('.effects-toggle').toggle( "fold", 1000 );
+      });
+
     });
-  </script> -->
+  </script>
 
-  <!-- </body> -->
+  </body>
 
-<!-- </html> -->
+</html>

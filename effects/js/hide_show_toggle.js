@@ -14,4 +14,10 @@ $(function(){
     });
   });
 
+  // toggle
+  $('.btn-toggle').button();
+  $('.btn-toggle').click( function() {
+     $('.effects-toggle').toggle( "fold", 1000 );
+  });
+
 });
